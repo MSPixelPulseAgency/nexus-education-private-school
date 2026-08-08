@@ -16,11 +16,14 @@ const academicLinks = [
 export function Brand({ footer = false }) {
   return (
     <Link className={`brand ${footer ? "brand-footer" : ""}`} to="/" aria-label="Nexus Education Private School home">
-      <span className="brand-mark" aria-hidden="true">NX</span>
-      <span className="brand-copy">
-        <strong>Nexus Education</strong>
-        <small>Private School</small>
-      </span>
+      <img
+        className="brand-wordmark"
+        src="/nexus-wordmark.png"
+        alt=""
+        width="800"
+        height="216"
+        decoding="async"
+      />
     </Link>
   );
 }
