@@ -1,5 +1,5 @@
 import { ArrowRight, Check, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Reveal from "./Reveal";
 import Seo from "./Seo";
 
@@ -14,18 +14,22 @@ export function SectionHeading({ eyebrow, title, text, center = false, light = f
 }
 
 export function PageHero({ eyebrow, title, text, image, imageAlt, children, metaTitle, metaDescription }) {
+  const { pathname } = useLocation();
   return (
     <>
       <Seo title={metaTitle} description={metaDescription} image={image} />
       <section className={`page-hero ${image ? "page-hero-visual" : ""}`}>
-        <div className="container page-hero-grid">
-          <div className="page-hero-copy">
-            <span className="eyebrow">{eyebrow}</span>
-            <h1>{title}</h1>
-            <p>{text}</p>
-            {children && <div className="button-row">{children}</div>}
+        <div className="container">
+          {pathname !== "/" && <nav className="breadcrumbs" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><span aria-current="page">{title.replace(/\.$/, "")}</span></nav>}
+          <div className="page-hero-grid">
+            <div className="page-hero-copy">
+              <span className="eyebrow">{eyebrow}</span>
+              <h1>{title}</h1>
+              <p>{text}</p>
+              {children && <div className="button-row">{children}</div>}
+            </div>
+            {image && <div className="page-hero-image"><img src={image} alt={imageAlt} fetchPriority="high" /></div>}
           </div>
-          {image && <div className="page-hero-image"><img src={image} alt={imageAlt} fetchPriority="high" /></div>}
         </div>
       </section>
     </>

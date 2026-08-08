@@ -2,7 +2,9 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import FloatingHelp from "./components/FloatingHelp";
 import ScrollManager from "./components/ScrollManager";
+import { CartProvider } from "./context/CartContext";
 import HomePage from "./pages/HomePage";
 
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -22,14 +24,19 @@ const ContactPage = lazy(() => import("./pages/ContactPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 const LegalPage = lazy(() => import("./pages/LegalPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+const CartPage = lazy(() => import("./pages/CartPage"));
+const RegisterPage = lazy(() => import("./pages/RegisterPage"));
+const PathwayPage = lazy(() => import("./pages/PathwayPage"));
+const VideosPage = lazy(() => import("./pages/VideosPage"));
 
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollManager />
-      <a className="skip-link" href="#main-content">Skip to main content</a>
-      <Header />
-      <main id="main-content" tabIndex="-1">
+      <CartProvider>
+        <ScrollManager />
+        <a className="skip-link" href="#main-content">Skip to main content</a>
+        <Header />
+        <main id="main-content" tabIndex="-1">
         <Suspense fallback={<div className="route-loader" role="status" aria-live="polite"><span aria-hidden="true" />Loading Nexus page…</div>}>
           <Routes>
           <Route path="/" element={<HomePage />} />
@@ -51,8 +58,19 @@ export default function App() {
           <Route path="/inquiry" element={<InquiryPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FAQPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/checkout" element={<RegisterPage />} />
+          <Route path="/credit-recovery" element={<PathwayPage slug="credit-recovery" />} />
+          <Route path="/upgrade-courses" element={<PathwayPage slug="upgrade-courses" />} />
+          <Route path="/adult-education" element={<PathwayPage slug="adult-education" />} />
+          <Route path="/mature-students" element={<PathwayPage slug="mature-students" />} />
+          <Route path="/ossd" element={<PathwayPage slug="ossd" />} />
+          <Route path="/ouac" element={<PathwayPage slug="ouac" />} />
+          <Route path="/ocas" element={<PathwayPage slug="ocas" />} />
+          <Route path="/student-resources/videos" element={<VideosPage />} />
           <Route path="/understanding-course-codes" element={<ResourceGuidePage slug="understanding-course-codes" />} />
-          <Route path="/ossd-requirements" element={<ResourceGuidePage slug="ossd-requirements" />} />
+          <Route path="/ossd-requirements" element={<PathwayPage slug="ossd" />} />
           <Route path="/university-planning" element={<ResourceGuidePage slug="university-planning" />} />
           <Route path="/college-planning" element={<ResourceGuidePage slug="college-planning" />} />
           <Route path="/parent-guardian-guide" element={<ResourceGuidePage slug="parent-guardian-guide" />} />
@@ -64,8 +82,10 @@ export default function App() {
           <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
-      </main>
-      <Footer />
+        </main>
+        <FloatingHelp />
+        <Footer />
+      </CartProvider>
     </BrowserRouter>
   );
 }

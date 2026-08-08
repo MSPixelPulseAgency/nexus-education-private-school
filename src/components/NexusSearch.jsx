@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, FileText, Newspaper, Search } from "lucide-react"
 import { Link, useNavigate } from "react-router-dom";
 import { blogs, courses, rankCourses } from "../data/catalog";
 import { resourceGuides } from "../data/resourceGuides";
+import AddToCartButton from "./AddToCartButton";
 
 const searchablePages = [
   ["About Nexus", "/about", "school approach future-ready student-focused"],
@@ -11,6 +12,14 @@ const searchablePages = [
   ["Academic Planning", "/academic-planning", "credits prerequisites pathways university college"],
   ["Online Learning", "/online-learning", "digital learning assignments progress routines"],
   ["Frequently Asked Questions", "/faq", "courses admissions LMS support questions"],
+  ["Credit Recovery", "/credit-recovery", "repeat recover strengthen Ontario high school credit"],
+  ["Upgrade Courses", "/upgrade-courses", "upgrade repeat marks prerequisites"],
+  ["Adult Education", "/adult-education", "adult high school credits Ontario OSSD prerequisites"],
+  ["Mature Students", "/mature-students", "PLAR mature student transcript Ontario"],
+  ["OSSD", "/ossd", "Ontario diploma credits literacy community online learning"],
+  ["OUAC Guide", "/ouac", "Ontario university application prerequisite planning"],
+  ["OCAS Guide", "/ocas", "Ontario college application transcripts prerequisites"],
+  ["Official Videos", "/student-resources/videos", "OUAC OCAS Ontario education videos"],
   ...resourceGuides.map((guide) => [guide.title.replace(/\.$/, ""), guide.path, `${guide.eyebrow} ${guide.intro}`]),
 ].map(([title, path, keywords]) => ({ title, path, keywords }));
 
@@ -131,22 +140,10 @@ export default function NexusSearch({ className = "" }) {
                 <div className="search-group-heading"><Icon size={16} /><span>{label}</span></div>
                 {results.filter((item) => item.type === type).map((item) => {
                   const index = results.indexOf(item);
-                  return (
-                    <Link
-                      id={`nexus-search-result-${index}`}
-                      className={activeIndex === index ? "is-active" : ""}
-                      role="option"
-                      aria-selected={activeIndex === index}
-                      key={item.key}
-                      to={item.path}
-                      onMouseEnter={() => setActiveIndex(index)}
-                      onClick={() => setOpen(false)}
-                    >
-                      {item.type === "course" && <span className="course-code">{item.label.split(" · ")[0]}</span>}
-                      <span><strong>{item.title}</strong><small>{item.type === "course" ? item.label.split(" · ").slice(1).join(" · ") : item.label}</small></span>
-                      <ArrowRight size={16} aria-hidden="true" />
-                    </Link>
-                  );
+                  const resultLink = <Link id={`nexus-search-result-${index}`} className={activeIndex === index ? "is-active" : ""} role="option" aria-selected={activeIndex === index} to={item.path} onMouseEnter={() => setActiveIndex(index)} onClick={() => setOpen(false)}>{item.type === "course" && <span className="course-code">{item.label.split(" · ")[0]}</span>}<span><strong>{item.title}</strong><small>{item.type === "course" ? item.label.split(" · ").slice(1).join(" · ") : item.label}</small></span><ArrowRight size={16} aria-hidden="true" /></Link>;
+                  if (item.type !== "course") return <div className="search-result-row" key={item.key}>{resultLink}</div>;
+                  const course = courses.find((entry) => `course-${entry.code}` === item.key);
+                  return <div className="search-result-row has-cart" key={item.key}>{resultLink}{course && <AddToCartButton course={course} className="search-add-cart" compact />}</div>;
                 })}
               </section>
             );

@@ -1,47 +1,55 @@
-import { ArrowLeft, ArrowRight, BookOpenCheck, CheckCircle2, ClipboardList, ExternalLink } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
+import { ArrowLeft, ArrowRight, BookOpenCheck, CheckCircle2, ClipboardList, ExternalLink, GraduationCap } from "lucide-react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import AddToCartButton from "../components/AddToCartButton";
+import FAQAccordion from "../components/FAQAccordion";
 import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
-import { CTASection, SectionHeading } from "../components/UI";
+import { CTASection, CheckList, SectionHeading } from "../components/UI";
+import useCart from "../hooks/useCart";
 import { courses } from "../data/catalog";
-import { getCourseVisual } from "../data/site";
+import { getCurriculumUrl, learningHighlights, outlineDescription } from "../data/curriculum";
+import { brand, getCourseVisual } from "../data/site";
 import NotFoundPage from "./NotFoundPage";
 
 export default function CourseOutlinePage() {
   const { slug } = useParams();
+  const navigate = useNavigate();
+  const { addCourse } = useCart();
   const course = courses.find((item) => item.slug === slug);
   if (!course) return <NotFoundPage />;
-  const visual = getCourseVisual(course.department);
+  const visual = getCourseVisual(course);
+  const highlights = learningHighlights(course);
+  const curriculumUrl = getCurriculumUrl(course);
+  const canonical = `${brand.canonical}/courses/${course.slug}/outline`;
+  const registerCourse = () => { addCourse(course); navigate("/register"); };
+  const schema = [
+    { "@context": "https://schema.org", "@type": "Course", name: `${course.code} ${course.title} Course Outline`, description: course.description, courseCode: course.code, provider: { "@type": "EducationalOrganization", name: brand.name, url: brand.canonical }, url: canonical },
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${brand.canonical}/` }, { "@type": "ListItem", position: 2, name: "Courses", item: `${brand.canonical}/courses` }, { "@type": "ListItem", position: 3, name: `${course.code} ${course.title}`, item: `${brand.canonical}/courses/${course.slug}` }, { "@type": "ListItem", position: 4, name: "Course Outline", item: canonical }] },
+  ];
+  const detailPanels = [
+    ["Online teaching and learning strategies", "The registered course materials identify the specific teacher-led activities, communication routines and learning tasks. The public outline does not invent delivery details that are not present in the source record."],
+    ["Assessment and evaluation", "Assessment types, weighting, deadlines and final-evaluation details must be confirmed in the registered course. No public mark or completion guarantee is made."],
+    ["Accommodations and individual needs", "Students should share relevant learning needs through the appropriate confidential school process. Supports are determined from the student's documentation and course context."],
+    ["Resources", "Use registered Nexus course resources and the current Ontario curriculum source. Copyrighted curriculum resources are linked rather than reproduced."],
+  ];
 
   return (
     <>
-      <Seo title={`${course.title} | ${course.code} Course Outline | Nexus Education`} description={`Review the public ${course.code} ${course.title} course outline, prerequisite, course type and LMS section sequence from the Nexus catalogue.`} image={visual} />
-      <section className="outline-hero">
-        <div className="container">
-          <nav className="breadcrumbs" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><Link to="/courses">Courses</Link><span>/</span><Link to={`/courses/${course.slug}`}>{course.code}</Link><span>/</span><span aria-current="page">Outline</span></nav>
-          <div className="outline-hero-grid">
-            <div><span className="eyebrow"><ClipboardList size={14} /> COURSE OUTLINE</span><span className="course-code course-code-large">{course.code}</span><h1>{course.title}</h1><p>This outline mirrors the section headings in the current Nexus LMS record and keeps availability, eligibility and final delivery details subject to confirmation.</p><div className="button-row"><Link className="btn btn-primary" to={`/inquiry?course=${course.code}`}>Ask About {course.code} <ArrowRight size={17} /></Link><Link className="btn btn-secondary" to={`/courses/${course.slug}`}><ArrowLeft size={17} /> Course Page</Link></div></div>
-            <div className="course-visual-card"><img src={visual} alt={`${course.department} learning environment for ${course.title}`} fetchPriority="high" /><div><span>{course.department}</span><strong>{course.code}</strong></div></div>
-          </div>
-        </div>
-      </section>
+      <Seo title={`${course.code} ${course.title} Course Outline | Nexus Education`} description={`Review the ${course.code} ${course.title} course description, prerequisite, official curriculum link and ${course.outline.length}-section Nexus LMS outline.`} image={visual} structuredData={schema} />
+      <section className="outline-hero"><div className="container"><nav className="breadcrumbs" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><Link to="/courses">Courses</Link><span>/</span><Link to={`/courses/grade-${course.grade}`}>Grade {course.grade}</Link><span>/</span><Link to={`/courses/${course.slug}`}>{course.title} | {course.code}</Link><span>/</span><span aria-current="page">Outline</span></nav><div className="outline-hero-grid"><div><span className="eyebrow"><ClipboardList size={14} /> COURSE OUTLINE</span><span className="course-code course-code-large">{course.code}</span><h1>{course.title}</h1><p>{course.description}</p><div className="course-hero-badges"><span>Grade {course.grade}</span><span>{course.type}</span><span>{course.credit} credit</span></div><div className="button-row"><AddToCartButton course={course} /><button className="btn btn-secondary" type="button" onClick={registerCourse}><GraduationCap size={17} /> Register Now</button><Link className="text-link" to={`/courses/${course.slug}`}><ArrowLeft size={17} /> Course Page</Link></div></div><div className="course-visual-card"><img src={visual} alt={`${course.department} visual for ${course.title}`} fetchPriority="high" /><div><span>{course.department}</span><strong>{course.code}</strong></div></div></div></div></section>
 
-      <Reveal as="section" className="section container outline-layout">
+      <Reveal as="section" className="section container outline-layout outline-layout-expanded">
         <article>
-          <SectionHeading eyebrow="LMS SEQUENCE" title="Course Sections at a Glance." text="The headings below come from the Nexus LMS catalogue. Strand labels remain intentionally general where the source record does not name a more specific unit." />
-          <ol className="outline-list">
-            {course.outline.map((section, index) => <li key={`${course.code}-${section}-${index}`}><span>{String(index + 1).padStart(2, "0")}</span><div><h2>{section}</h2><p>{index === 0 ? "Orientation, course information and communication for this course record." : index === course.outline.length - 1 ? "The final section shown in the current LMS sequence." : "A structured learning section in the current LMS course outline."}</p></div></li>)}
-          </ol>
+          <SectionHeading eyebrow="COURSE DESCRIPTION" title={`${course.code} at a Glance.`} /><p className="large-copy">{course.description}</p>
+          <div className="notice-card"><BookOpenCheck size={22} /><div><strong>Prerequisite: {course.prerequisite}</strong><p>Confirm the prerequisite, current availability and individual eligibility before registration.</p></div></div>
+          {highlights.length > 0 && <><h2>Learning described in the source record</h2><CheckList items={highlights} /></>}
+          <div className="outline-table-heading"><div><span className="mini-label">LMS SEQUENCE</span><h2>{course.code} course outline</h2></div><span>{course.outline.length} sections</span></div>
+          <div className="outline-table-wrap"><table className="outline-table"><caption className="sr-only">{course.code} course outline section sequence</caption><thead><tr><th scope="col">Unit order</th><th scope="col">Unit name</th><th scope="col">Description</th></tr></thead><tbody>{course.outline.map((section, index) => <tr key={`${course.code}-${section}-${index}`}><td data-label="Unit order">{index === course.outline.length - 1 && /final/i.test(section) ? "Final" : `Unit ${index + 1}`}</td><th data-label="Unit name" scope="row">{section}</th><td data-label="Description">{outlineDescription(course, section, index)}</td></tr>)}</tbody></table></div>
+          <p className="outline-timing-note">Suggested hours and completion timing are not published because they are not verified in the current source record. Confirm delivery and pacing during registration.</p>
+          <SectionHeading eyebrow="COURSE DELIVERY" title="Details Confirmed in the Registered Course." /><FAQAccordion items={detailPanels} />
+          <div className="outline-source-banner"><ExternalLink size={22} /><div><strong>Official Ontario curriculum source</strong><p>Review the Ministry curriculum page for current subject context and expectations.</p><a className="text-link" href={curriculumUrl} target="_blank" rel="noreferrer">Open official curriculum <ArrowRight size={15} /></a></div></div>
         </article>
-        <aside>
-          <div className="outline-facts">
-            <BookOpenCheck size={28} />
-            <span className="mini-label">COURSE FACTS</span>
-            <dl><div><dt>Grade</dt><dd>{course.grade}</dd></div><div><dt>Type</dt><dd>{course.type}</dd></div><div><dt>Credit</dt><dd>{course.credit}</dd></div><div><dt>Prerequisite</dt><dd>{course.prerequisite}</dd></div></dl>
-            <div className="availability-note"><CheckCircle2 size={18} /><span><strong>Confirm before registering</strong>The catalogue record does not guarantee current availability or individual eligibility.</span></div>
-            {course.sourceUrl && <a className="text-link" href={course.sourceUrl} target="_blank" rel="noreferrer">Ontario curriculum source <ExternalLink size={15} /></a>}
-          </div>
-        </aside>
+        <aside><div className="outline-facts"><BookOpenCheck size={28} /><span className="mini-label">COURSE FACTS</span><dl><div><dt>Course code</dt><dd>{course.code}</dd></div><div><dt>Grade</dt><dd>{course.grade}</dd></div><div><dt>Type</dt><dd>{course.type}</dd></div><div><dt>Credit</dt><dd>{course.credit}</dd></div><div><dt>Prerequisite</dt><dd>{course.prerequisite}</dd></div></dl><div className="availability-note"><CheckCircle2 size={18} /><span><strong>Confirm before registering</strong>The catalogue record does not guarantee current availability or individual eligibility.</span></div><AddToCartButton course={course} /><button className="btn btn-secondary" type="button" onClick={registerCourse}>Register Now</button></div></aside>
       </Reveal>
       <CTASection title={`Plan Your Next Step With ${course.code}.`} text="Share your completed courses and goal so the prerequisite and current availability can be confirmed." />
     </>

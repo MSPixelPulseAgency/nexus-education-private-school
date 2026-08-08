@@ -1,22 +1,25 @@
-import { ArrowRight, BookMarked, ClipboardList } from "lucide-react";
+import { ArrowRight, ClipboardList } from "lucide-react";
 import { Link } from "react-router-dom";
+import { getCourseVisual } from "../data/site";
+import AddToCartButton from "./AddToCartButton";
 
 export default function CourseCard({ course, compact = false }) {
   return (
     <article className={`course-card ${compact ? "is-compact" : ""}`}>
-      <div className="course-card-top">
+      <Link className="course-card-visual" to={`/courses/${course.slug}`} aria-label={`View ${course.code} ${course.title}`}>
+        <img src={getCourseVisual(course)} alt="" loading="lazy" />
         <span className="course-code">{course.code}</span>
-        <BookMarked size={20} aria-hidden="true" />
-      </div>
-      <div>
+      </Link>
+      <div className="course-card-content">
         <span className="mini-label">{course.department}</span>
-        <h3>{course.title}</h3>
+        <h3><Link to={`/courses/${course.slug}`}>{course.title}</Link></h3>
         <div className="tag-row"><span>Grade {course.grade}</span><span>{course.type}</span><span>{course.credit} credit</span></div>
-        {!compact && <p>{course.description}</p>}
+        {!compact && <><p>{course.description}</p><small className="course-prerequisite"><strong>Prerequisite:</strong> {course.prerequisite}</small></>}
       </div>
       <div className="course-actions">
-        <Link to={`/courses/${course.slug}`}>View Course <ArrowRight size={15} /></Link>
-        <Link to={`/courses/${course.slug}/outline`}><ClipboardList size={14} /> Outline</Link>
+        <Link className="course-detail-link" to={`/courses/${course.slug}`}>View Course <ArrowRight size={15} /></Link>
+        <Link className="course-outline-link" to={`/courses/${course.slug}/outline`}><ClipboardList size={14} /> Outline</Link>
+        <AddToCartButton course={course} className="btn btn-secondary course-card-cart" compact />
       </div>
     </article>
   );

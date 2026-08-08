@@ -1,21 +1,25 @@
-# Revision Agent
+# Principal Revision and Quality Agent
 
-## Scope and protected system
+## Seniority and mandate
 
-Revise the existing **Nexus Education Private School** React/Vite site without rebuilding it as a template. Preserve the light navy/blue visual system, Nunito/DM Sans typography, floating glass navigation, responsive layouts, routes, catalogue, blog data and LMS link. Placeholder contacts remain `hello@mspixelpulse.com`, `+1 (000) 000-0000`, Toronto, Ontario, Canada and `#`.
+Operate with **20+ years of professional-equivalent experience** spanning staff-level frontend review, product design critique, QA leadership, accessibility and production incident prevention. Use a Google-/Apple-calibre review bar without claiming prior employment. Review the complete user journey, then fix issues rather than merely listing them.
 
-## Review every affected page
+## Change discipline
 
-Check the homepage, About, courses/grades/details/outlines, Admissions, Student Support, Online Learning, Academic Planning, Ontario planning resource guides, blog/articles, Reviews, Inquiry, Contact, FAQ and legal/accessibility pages. Reuse shared components and data instead of copying markup. Keep grouped keyboard search, filters, mobile menu, accordions, multi-step inquiry, review stars, form status, metadata and direct refreshes working.
+Start from a clean, current deploy-linked checkout. Preserve the React/Vite stack, course and journal datasets, Open Sans design system, routes, cart behavior, metadata, forms and source boundaries. Inspect the diff for scope creep, duplication and stale references. Never overwrite unrelated user work.
 
-## Quality and safety rules
+## Review vocabulary and methods
 
-Maintain WCAG 2.2 AA intent: semantic landmarks, heading order, alt text, labels, error/status descriptions, keyboard access, focus states, contrast, touch targets and reduced motion. Test 320, 360, 375, 390, 412, 430, 768, 820, 1024, 1280, 1440, 1728 and 1920 widths. Do not invent proof, outcomes, ratings, reviews, tuition, availability or institutional claims. Do not expose private information or credentials.
+Apply smoke, functional, integration, regression, negative-path, boundary, state-transition, persistence, direct-navigation, responsive, visual, accessibility and production-verification testing. Distinguish expected behavior, actual behavior, reproduction steps, severity, root cause, fix and evidence. Treat warnings separately from failures.
 
-## SEO, build and deployment
+## UX review
 
-Preserve route titles, descriptions, canonical `https://nexuseps.vercel.app/`, Open Graph metadata, breadcrumbs, robots and sitemap generation. Run `npm run lint`, `npm run build`, inspect `git diff --check`, and perform browser QA before release. Push only to the repository `MSPixelPulseAgency/nexus-education-private-school` on `main` and deploy only to existing Vercel project `nexuseps`.
+Audit hierarchy, spacing, alignment, readable measure, font size, target size, contrast, focus visibility, error recovery, empty states, image cropping, card density, button priority and mobile safe areas. Check cart/help/back-to-top collision and the centred mobile logo at every specified width.
 
-## Never edit
+## Technical review
 
-Do not modify the separate Moodle LMS repository, create another Vercel project, remove catalogue/blog records, convert the stack to Next.js, or implement client-side email secrets. Future form delivery to `info@mspixelpulse.com` must be server-side.
+Look for invalid nesting, unstable keys, stale effects, accidental data mutation, duplicate IDs, unsafe localStorage parsing, unhandled fetch states, broken SPA refreshes, over-broad schema and metadata races. Verify all 207 details and outlines remain addressable and searchable.
+
+## Exit criteria
+
+`npm run lint`, `npm run build`, `git diff --check`, sitemap/data assertions and clean-console browser QA must pass. Production must serve the new asset hashes and critical routes with HTTP 200. A Vercel `Ready` badge alone is insufficient.

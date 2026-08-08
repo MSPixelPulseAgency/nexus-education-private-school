@@ -30,23 +30,52 @@ export const images = {
   campus: unsplash("photo-1523240795612-9a054b0db644"),
   mentoring: unsplash("photo-1577896851231-70ef18881754"),
   planning: unsplash("photo-1454165804606-c3d57bc86b40"),
+  study: unsplash("photo-1434030216411-0b793f4b4173"),
+  adultLearning: unsplash("photo-1516321318423-f06f85e504b3"),
+  university: unsplash("photo-1523050854058-8df90110c9f1"),
+  college: unsplash("photo-1523240795612-9a054b0db644"),
+  videoLearning: unsplash("photo-1584697964358-3e14ca57658b"),
+  books: unsplash("photo-1495446815901-a7297e633e8d"),
+  chemistry: unsplash("photo-1532187863486-abf9dbad1b69"),
+  biology: unsplash("photo-1530210124550-912dc1381cb8"),
+  physics: unsplash("photo-1635070041078-e363dbe005cb"),
+  coding: unsplash("photo-1461749280684-dccba630e2f6"),
+  business: unsplash("photo-1556761175-b413da4baf72"),
+  geography: unsplash("photo-1526778548025-fa2f459cd5c1"),
+  history: unsplash("photo-1564399579883-451a5d44ec08"),
+  language: unsplash("photo-1457369804613-52c61a468e7d"),
+  technology: unsplash("photo-1581092160562-40aa08e78837"),
 };
 
 export const courseVisuals = {
   "The Arts": unsplash("photo-1549490349-8643362247b5"),
-  "Business Studies": images.planning,
+  "Business Studies": images.business,
   "Canadian and World Studies": unsplash("photo-1521295121783-8a321d551ad2"),
-  "Computer Studies": unsplash("photo-1516321318423-f06f85e504b3"),
-  English: unsplash("photo-1455390582262-044cdead277a"),
+  "Computer Studies": images.coding,
+  English: images.books,
   "Guidance and Career Education": images.graduation,
   "Health and Physical Education": unsplash("photo-1571019613454-1cb2f99b2d8b"),
   Mathematics: unsplash("photo-1509228468518-180dd4864904"),
   Science: images.science,
   "Social Sciences and Humanities": unsplash("photo-1524995997946-a1c2e315a42f"),
-  "Technological Education": unsplash("photo-1581091226825-a6a2a5aee158"),
+  "Technological Education": images.technology,
 };
 
-export const getCourseVisual = (department) => courseVisuals[department] || images.classroom;
+export const getCourseVisual = (courseOrDepartment) => {
+  if (typeof courseOrDepartment === "string") return courseVisuals[courseOrDepartment] || images.classroom;
+  const course = courseOrDepartment || {};
+  const code = course.code || "";
+  const title = (course.title || "").toLowerCase();
+  if (/chemistry/.test(title) || /^SCH/.test(code)) return images.chemistry;
+  if (/biology/.test(title) || /^SBI/.test(code)) return images.biology;
+  if (/physics/.test(title) || /^SPH/.test(code)) return images.physics;
+  if (/computer|programming/.test(title) || /^(ICS|ICD|BTA)/.test(code)) return images.coding;
+  if (/geograph/.test(title) || /^CG/.test(code)) return images.geography;
+  if (/history/.test(title) || /^CH/.test(code)) return images.history;
+  if (/english|literacy|writer/.test(title) || /^(ENG|EAE|EWC|OLC)/.test(code)) return images.books;
+  if (/french|language/.test(title) || /^(FSF|FIF|FEF|LV)/.test(code)) return images.language;
+  return courseVisuals[course.department] || images.classroom;
+};
 
 export const imageSets = {
   home: [images.classroom, images.science, images.collaboration],
@@ -68,6 +97,17 @@ export const staticMeta = {
   "/inquiry": ["Start an Inquiry | Nexus Education", "Tell Nexus about your current studies, course interests and academic goals."],
   "/contact": ["Contact Nexus Education Private School", "Contact Nexus about courses, admissions, academic planning, LMS support or website accessibility."],
   "/faq": ["Frequently Asked Questions | Nexus Education", "Answers about Nexus courses, admissions, learning, LMS access and academic planning."],
+  "/cart": ["Course Cart | Nexus Education", "Review selected Ontario secondary course records before preparing a Nexus registration request."],
+  "/register": ["Register for Ontario Courses | Nexus Education", "Prepare selected courses and student information for a Nexus registration review."],
+  "/checkout": ["Course Registration Review | Nexus Education", "Review selected courses and prepare the required student and academic information."],
+  "/credit-recovery": ["Ontario Credit Recovery Guidance | Nexus Education", "Explore course repetition, credit recovery and prerequisite planning with factual Ontario guidance."],
+  "/upgrade-courses": ["Upgrade Ontario High School Courses | Nexus Education", "Plan a Grade 11 or Grade 12 course upgrade around verified postsecondary prerequisites."],
+  "/adult-education": ["Adult Education and Ontario Credits | Nexus Education", "Explore Ontario secondary credits, prerequisite courses and OSSD planning for adult learners."],
+  "/mature-students": ["Mature Student Ontario Course Planning | Nexus Education", "Understand document review, PLAR context and secondary course planning for mature students."],
+  "/ossd": ["Ontario OSSD Requirements | Nexus Education", "Review current cohort-aware OSSD credit, literacy, community, online-learning and financial-literacy requirements."],
+  "/ouac": ["OUAC Guide for Ontario Students | Nexus Education", "Plan university prerequisite courses and use the official OUAC undergraduate application guide."],
+  "/ocas": ["OCAS Guide for Ontario College Applicants | Nexus Education", "Plan college prerequisites, transcripts and applications using official Ontario Colleges guidance."],
+  "/student-resources/videos": ["Ontario Student Videos and Planning Resources | Nexus Education", "Watch official OUAC and Ontario Colleges guidance and open verified Ontario education resources."],
   "/understanding-course-codes": ["Ontario High School Course Codes Explained | Nexus Education", "Learn how Ontario secondary course codes identify subject, grade and course type."],
   "/ossd-requirements": ["Ontario OSSD Requirements Planning Guide | Nexus Education", "Review the main Ontario graduation planning areas and confirm the requirements for your Grade 9 entry cohort."],
   "/university-planning": ["Ontario University Course Planning Guide | Nexus Education", "Build a high school course plan around current university prerequisites and official sources."],

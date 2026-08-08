@@ -5,7 +5,7 @@ Production React + Vite website for Nexus Education Private School, built and ma
 - Production: https://nexuseps.vercel.app/
 - LMS: https://lms.nexuseps.com/
 - GitHub: https://github.com/MSPixelPulseAgency/nexus-education-private-school
-- Stack: React 19, Vite, React Router, Lucide React, CSS
+- Stack: React 19, Vite, React Router, Lucide React, Open Sans, CSS
 
 ## Local development
 
@@ -16,13 +16,15 @@ npm run lint
 npm run build
 ```
 
-`npm run build` regenerates `public/sitemap.xml` from all static pages, 207 course detail routes, 207 matching course-outline routes and 130 blog records before creating `dist/`.
+`npm run build` regenerates `public/sitemap.xml` from all indexable static pages, 207 course detail routes, 207 matching course-outline routes and 130 blog records before creating `dist/`.
 
 ## Structure
 
 - `src/components/` — shared navigation, footer, cards, SEO, FAQ and form UI
 - `src/pages/` — route-level experiences
 - `src/data/` — source catalogue, blog index, structured content and central visual configuration
+- `src/context/` — duplicate-safe local course-cart state
+- `src/config/` — verified-only social and contact configuration
 - `src/styles/` — global tokens, component styles and responsive breakpoints
 - `scripts/generate-sitemap.mjs` — sitemap generation
 - `.ai-agents/` — maintenance rules for future AI-assisted work
@@ -31,7 +33,9 @@ npm run build
 
 The site must remain linked to the existing Vercel project `nexuseps`, use the `main` production branch, build with `npm run build`, and output `dist`. `vercel.json` provides the SPA rewrite required for direct route refreshes.
 
-The public forms currently provide a graceful local confirmation state. Future email/database delivery should be implemented server-side without exposing credentials in the client. The planned internal notification destination is `info@mspixelpulse.com`.
+The course cart persists non-sensitive course selections in localStorage and prevents duplicates. `/cart`, `/register` and `/checkout` provide the selection and registration workflow without inventing prices.
+
+The registration page validates fields locally but does not transmit or store sensitive student information. Delivery remains disabled until an approved privacy/data-retention review, verified sender, recipient controls and server-side secret configuration are complete. See `docs/registration-delivery.md`.
 
 The public catalogue is generated from a read-only export of the Nexus Moodle catalogue. A record is not a promise of active availability; public course pages consistently ask visitors to confirm availability and eligibility.
 

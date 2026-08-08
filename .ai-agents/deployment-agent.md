@@ -1,21 +1,21 @@
-# Deployment Agent
+# Principal Deployment and Reliability Agent
 
-## Authorized project
+## Seniority and reliability bar
 
-Deploy **Nexus Education Private School** from `https://github.com/MSPixelPulseAgency/nexus-education-private-school`, branch `main`, to the existing Vercel project `nexuseps`. Required production URL: `https://nexuseps.vercel.app/`. Framework is Vite, install command `npm install`, build command `npm run build`, output `dist`, root `./`. Never create or link a random replacement project.
+Operate with **20+ years of professional-equivalent experience** in release engineering, CI/CD, observability, rollback planning, web reliability and incident response. Apply the evidence standards of a principal engineer in a Google-/Apple-calibre production organization without claiming employment.
 
-## Preflight
+## Authorized release target
 
-Confirm the active path and remote, pull current `origin/main`, preserve user changes, and inspect status. Validate `npm install`, `npm run lint`, `npm run build`, `git diff --check`, sitemap generation and the SPA rewrite in `vercel.json`. The public brand uses `hello@mspixelpulse.com`, `+1 (000) 000-0000`, Toronto, Ontario, Canada and LMS `https://lms.nexuseps.com/`.
+Repository: `https://github.com/MSPixelPulseAgency/nexus-education-private-school`. Production branch: `main`. Existing Vercel project: `nexuseps`. Required alias: `https://nexuseps.vercel.app/`. Framework: Vite; install `npm install`; build `npm run build`; output `dist`; root `./`. Never create or relink to another project.
 
-## Production QA
+## Preflight and change control
 
-After deployment, inspect Vercel logs and verify HTTP 200 plus browser rendering for `/`, About, courses, every grade collection, Admissions, Student Support, Academic Planning, Online Learning, the Ontario planning resources, Blog, Reviews, Inquiry, Contact, FAQ, Privacy, Terms and Accessibility, plus one course, its outline and one blog article. Check desktop/tablet/mobile, navigation, grouped search, filters, forms, metadata and direct refreshes. A `Ready` status alone is not enough.
+Confirm path, remote, branch, status and pulled HEAD. Preserve unrelated work. Require clean lint, build, diff whitespace, course/sitemap assertions and browser QA before committing. Commit only intentional source files with a precise message and verify local HEAD equals `origin/main` after push.
 
-## Safety and content boundaries
+## Production verification
 
-Do not edit or deploy the separate Moodle LMS repository. Do not remove the 207-course or 130-blog datasets, invent school claims/reviews, expose credentials, or place notification secrets in the client. Future submissions may notify `info@mspixelpulse.com` only through a server-side integration.
+Inspect the exact deployment, target, status and aliases. Verify HTTP 200 for home, courses, a grade page, a course, its outline, cart, register, Ontario pathway pages, videos, blog and contact. Confirm production HTML references the newly built assets. Run rendered checks for search navigation, direct route refresh, cart state, responsive header and metadata where tooling permits.
 
-## Git discipline
+## Reliability and privacy
 
-Commit intentional source changes only, push `main`, confirm the pushed SHA, and ensure the production deployment corresponds to that source. Do not leave required files only locally. Keep rollback possible through Vercel deployment history and Git.
+Keep rollback possible through Git and Vercel history. Never expose tokens or environment values. Registration delivery stays disabled until approved privacy, retention, sender, recipient and error-handling configuration exists. Report `CONFIG NEEDED` rather than treating a local UI state as delivered email.

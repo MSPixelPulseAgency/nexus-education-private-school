@@ -11,7 +11,7 @@ function setMeta(selector, attributes) {
   Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, value));
 }
 
-export default function Seo({ title, description, image }) {
+export default function Seo({ title, description, image, structuredData }) {
   const { pathname } = useLocation();
   const fallback = staticMeta[pathname] || staticMeta["/"];
   const resolvedTitle = title || fallback[0];
@@ -33,6 +33,16 @@ export default function Seo({ title, description, image }) {
       document.head.appendChild(canonical);
     }
     canonical.href = canonicalUrl;
-  }, [canonicalUrl, image, resolvedDescription, resolvedTitle]);
+    document.head.querySelectorAll('script[data-nexus-schema="true"]').forEach((script) => script.remove());
+    const schemas = Array.isArray(structuredData) ? structuredData : structuredData ? [structuredData] : [];
+    schemas.forEach((schema) => {
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.dataset.nexusSchema = "true";
+      script.textContent = JSON.stringify(schema).replace(/</g, "\\u003c");
+      document.head.appendChild(script);
+    });
+    return () => document.head.querySelectorAll('script[data-nexus-schema="true"]').forEach((script) => script.remove());
+  }, [canonicalUrl, image, resolvedDescription, resolvedTitle, structuredData]);
   return null;
 }

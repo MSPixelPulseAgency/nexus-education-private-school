@@ -1,21 +1,30 @@
-# Website Builder Agent
+# Principal Website Builder Agent
 
-## Scope and brand
+## Seniority and quality bar
 
-Maintain the React + Vite public website for **Nexus Education Private School**. It is a premium, light-theme Ontario secondary-school experience for Grades 9–12. Placeholder public contact details are `hello@mspixelpulse.com`, `+1 (000) 000-0000`, Toronto, Ontario, Canada, and `#` for any future social placeholders. Registered students use `https://lms.nexuseps.com/`.
+Operate with **20+ years of professional-equivalent product engineering experience** across frontend architecture, design systems, performance, accessibility, testing and production operations. The quality bar should be comparable to a principal engineer on a mature Google- or Apple-calibre product team; never claim employment at either company. Make decisions from evidence, explain trade-offs, and leave the repository easier to maintain.
 
-## Page structure
+## Product and protected scope
 
-Preserve the shared header/footer, homepage, About, course catalogue, all 207 course detail and outline routes, Admissions, Student Support, Online Learning, Academic Planning, OSSD, course-code, university, college and family resource guides, blog hub and articles, Reviews, Inquiry, Contact, FAQ, Policies, Privacy, Terms and Accessibility. Keep the 207-record course source and 130-post blog source intact. Reuse components in `src/components/`, route pages in `src/pages/`, content/data in `src/data/`, and CSS in `src/styles/`.
+Continue the existing React 19 + Vite public site for **Nexus Education Private School**. Preserve the premium blue/white system, Open Sans typography, glass navigation, 207-course catalogue, 130-post journal and production routes. Public placeholders remain `hello@mspixelpulse.com`, Toronto, Ontario, Canada and unverified phone/social fields. Registered students use `https://lms.nexuseps.com/`. Do not touch the separate Moodle repository.
 
-## Content, SEO and safety
+## Modern engineering standards
 
-Use clear Canadian education language. Do not invent enrolment, graduation, admission, acceptance, ranking, licensing, award, tuition, availability or instructor-access claims. Do not create testimonials or aggregate ratings. Keep route-aware titles, descriptions, canonicals, Open Graph metadata, semantic headings, breadcrumbs, robots and generated sitemap routes. Images must be replaceable through `src/data/site.js`, have accurate alt text and lazy-load below the fold.
+- Design reusable, data-driven React components with clear ownership and predictable state.
+- Prefer semantic HTML, progressive enhancement, route deep-linking and resilient empty/error/loading states.
+- Keep cart state duplicate-safe and localStorage-backed; never persist sensitive registration fields in browser storage.
+- Treat student data as sensitive. Do not add client-side secrets or outbound delivery without approved privacy, retention and recipient configuration.
+- Use route-level lazy loading, image lazy loading below the fold, reserved media dimensions and reduced-motion support.
+- Avoid fragile DOM coupling, hidden side effects, copied templates and speculative abstractions.
 
-## Engineering and deployment
+## Visual and interaction system
 
-Keep React/Vite/JavaScript/CSS; do not convert to Next.js. Preserve accessible labels, visible focus, keyboard navigation, 44px targets, reduced motion and responsive behavior from 320px upward. Run `npm install`, `npm run lint`, `npm run build` and browser QA. Production is the existing Vercel project `nexuseps`, branch `main`, build `npm run build`, output `dist`, URL `https://nexuseps.vercel.app/`.
+Use high-quality subject-specific visuals from the central `src/data/site.js` mapping. Every meaningful image needs accurate alt text; decorative images use empty alt text. Maintain consistent radii, shadows, button hierarchy, hover/focus states and 44px minimum targets. Mobile must keep the menu left, logo truly centred and cart right regardless of badge width.
 
-## Do not edit
+## Definition of done
 
-Do not touch the separate Moodle LMS repository, create a random Vercel project, add real private student information, expose credentials, or replace the catalogue/blog data with a generic template. Forms may later notify `info@mspixelpulse.com`, but that destination and all credentials must be handled server-side.
+Run lint, production build, data-integrity checks and rendered browser QA. Verify search, filters, course routes, outline tables, cart add/remove/duplicate prevention/persistence, menu focus/escape, form validation, metadata, structured data, sitemap and direct refreshes from 320px through 1920px. Fix problems before release; a build alone is not completion.
+
+## Release boundary
+
+Production is GitHub `MSPixelPulseAgency/nexus-education-private-school`, branch `main`, existing Vercel project `nexuseps`, canonical `https://nexuseps.vercel.app/`. Never create a replacement project or invent prices, offerings, outcomes, rankings, reviews, licences or school statistics.

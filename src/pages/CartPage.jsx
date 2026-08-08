@@ -1,0 +1,22 @@
+import { ArrowRight, BookOpen, ShoppingBag, Trash2, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
+import useCart from "../hooks/useCart";
+import { getCourseVisual } from "../data/site";
+
+export default function CartPage() {
+  const { items, removeCourse, clearCart } = useCart();
+  return (
+    <>
+      <Seo title="Course Cart | Nexus Education Private School" description="Review the Ontario secondary school courses selected for a Nexus registration inquiry." />
+      <section className="page-hero cart-hero"><div className="container"><nav className="breadcrumbs" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><span aria-current="page">Course Cart</span></nav><div className="page-hero-copy"><span className="eyebrow"><ShoppingBag size={14} /> COURSE CART</span><h1>Review Your Course Selections.</h1><p>Course selection begins a registration review. It does not confirm availability, eligibility, enrolment or pricing.</p></div></div></section>
+      <section className="section container cart-layout">
+        <div className="cart-list" aria-live="polite">
+          <div className="cart-list-heading"><div><span className="mini-label">SELECTED COURSES</span><h2>{items.length ? `${items.length} course${items.length === 1 ? "" : "s"}` : "Your cart is empty"}</h2></div>{items.length > 0 && <button type="button" onClick={clearCart}><Trash2 size={17} /> Clear cart</button>}</div>
+          {items.length ? items.map((course) => <article className="cart-course" key={course.code}><img src={getCourseVisual(course.department)} alt="" loading="lazy" /><div><span className="course-code">{course.code}</span><h3><Link to={`/courses/${course.slug}`}>{course.title}</Link></h3><p>Grade {course.grade} · {course.type} · {course.credit} credit</p><small>Prerequisite: {course.prerequisite}</small></div><button type="button" onClick={() => removeCourse(course.code)} aria-label={`Remove ${course.code} from cart`}><X size={19} /></button></article>) : <div className="empty-state"><BookOpen size={38} /><h2>Choose courses before registering.</h2><p>Search the complete catalogue by code, title, grade, type or department.</p><Link className="btn btn-primary" to="/courses">Explore Courses <ArrowRight size={17} /></Link></div>}
+        </div>
+        <aside className="cart-summary"><span className="mini-label">REGISTRATION SUMMARY</span><h2>No payment is taken here.</h2><p>Nexus pricing is not configured on the public website. The next step collects student and academic details for review.</p><dl><div><dt>Courses</dt><dd>{items.length}</dd></div><div><dt>Total credits represented</dt><dd>{items.reduce((sum, item) => sum + Number(item.credit || 0), 0)}</dd></div></dl><Link className={`btn btn-primary ${items.length ? "" : "is-disabled"}`} aria-disabled={!items.length} tabIndex={items.length ? 0 : -1} to={items.length ? "/register" : "/courses"}>Continue to Registration <ArrowRight size={17} /></Link><Link className="text-link" to="/courses">Continue browsing</Link></aside>
+      </section>
+    </>
+  );
+}
