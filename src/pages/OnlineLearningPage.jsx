@@ -1,0 +1,19 @@
+import { ArrowRight, BookOpen, CheckSquare, Laptop2, LockKeyhole, MessageSquare, Signal, TimerReset } from "lucide-react";
+import { Link } from "react-router-dom";
+import Reveal from "../components/Reveal";
+import { CTASection, CheckList, PageHero, SectionHeading } from "../components/UI";
+import { brand, images } from "../data/site";
+
+const features = [[BookOpen, "Organized Course Content", "Course materials and activities can be accessed through a structured digital learning environment."], [CheckSquare, "Assignments", "Registered students review course-specific activities, instructions and expectations in the LMS."], [TimerReset, "Progress Tracking", "A regular check-in routine helps students understand what is complete and what comes next."], [MessageSquare, "Communication", "Clear, contextual questions make digital support more useful."], [Signal, "Technical Readiness", "A reliable connection, current browser and organized device setup reduce avoidable friction."], [LockKeyhole, "Academic Integrity", "Students remain responsible for honest work, appropriate source use and secure account access."]];
+
+export default function OnlineLearningPage() {
+  return (
+    <>
+      <PageHero eyebrow="ONLINE LEARNING" title="Learning That Fits Your Schedule." text="A modern digital learning experience helps students access course content, manage assignments and stay connected to their progress." image={images.collaboration} imageAlt="Students collaborating around laptops in a modern learning environment"><a className="btn btn-primary" href={brand.lms} target="_blank" rel="noreferrer">Registered Student Login <ArrowRight size={17} /></a><Link className="btn btn-secondary" to="/inquiry">Ask About a Course</Link></PageHero>
+      <Reveal as="section" className="section container"><SectionHeading eyebrow="THE DIGITAL EXPERIENCE" title="Clear Structure. Fewer Guessing Games." text="The public website introduces the path; registered students use the LMS for their actual course experience." /><div className="feature-grid">{features.map(([Icon, title, text]) => <article className="feature-card" key={title}><span className="icon-bubble"><Icon size={21} /></span><h3>{title}</h3><p>{text}</p></article>)}</div></Reveal>
+      <Reveal as="section" className="section soft-section"><div className="container online-requirements"><div className="online-device"><Laptop2 size={60} /><span aria-hidden="true" /><div><strong>Nexus LMS</strong><small>Course content · activities · progress</small></div></div><div><SectionHeading eyebrow="TECHNICAL REQUIREMENTS" title="Prepare a Dependable Learning Setup." /><CheckList items={["A current desktop or mobile browser", "A reliable internet connection", "A private, secure LMS password", "A way to create and upload course work", "A focused place for regular study time"]} /><p className="small-note">Course format, timing and instructor availability should be confirmed for the specific course. This page does not promise fully self-paced learning or 24/7 instructor access.</p></div></div></Reveal>
+      <Reveal as="section" className="section container learning-rhythm"><SectionHeading eyebrow="A BETTER ONLINE RHYTHM" title="Use a Simple Weekly Loop." center /><div>{[["Plan", "Review deadlines and choose focused study blocks."], ["Learn", "Work through the current material without rushing for completion."], ["Practice", "Use active recall, problems or projects to test understanding."], ["Ask", "Send a specific question when something remains unclear."], ["Review", "Check progress and adjust the next week deliberately."]].map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></Reveal>
+      <CTASection title="Find the Course That Fits Your Next Step." />
+    </>
+  );
+}
