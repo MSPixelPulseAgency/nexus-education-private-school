@@ -16,7 +16,7 @@ npm run lint
 npm run build
 ```
 
-`npm run build` regenerates `public/sitemap.xml` from all static pages, 148 course records and 130 blog records before creating `dist/`.
+`npm run build` regenerates `public/sitemap.xml` from all static pages, 207 course detail routes, 207 matching course-outline routes and 130 blog records before creating `dist/`.
 
 ## Structure
 
@@ -32,5 +32,7 @@ npm run build
 The site must remain linked to the existing Vercel project `nexuseps`, use the `main` production branch, build with `npm run build`, and output `dist`. `vercel.json` provides the SPA rewrite required for direct route refreshes.
 
 The public forms currently provide a graceful local confirmation state. Future email/database delivery should be implemented server-side without exposing credentials in the client. The planned internal notification destination is `info@mspixelpulse.com`.
+
+The public catalogue is generated from a read-only export of the Nexus Moodle catalogue. A record is not a promise of active availability; public course pages consistently ask visitors to confirm availability and eligibility.
 
 This repository is only for the public React/Vite website. Do not modify or replace the separate Nexus Moodle LMS repository from this project.

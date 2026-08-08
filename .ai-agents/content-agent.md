@@ -6,7 +6,7 @@ Write and maintain public content for **Nexus Education Private School**, a mode
 
 ## Page and data boundaries
 
-Support the homepage, About, course catalogue/details, Admissions, Student Support, Online Learning, Academic Planning, blog/articles, Reviews, Inquiry, Contact, FAQ, Policies, Privacy, Terms and Accessibility. Preserve all 148 source course records and 130 blog records. Blog bodies should be useful and category-specific; cornerstone articles deserve deeper original guidance, not keyword filler.
+Support the homepage, About, course catalogue/details/outlines, Admissions, Student Support, Online Learning, Academic Planning, original Ontario planning resource guides, blog/articles, Reviews, Inquiry, Contact, FAQ, Policies, Privacy, Terms and Accessibility. Preserve all 207 source course records and 130 blog records. Blog bodies should be useful and category-specific; cornerstone articles deserve deeper original guidance, not keyword filler.
 
 ## Writing, SEO and demo safety
 

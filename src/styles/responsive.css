@@ -27,7 +27,7 @@
 }
 
 @media (max-width: 980px) {
-  .page-hero-visual .page-hero-grid, .home-hero, .future-panel, .support-split, .reviews-preview, .about-story, .split-feature, .admissions-prep, .quick-help, .online-requirements, .pathway-example, .course-hero-grid, .course-detail-body, .blog-feature, .article-hero-grid, .reviews-layout, .contact-layout { grid-template-columns: 1fr; }
+  .page-hero-visual .page-hero-grid, .home-hero, .future-panel, .support-split, .reviews-preview, .about-story, .split-feature, .admissions-prep, .quick-help, .online-requirements, .pathway-example, .course-hero-grid, .course-detail-body, .outline-hero-grid, .outline-layout, .guide-content-grid, .blog-feature, .article-hero-grid, .reviews-layout, .contact-layout { grid-template-columns: 1fr; }
   .page-hero-image { min-height: 410px; max-width: 760px; width: 100%; }
   .page-hero-image img { min-height: 386px; }
   .home-hero { padding-top: 140px; }
@@ -44,7 +44,9 @@
   .support-card-grid, .contact-topic-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .learning-rhythm > div:last-child { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .course-detail-body aside { max-width: 680px; }
-  .planning-card { position: static; }
+  .planning-card, .outline-facts, .source-card { position: static; }
+  .course-hero-side, .outline-hero-grid .course-visual-card { width: 100%; max-width: 760px; }
+  .guide-highlight-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .article-layout { grid-template-columns: minmax(0,800px); }
   .article-toc { position: static; display: flex; flex-wrap: wrap; align-items: center; }
   .article-toc strong { width: 100%; }
@@ -110,12 +112,11 @@
   .section-heading p { font-size: 0.95rem; }
   .home-finder { padding: 19px; border-radius: 27px; }
   .home-finder-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
-  .finder-search { min-height: 62px; grid-template-columns: auto 1fr; padding: 0 13px; }
-  .finder-search > span { display: none; }
-  .finder-results { right: 19px; left: 19px; }
-  .finder-results a { grid-template-columns: auto 1fr; }
-  .finder-results a > svg { display: none; }
-  .feature-grid, .grade-grid, .card-grid.two, .card-grid.three, .visual-grid.three, .support-card-grid, .contact-topic-grid, .planning-grade-grid { grid-template-columns: 1fr; }
+  .nexus-search-input { min-height: 62px; grid-template-columns: auto minmax(0,1fr); padding: 0 13px; }
+  .nexus-search-input input { height: 58px; font-size: 1rem; }
+  .nexus-search-input > span { display: none; }
+  .nexus-search-panel { top: 70px; max-height: min(62vh,430px); }
+  .feature-grid, .grade-grid, .card-grid.two, .card-grid.three, .visual-grid.three, .support-card-grid, .contact-topic-grid, .planning-grade-grid, .guide-highlight-grid { grid-template-columns: 1fr; }
   .feature-card { min-height: 210px; }
   .grade-card { min-height: 220px; grid-template-columns: 100px 1fr; padding: 20px; }
   .grade-number { font-size: 5.6rem; }
@@ -158,11 +159,17 @@
   .catalog-search, .blog-search, .faq-search { min-height: 56px; padding: 0 13px; }
   .catalog-search input, .blog-search input, .faq-search input { height: 52px; font-size: 1rem; }
   .blog-search > span, .faq-search > span { display: none; }
-  .course-detail-hero { padding: 105px 0 60px; }
+  .course-detail-hero, .outline-hero { padding: 105px 0 60px; }
   .course-hero-grid { gap: 36px; }
-  .course-hero-grid h1 { font-size: clamp(2.5rem,11vw,3.8rem); }
+  .course-hero-grid h1, .outline-hero-grid h1 { font-size: clamp(2.5rem,11vw,3.8rem); }
+  .outline-hero-grid { gap: 34px; }
+  .course-visual-card { min-height: 300px; transform: none; }
+  .course-visual-card img { height: 282px; }
   .course-snapshot { padding: 21px; }
   .course-detail-body { gap: 42px; }
+  .outline-layout, .guide-content-grid { gap: 42px; }
+  .outline-list li { grid-template-columns: 50px minmax(0,1fr); gap: 12px; padding: 18px; }
+  .outline-list li > span { width: 46px; height: 46px; }
 
   .blog-feature { gap: 27px; padding: 9px 9px 25px; border-radius: 28px; }
   .blog-feature-image { min-height: 330px; }
@@ -214,7 +221,11 @@
   .hero-stat small { font-size: 0.61rem; }
   .hero-stat .icon-bubble { display: none; }
   .hero-subjects span:last-child { display: none; }
-  .finder-examples > span { width: 100%; }
+  .search-examples > span { width: 100%; }
+  .search-result-group > a { gap: 8px; padding-inline: 8px; }
+  .search-result-group strong { font-size: 0.86rem; }
+  .search-result-group small { font-size: 0.74rem; }
+  .search-result-group .course-code { padding-inline: 8px; font-size: 0.71rem; }
   .grade-card { grid-template-columns: 72px 1fr; gap: 13px; padding: 17px; }
   .grade-number { font-size: 4.5rem; }
   .pathway-grid { grid-template-columns: 1fr; }

@@ -2,11 +2,11 @@
 
 ## Scope and protected system
 
-Revise the existing **Nexus Education Private School** React/Vite site without rebuilding it as a template. Preserve the light navy/blue visual system, Manrope/Inter typography, floating glass navigation, responsive layouts, routes, catalogue, blog data and LMS link. Placeholder contacts remain `hello@mspixelpulse.com`, `+1 (000) 000-0000`, Toronto, Ontario, Canada and `#`.
+Revise the existing **Nexus Education Private School** React/Vite site without rebuilding it as a template. Preserve the light navy/blue visual system, Nunito/DM Sans typography, floating glass navigation, responsive layouts, routes, catalogue, blog data and LMS link. Placeholder contacts remain `hello@mspixelpulse.com`, `+1 (000) 000-0000`, Toronto, Ontario, Canada and `#`.
 
 ## Review every affected page
 
-Check the homepage, About, courses/grades/details, Admissions, Student Support, Online Learning, Academic Planning, blog/articles, Reviews, Inquiry, Contact, FAQ and legal/accessibility pages. Reuse shared components and data instead of copying markup. Keep filters, mobile menu, accordions, multi-step inquiry, review stars, form status, metadata and direct refreshes working.
+Check the homepage, About, courses/grades/details/outlines, Admissions, Student Support, Online Learning, Academic Planning, Ontario planning resource guides, blog/articles, Reviews, Inquiry, Contact, FAQ and legal/accessibility pages. Reuse shared components and data instead of copying markup. Keep grouped keyboard search, filters, mobile menu, accordions, multi-step inquiry, review stars, form status, metadata and direct refreshes working.
 
 ## Quality and safety rules
 

@@ -1,29 +1,10 @@
 import courseRows from "./courses.js";
 import blogRows from "./blogs.js";
 
-const codeFixes = { TEa4E: "TEJ4E", TEa4M: "TEJ4M", TTz0E: "TTJ4E" };
-
-const departments = {
-  A: "The Arts",
-  C: "Canadian & World Studies",
-  H: "Social Sciences & Humanities",
-  P: "Health & Physical Education",
-  T: "Technological Education",
-};
-
-export const courses = courseRows.map((row) => {
-  const code = codeFixes[row.c] || row.c;
-  return {
-    code,
-    title: row.t,
-    slug: row.s,
-    grade: row.g,
-    type: row.y || "Ontario Credit",
-    credit: 1,
-    department: departments[code.charAt(0)] || "Ontario Credit Courses",
-    description: `${row.t} (${code}) is listed in the Nexus catalogue as a Grade ${row.g} ${row.y || "Ontario credit"} course.`,
-  };
-});
+export const courses = courseRows.map((row) => ({
+  ...row,
+  searchText: `${row.code} ${row.title} grade ${row.grade} ${row.type} ${row.department}`.toLowerCase(),
+}));
 
 export const blogs = blogRows.map((row, index) => ({
   title: row.t,
@@ -59,22 +40,27 @@ export const departmentsList = [...new Set(courses.map((course) => course.depart
 export const courseTypes = [...new Set(courses.map((course) => course.type))].sort();
 export const blogCategories = [...new Set(blogs.map((post) => post.category))];
 
-export const featuredCourses = ["CGC1W", "CHC2D", "HSP3U", "PSK4U", "CLN4U", "TGJ4M"]
+export const featuredCourses = ["MHF4U", "ENG4U", "SPH4U", "SBI4U", "ICS4U", "HSP3U"]
   .map((code) => courses.find((course) => course.code === code))
   .filter(Boolean);
 
 export function rankCourses(items, query) {
   const normalized = query.trim().toLowerCase();
+  const compact = normalized.replace(/[^a-z0-9]/g, "");
   if (!normalized) return items;
+
   return items
     .map((course) => {
       const code = course.code.toLowerCase();
       const title = course.title.toLowerCase();
-      const haystack = `${code} ${title} grade ${course.grade} ${course.type} ${course.department}`.toLowerCase();
-      let score = haystack.includes(normalized) ? 1 : 0;
-      if (title.startsWith(normalized)) score = 3;
-      if (code.startsWith(normalized)) score = 5;
-      if (code === normalized) score = 10;
+      const compactCode = code.replace(/[^a-z0-9]/g, "");
+      let score = 0;
+      if (course.searchText.includes(normalized)) score = 20;
+      if (title.includes(normalized)) score = 35;
+      if (title.startsWith(normalized)) score = 55;
+      if (compact && compactCode.includes(compact)) score = 70;
+      if (compact && compactCode.startsWith(compact)) score = 90;
+      if (compact && compactCode === compact) score = 120;
       return { course, score };
     })
     .filter(({ score }) => score > 0)

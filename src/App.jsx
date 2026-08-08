@@ -8,6 +8,8 @@ import HomePage from "./pages/HomePage";
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const CoursesPage = lazy(() => import("./pages/CoursesPage"));
 const CourseDetailPage = lazy(() => import("./pages/CourseDetailPage"));
+const CourseOutlinePage = lazy(() => import("./pages/CourseOutlinePage"));
+const ResourceGuidePage = lazy(() => import("./pages/ResourceGuidePage"));
 const AdmissionsPage = lazy(() => import("./pages/AdmissionsPage"));
 const StudentSupportPage = lazy(() => import("./pages/StudentSupportPage"));
 const OnlineLearningPage = lazy(() => import("./pages/OnlineLearningPage"));
@@ -37,6 +39,7 @@ export default function App() {
           <Route path="/courses/grade-10" element={<CoursesPage gradeOverride="10" />} />
           <Route path="/courses/grade-11" element={<CoursesPage gradeOverride="11" />} />
           <Route path="/courses/grade-12" element={<CoursesPage gradeOverride="12" />} />
+          <Route path="/courses/:slug/outline" element={<CourseOutlinePage />} />
           <Route path="/courses/:slug" element={<CourseDetailPage />} />
           <Route path="/admissions" element={<AdmissionsPage />} />
           <Route path="/student-support" element={<StudentSupportPage />} />
@@ -48,6 +51,11 @@ export default function App() {
           <Route path="/inquiry" element={<InquiryPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FAQPage />} />
+          <Route path="/understanding-course-codes" element={<ResourceGuidePage slug="understanding-course-codes" />} />
+          <Route path="/ossd-requirements" element={<ResourceGuidePage slug="ossd-requirements" />} />
+          <Route path="/university-planning" element={<ResourceGuidePage slug="university-planning" />} />
+          <Route path="/college-planning" element={<ResourceGuidePage slug="college-planning" />} />
+          <Route path="/parent-guardian-guide" element={<ResourceGuidePage slug="parent-guardian-guide" />} />
           <Route path="/why-nexus" element={<AboutPage />} />
           <Route path="/privacy" element={<LegalPage type="privacy" />} />
           <Route path="/terms" element={<LegalPage type="terms" />} />

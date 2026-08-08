@@ -10,6 +10,8 @@ const academicLinks = [
   ["Grade 11", "/courses/grade-11"],
   ["Grade 12", "/courses/grade-12"],
   ["Academic Planning", "/academic-planning"],
+  ["Understanding Course Codes", "/understanding-course-codes"],
+  ["OSSD Requirements", "/ossd-requirements"],
   ["Online Learning", "/online-learning"],
 ];
 
@@ -108,6 +110,8 @@ export default function Header() {
           <div className="mobile-menu-grid">
             {navigation.map((item) => <NavLink end={item.to === "/"} tabIndex={open ? 0 : -1} key={item.to} to={item.to}>{item.label}</NavLink>)}
             <Link tabIndex={open ? 0 : -1} to="/academic-planning">Academic Planning</Link>
+            <Link tabIndex={open ? 0 : -1} to="/ossd-requirements">OSSD Requirements</Link>
+            <Link tabIndex={open ? 0 : -1} to="/parent-guardian-guide">Parent & Guardian Guide</Link>
             <Link tabIndex={open ? 0 : -1} to="/online-learning">Online Learning</Link>
           </div>
           <div className="mobile-menu-actions">

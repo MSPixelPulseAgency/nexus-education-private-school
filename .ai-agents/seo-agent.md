@@ -6,7 +6,7 @@ Optimize the public **Nexus Education Private School** React/Vite website for us
 
 ## Route coverage
 
-Maintain metadata and indexable paths for the homepage, About, courses, Grade 9–12 collections, every course detail, Admissions, Student Support, Academic Planning, Online Learning, blog hub, all blog articles, Reviews, Inquiry, Contact, FAQ, Policies, Privacy, Terms and Accessibility. `scripts/generate-sitemap.mjs` must include static routes plus all 148 course and 130 blog routes. Keep `public/robots.txt` linked to the production sitemap.
+Maintain metadata and indexable paths for the homepage, About, courses, Grade 9–12 collections, every course detail and matching outline, Admissions, Student Support, Academic Planning, Online Learning, original Ontario planning resource guides, blog hub, all blog articles, Reviews, Inquiry, Contact, FAQ, Policies, Privacy, Terms and Accessibility. `scripts/generate-sitemap.mjs` must include static routes plus all 207 course details, 207 course outlines and 130 blog routes. Keep `public/robots.txt` linked to the production sitemap.
 
 ## Content and technical rules
 

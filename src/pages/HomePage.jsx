@@ -1,17 +1,17 @@
-import { useMemo, useState } from "react";
 import {
   ArrowRight, BookOpenCheck, Bot, BrainCircuit, ChevronRight, CircleUserRound,
-  Compass, GraduationCap, Headphones, Laptop2, Lightbulb, Search, ShieldCheck,
+  Compass, GraduationCap, Headphones, Laptop2, Lightbulb, ShieldCheck,
   Sparkles, Star, Target, UsersRound,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import BlogCard from "../components/BlogCard";
 import CourseCard from "../components/CourseCard";
 import FAQAccordion from "../components/FAQAccordion";
+import NexusSearch from "../components/NexusSearch";
 import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
 import { CTASection, SectionHeading } from "../components/UI";
-import { blogs, courses, featuredCourses, gradeCounts, rankCourses } from "../data/catalog";
+import { blogs, courses, featuredCourses, gradeCounts } from "../data/catalog";
 import { faqGroups } from "../data/content";
 import { images } from "../data/site";
 
@@ -31,37 +31,6 @@ const advantages = [
   [BookOpenCheck, "Course Transparency", "Compare codes, grades, types, credits and pathway context clearly."],
 ];
 
-function HomeCourseFinder() {
-  const [query, setQuery] = useState("");
-  const matches = useMemo(() => rankCourses(courses, query).slice(0, 6), [query]);
-  return (
-    <div className="home-finder">
-      <div className="home-finder-heading">
-        <div><span className="eyebrow">INTERACTIVE COURSE FINDER</span><h2>Find Your Next Course.</h2></div>
-        <Link className="text-link" to="/courses">View All Courses <ArrowRight size={16} /></Link>
-      </div>
-      <div className="finder-search">
-        <Search size={22} aria-hidden="true" />
-        <label className="sr-only" htmlFor="home-course-search">Search the Nexus course catalogue</label>
-        <input id="home-course-search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Try CGC1W, Law, Grade 12 or Technology" />
-        <span>148 records</span>
-      </div>
-      {query && (
-        <div className="finder-results" role="listbox" aria-label="Course search results">
-          {matches.length ? matches.map((course) => (
-            <Link key={course.code} to={`/courses/${course.slug}`} role="option">
-              <span className="course-code">{course.code}</span>
-              <span><strong>{course.title}</strong><small>Grade {course.grade} · {course.type}</small></span>
-              <ChevronRight size={17} />
-            </Link>
-          )) : <div className="finder-empty">No close match yet. Try a course title, grade or department.</div>}
-        </div>
-      )}
-      <div className="finder-examples"><span>Popular searches:</span>{["CGC1W", "Grade 12", "Technology", "University"].map((term) => <button type="button" key={term} onClick={() => setQuery(term)}>{term}</button>)}</div>
-    </div>
-  );
-}
-
 export default function HomePage() {
   const homeFaqs = Object.values(faqGroups).flat().filter((_, index) => [0, 1, 2, 4, 6, 9, 12].includes(index)).slice(0, 7);
   return (
@@ -80,7 +49,7 @@ export default function HomePage() {
         </div>
         <div className="hero-visual">
           <div className="hero-photo"><img src={images.hero} alt="Diverse students collaborating around a laptop in a modern learning space" fetchPriority="high" /></div>
-          <div className="hero-stat hero-stat-one"><span className="icon-bubble"><BookOpenCheck size={20} /></span><span><strong>148+</strong><small>Course records</small></span></div>
+          <div className="hero-stat hero-stat-one"><span className="icon-bubble"><BookOpenCheck size={20} /></span><span><strong>{courses.length}</strong><small>Course records</small></span></div>
           <div className="hero-stat hero-stat-two"><span className="icon-bubble"><Target size={20} /></span><span><strong>Grades 9–12</strong><small>Clear pathways</small></span></div>
           <div className="hero-subjects" aria-hidden="true"><span>STEM</span><span>CODE</span><span>CREATE</span></div>
         </div>
@@ -88,7 +57,15 @@ export default function HomePage() {
 
       <section className="trust-strip" aria-label="Nexus experience highlights"><div className="container trust-grid">{trustItems.map(([Icon, title, text]) => <div key={title}><Icon size={21} /><span><strong>{title}</strong><small>{text}</small></span></div>)}</div></section>
 
-      <Reveal as="section" className="section container"><HomeCourseFinder /></Reveal>
+      <Reveal as="section" className="section container">
+        <div className="home-finder">
+          <div className="home-finder-heading">
+            <div><span className="eyebrow">INTERACTIVE NEXUS SEARCH</span><h2>Find a Course or Planning Answer.</h2><p>Search exact course codes, titles, departments, grades, resource pages and the Nexus Journal.</p></div>
+            <Link className="text-link" to="/courses">View All Courses <ArrowRight size={16} /></Link>
+          </div>
+          <NexusSearch />
+        </div>
+      </Reveal>
 
       <Reveal as="section" className="section container">
         <SectionHeading eyebrow="WHY NEXUS" title="School Should Move You Forward." text="Every part of the experience is designed to make the next academic step easier to understand." />

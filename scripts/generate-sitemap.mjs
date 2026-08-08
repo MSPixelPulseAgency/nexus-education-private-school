@@ -9,11 +9,13 @@ const staticRoutes = [
   "/", "/about", "/why-nexus", "/courses", "/courses/grade-9", "/courses/grade-10",
   "/courses/grade-11", "/courses/grade-12", "/admissions", "/student-support",
   "/academic-planning", "/online-learning", "/blog", "/reviews", "/inquiry", "/contact",
-  "/faq", "/policies", "/privacy", "/terms", "/accessibility",
+  "/faq", "/understanding-course-codes", "/ossd-requirements", "/university-planning",
+  "/college-planning", "/parent-guardian-guide", "/policies", "/privacy", "/terms", "/accessibility",
 ];
 const routes = [
   ...staticRoutes,
   ...courses.map((course) => `/courses/${course.slug}`),
+  ...courses.map((course) => `/courses/${course.slug}/outline`),
   ...blogs.map((post) => `/blog/${post.slug}`),
 ];
 const xml = `<?xml version="1.0" encoding="UTF-8"?>

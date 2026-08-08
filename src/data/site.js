@@ -32,6 +32,22 @@ export const images = {
   planning: unsplash("photo-1454165804606-c3d57bc86b40"),
 };
 
+export const courseVisuals = {
+  "The Arts": unsplash("photo-1549490349-8643362247b5"),
+  "Business Studies": images.planning,
+  "Canadian and World Studies": unsplash("photo-1521295121783-8a321d551ad2"),
+  "Computer Studies": unsplash("photo-1516321318423-f06f85e504b3"),
+  English: unsplash("photo-1455390582262-044cdead277a"),
+  "Guidance and Career Education": images.graduation,
+  "Health and Physical Education": unsplash("photo-1571019613454-1cb2f99b2d8b"),
+  Mathematics: unsplash("photo-1509228468518-180dd4864904"),
+  Science: images.science,
+  "Social Sciences and Humanities": unsplash("photo-1524995997946-a1c2e315a42f"),
+  "Technological Education": unsplash("photo-1581091226825-a6a2a5aee158"),
+};
+
+export const getCourseVisual = (department) => courseVisuals[department] || images.classroom;
+
 export const imageSets = {
   home: [images.classroom, images.science, images.collaboration],
   about: [images.campus, images.mentoring, images.graduation],
@@ -42,7 +58,7 @@ export const staticMeta = {
   "/": ["Nexus Education Private School | Ontario Courses", "Explore Ontario secondary school credit courses, academic pathways and student support for Grades 9–12."],
   "/about": ["About Nexus Education Private School", "Learn about the clear, student-focused and future-ready approach behind Nexus Education Private School."],
   "/why-nexus": ["Why Nexus Education Private School", "Discover the clear, student-focused and future-ready approach behind Nexus Education Private School."],
-  "/courses": ["Ontario Credit Courses | Nexus Education", "Search 148 course records by code, title, grade, course type and department."],
+  "/courses": ["Ontario Credit Courses | Nexus Education", "Search 207 Nexus catalogue records by exact code, title, grade, course type and department."],
   "/admissions": ["Admissions | Nexus Education Private School", "Explore the Nexus inquiry and admissions process, prerequisite guidance and registration preparation."],
   "/student-support": ["Student Support | Nexus Education", "Find support for course selection, prerequisites, academic planning and the Nexus learning platform."],
   "/online-learning": ["Online Learning | Nexus Education", "Learn how Nexus organizes digital learning, assignments, progress tracking and student communication."],
@@ -52,6 +68,11 @@ export const staticMeta = {
   "/inquiry": ["Start an Inquiry | Nexus Education", "Tell Nexus about your current studies, course interests and academic goals."],
   "/contact": ["Contact Nexus Education Private School", "Contact Nexus about courses, admissions, academic planning, LMS support or website accessibility."],
   "/faq": ["Frequently Asked Questions | Nexus Education", "Answers about Nexus courses, admissions, learning, LMS access and academic planning."],
+  "/understanding-course-codes": ["Ontario High School Course Codes Explained | Nexus Education", "Learn how Ontario secondary course codes identify subject, grade and course type."],
+  "/ossd-requirements": ["Ontario OSSD Requirements Planning Guide | Nexus Education", "Review the main Ontario graduation planning areas and confirm the requirements for your Grade 9 entry cohort."],
+  "/university-planning": ["Ontario University Course Planning Guide | Nexus Education", "Build a high school course plan around current university prerequisites and official sources."],
+  "/college-planning": ["Ontario College Course Planning Guide | Nexus Education", "Compare Ontario college program requirements, prerequisites and preparation."],
+  "/parent-guardian-guide": ["Parent and Guardian Course Planning Guide | Nexus Education", "Practical prompts for families supporting course research and independent learning habits."],
   "/privacy": ["Privacy | Nexus Education", "Read how Nexus handles website inquiries, contact information and public submissions."],
   "/terms": ["Terms of Use | Nexus Education", "Read the terms for using the Nexus Education Private School website and course catalogue."],
   "/accessibility": ["Accessibility | Nexus Education", "Read the Nexus commitment to an accessible website experience and how to report a barrier."],

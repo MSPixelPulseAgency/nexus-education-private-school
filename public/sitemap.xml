@@ -17,158 +17,429 @@
   <url><loc>https://nexuseps.vercel.app/inquiry</loc></url>
   <url><loc>https://nexuseps.vercel.app/contact</loc></url>
   <url><loc>https://nexuseps.vercel.app/faq</loc></url>
+  <url><loc>https://nexuseps.vercel.app/understanding-course-codes</loc></url>
+  <url><loc>https://nexuseps.vercel.app/ossd-requirements</loc></url>
+  <url><loc>https://nexuseps.vercel.app/university-planning</loc></url>
+  <url><loc>https://nexuseps.vercel.app/college-planning</loc></url>
+  <url><loc>https://nexuseps.vercel.app/parent-guardian-guide</loc></url>
   <url><loc>https://nexuseps.vercel.app/policies</loc></url>
   <url><loc>https://nexuseps.vercel.app/privacy</loc></url>
   <url><loc>https://nexuseps.vercel.app/terms</loc></url>
   <url><loc>https://nexuseps.vercel.app/accessibility</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/drama-ada1o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/integrated-arts-alc1o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/music-amu1o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/dance-atc1o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi1o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/exploring-canadian-geography-cgc1w</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/food-and-nutrition-hfn1o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/exploring-family-studies-hif1o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/healthy-active-living-education-ppl1o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/technology-and-the-skilled-trades-tas1o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/drama-ada2o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/integrated-arts-alc2o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/music-amu2o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm2o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/dance-atc2o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi2o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/canadian-history-since-world-war-i-chc2d</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/canadian-history-since-world-war-i-chc2p</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/civics-and-citizenship-chv2o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/food-and-nutrition-hfn2o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/exploring-family-studies-hif2o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/clothing-hnl2o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/healthy-active-living-education-ppl2o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/technology-and-the-skilled-trades-tas2o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/drama-ada3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/drama-ada3o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/drama-ada4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/drama-ada4m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/exploring-and-creating-in-the-arts-aea3o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/exploring-and-creating-in-the-arts-aea4o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/integrated-arts-alc1o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/integrated-arts-alc2o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/music-amu1o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/music-amu2o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/music-amu3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/music-amu3o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/music-amu4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/music-amu4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm2o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm3o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/dance-atc1o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/dance-atc2o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/dance-atc3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/dance-atc3o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/dance-atc4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/dance-atc4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi1o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi2o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi3o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/financial-accounting-fundamentals-baf3m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/accounting-essentials-bai3e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/financial-accounting-principles-bat4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/international-business-fundamentals-bbb4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/entrepreneurship-the-venture-bdi3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/venture-planning-in-an-electronic-age-bdv4c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/building-the-entrepreneurial-mindset-bem1o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/launching-and-leading-a-business-bep2o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/marketing-goods-services-events-bmi3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/marketing-retail-and-service-bmx3e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/business-leadership-management-fundamentals-boh4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/exploring-canadian-geography-cgc1w</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/regional-geography-cgd3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/forces-of-nature-physical-processes-and-disasters-cgf3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/travel-and-tourism-a-geographic-perspective-cgg3o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-spatial-technologies-cgt3o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/american-history-cha3u</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/origins-and-citizenship-the-history-of-a-canadian-ethnic-group-che3o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/world-history-since-1900-global-and-regional-interactions-cht3o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/world-history-to-the-end-of-the-fifteenth-century-chw3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/the-individual-and-the-economy-cie3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/understanding-canadian-law-in-everyday-life-clu3e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/understanding-canadian-law-clu3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/politics-in-action-making-change-cpc3o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/food-and-culture-hfc3e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/food-and-culture-hfc3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/dynamics-of-human-relationships-hhd3o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/housing-and-home-design-hls3o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/understanding-fashion-hnc3c</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/raising-healthy-children-hpc3o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/working-with-infants-and-young-children-hpw3c</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/world-religions-and-belief-traditions-in-daily-life-hrf3o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/world-religions-and-belief-traditions-perspectives-issues-and-challenges-hrt3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/equity-diversity-and-social-justice-hse3e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/gender-studies-hsg3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-anthropology-psychology-and-sociology-hsp3c</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-anthropology-psychology-and-sociology-hsp3u</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/philosophy-the-big-questions-hzb3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/healthy-active-living-education-ppl3o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/health-for-life-ppz3c</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/construction-engineering-technology-tcj3c</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/construction-technology-tcj3e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/technological-design-tdj3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/technological-design-and-the-environment-tdj3o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/computer-technology-tej3e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/computer-engineering-technology-tej3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/hospitality-and-tourism-tfj3c</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/hospitality-and-tourism-tfj3e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/communications-technology-tgj3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/communications-technology-broadcast-and-print-production-tgj3o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/green-industries-thj3e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/green-industries-thj3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/manufacturing-technology-tmj3c</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/manufacturing-technology-tmj3e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/manufacturing-engineering-technology-tmj3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/health-care-tpj3c</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/health-care-tpj3m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/transportation-technology-ttj3c</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/custom-woodworking-twj3e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/hairstyling-and-aesthetics-txj3e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/drama-ada4e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/drama-ada4m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/exploring-and-creating-in-the-arts-aea4o</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/music-amu4e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/music-amu4m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm4e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm4m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/dance-atc4e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/dance-atc4m</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi4e</loc></url>
-  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi4m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/spatial-technologies-in-action-cgo4m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/living-in-a-sustainable-world-cgr4e</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/the-environment-and-resource-management-cgr4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-spatial-technologies-cgt3o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/world-geography-urban-patterns-and-population-issues-cgu4m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/world-issues-a-geographic-analysis-cgw4c</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/world-issues-a-geographic-analysis-cgw4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/american-history-cha3u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/canadian-history-since-world-war-i-chc2d</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/canadian-history-since-world-war-i-chc2p</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/origins-and-citizenship-the-history-of-a-canadian-ethnic-group-che3o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/canada-history-identity-and-culture-chi4u</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/adventures-in-world-history-chm4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-history-since-1900-global-and-regional-interactions-cht3o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/civics-and-citizenship-chv2o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-history-to-the-end-of-the-fifteenth-century-chw3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/world-history-since-the-fifteenth-century-chy4c</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/world-history-since-the-fifteenth-century-chy4u</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/analysing-current-economic-issues-cia4u</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/making-personal-economic-choices-cic4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/the-individual-and-the-economy-cie3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/legal-studies-cln4c</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/canadian-and-international-law-cln4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/understanding-canadian-law-in-everyday-life-clu3e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/understanding-canadian-law-clu3m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/politics-in-action-making-change-cpc3o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/canadian-and-international-politics-cpw4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng2d</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng2p</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng3e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng3u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng4c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-enl1w</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/career-studies-glc2o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/learning-strategies-1-skills-for-success-in-secondary-school-gle1o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/navigating-the-workplace-gln4o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/learning-strategies-1-skills-for-success-in-secondary-school-gls1o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/leadership-and-peer-support-gpp3o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/designing-your-future-gwl3o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/nutrition-and-health-hfa4c</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/nutrition-and-health-hfa4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/food-and-culture-hfc3e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/food-and-culture-hfc3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/food-and-healthy-living-hfl4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/food-and-nutrition-hfn1o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/food-and-nutrition-hfn2o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/dynamics-of-human-relationships-hhd3o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/human-development-throughout-the-lifespan-hhg4m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/families-in-canada-hhs4c</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/families-in-canada-hhs4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/exploring-family-studies-hif1o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/exploring-family-studies-hif2o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/personal-life-management-hip4o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/housing-and-home-design-hls3o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/the-world-of-fashion-hnb4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/understanding-fashion-hnc3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/clothing-hnl2o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/raising-healthy-children-hpc3o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/working-with-school-age-children-and-adolescents-hpd4c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/working-with-infants-and-young-children-hpw3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-religions-and-belief-traditions-in-daily-life-hrf3o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-religions-and-belief-traditions-perspectives-issues-and-challenges-hrt3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/challenge-and-change-in-society-hsb4u</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/world-cultures-hsc4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/equity-diversity-and-social-justice-hse3e</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/equity-and-social-justice-from-theory-to-practice-hse4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/gender-studies-hsg3m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-anthropology-psychology-and-sociology-hsp3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-anthropology-psychology-and-sociology-hsp3u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/philosophy-the-big-questions-hzb3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/philosophy-questions-and-theories-hzt4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/digital-technology-and-innovations-in-the-changing-world-icd2o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-computer-programming-ics3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-computer-science-ics3u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/computer-programming-ics4c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/computer-science-ics4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/foundations-for-college-mathematics-map4c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/foundations-for-college-mathematics-mbf3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/functions-and-applications-mcf3m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/functions-mcr3u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/mathematics-for-college-technology-mct4c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/calculus-and-vectors-mcv4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/mathematics-of-data-management-mdm4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/mathematics-for-work-and-everyday-life-mel3e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/mathematics-for-work-and-everyday-life-mel4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/foundations-of-mathematics-mfm2p</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/advanced-functions-mhf4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/principles-of-mathematics-mpm2d</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/mathematics-mth1w</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/recreation-and-healthy-active-living-leadership-plf4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/healthy-active-living-education-ppl1o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/healthy-active-living-education-ppl2o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/healthy-active-living-education-ppl3o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/health-active-living-education-ppl4o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/health-for-life-ppz3c</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/introductory-kinesiology-psk4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/biology-sbi3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/biology-sbi3u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/biology-sbi4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/chemistry-sch3u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/chemistry-sch4c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/chemistry-sch4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/earth-and-space-science-ses4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/science-snc1w</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/science-snc2d</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/science-snc2p</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/science-snc4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/science-snc4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/physics-sph3u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/physics-sph4u</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/environmental-science-svn3m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/technology-and-the-skilled-trades-tas1o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/technology-and-the-skilled-trades-tas2o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/construction-engineering-technology-tcj3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/construction-technology-tcj3e</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/construction-engineering-technology-tcj4c</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/construction-technology-tcj4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/technological-design-tdj3m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/technological-design-and-the-environment-tdj3o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/technological-design-tdj4m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/technological-design-in-the-twenty-first-century-tdj4o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/computer-technology-tej3e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/computer-engineering-technology-tej3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/computer-technology-tej4e</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/computer-engineering-technology-tej4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/hospitality-and-tourism-tfj3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/hospitality-and-tourism-tfj3e</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/hospitality-and-tourism-tfj4c</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/hospitality-and-tourism-tfj4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/communications-technology-tgj3m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/communications-technology-broadcast-and-print-production-tgj3o</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/communications-technology-tgj4m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/communications-technology-digital-imagery-and-web-design-tgj4o</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/green-industries-thj3e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/green-industries-thj3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/green-industries-thj4e</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/green-industries-thj4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/manufacturing-technology-tmj3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/manufacturing-technology-tmj3e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/manufacturing-engineering-technology-tmj3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/manufacturing-technology-tmj4c</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/manufacturing-technology-tmj4e</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/manufacturing-engineering-technology-tmj4m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/child-development-and-gerontology-toj4c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/health-care-tpj3c</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/health-care-tpj3m</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/health-care-tpj4c</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/health-care-support-services-tpj4e</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/health-care-tpj4m</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/transportation-technology-ttj3c</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/transportation-technology-ttj4c</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/transportation-technology-vehicle-maintenance-ttj4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/custom-woodworking-twj3e</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/custom-woodworking-twj4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/hairstyling-and-aesthetics-txj3e</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/hairstyling-and-aesthetics-txj4e</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/drama-ada1o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/drama-ada2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/drama-ada3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/drama-ada3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/drama-ada4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/drama-ada4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/exploring-and-creating-in-the-arts-aea3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/exploring-and-creating-in-the-arts-aea4o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/integrated-arts-alc1o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/integrated-arts-alc2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/music-amu1o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/music-amu2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/music-amu3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/music-amu3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/music-amu4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/music-amu4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/media-arts-asm4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/dance-atc1o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/dance-atc2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/dance-atc3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/dance-atc3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/dance-atc4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/dance-atc4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi1o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/visual-arts-avi4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/financial-accounting-fundamentals-baf3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/accounting-essentials-bai3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/financial-accounting-principles-bat4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/international-business-fundamentals-bbb4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/entrepreneurship-the-venture-bdi3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/venture-planning-in-an-electronic-age-bdv4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/building-the-entrepreneurial-mindset-bem1o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/launching-and-leading-a-business-bep2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/marketing-goods-services-events-bmi3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/marketing-retail-and-service-bmx3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/business-leadership-management-fundamentals-boh4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/exploring-canadian-geography-cgc1w/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/regional-geography-cgd3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/forces-of-nature-physical-processes-and-disasters-cgf3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/travel-and-tourism-a-geographic-perspective-cgg3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/spatial-technologies-in-action-cgo4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/living-in-a-sustainable-world-cgr4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/the-environment-and-resource-management-cgr4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-spatial-technologies-cgt3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-geography-urban-patterns-and-population-issues-cgu4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-issues-a-geographic-analysis-cgw4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-issues-a-geographic-analysis-cgw4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/american-history-cha3u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/canadian-history-since-world-war-i-chc2d/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/canadian-history-since-world-war-i-chc2p/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/origins-and-citizenship-the-history-of-a-canadian-ethnic-group-che3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/canada-history-identity-and-culture-chi4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/adventures-in-world-history-chm4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-history-since-1900-global-and-regional-interactions-cht3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/civics-and-citizenship-chv2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-history-to-the-end-of-the-fifteenth-century-chw3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-history-since-the-fifteenth-century-chy4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-history-since-the-fifteenth-century-chy4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/analysing-current-economic-issues-cia4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/making-personal-economic-choices-cic4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/the-individual-and-the-economy-cie3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/legal-studies-cln4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/canadian-and-international-law-cln4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/understanding-canadian-law-in-everyday-life-clu3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/understanding-canadian-law-clu3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/politics-in-action-making-change-cpc3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/canadian-and-international-politics-cpw4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng2d/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng2p/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng3u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-eng4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/english-enl1w/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/career-studies-glc2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/learning-strategies-1-skills-for-success-in-secondary-school-gle1o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/navigating-the-workplace-gln4o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/learning-strategies-1-skills-for-success-in-secondary-school-gls1o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/leadership-and-peer-support-gpp3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/designing-your-future-gwl3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/nutrition-and-health-hfa4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/nutrition-and-health-hfa4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/food-and-culture-hfc3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/food-and-culture-hfc3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/food-and-healthy-living-hfl4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/food-and-nutrition-hfn1o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/food-and-nutrition-hfn2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/dynamics-of-human-relationships-hhd3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/human-development-throughout-the-lifespan-hhg4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/families-in-canada-hhs4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/families-in-canada-hhs4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/exploring-family-studies-hif1o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/exploring-family-studies-hif2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/personal-life-management-hip4o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/housing-and-home-design-hls3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/the-world-of-fashion-hnb4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/understanding-fashion-hnc3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/clothing-hnl2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/raising-healthy-children-hpc3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/working-with-school-age-children-and-adolescents-hpd4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/working-with-infants-and-young-children-hpw3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-religions-and-belief-traditions-in-daily-life-hrf3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-religions-and-belief-traditions-perspectives-issues-and-challenges-hrt3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/challenge-and-change-in-society-hsb4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/world-cultures-hsc4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/equity-diversity-and-social-justice-hse3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/equity-and-social-justice-from-theory-to-practice-hse4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/gender-studies-hsg3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-anthropology-psychology-and-sociology-hsp3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-anthropology-psychology-and-sociology-hsp3u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/philosophy-the-big-questions-hzb3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/philosophy-questions-and-theories-hzt4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/digital-technology-and-innovations-in-the-changing-world-icd2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-computer-programming-ics3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/introduction-to-computer-science-ics3u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/computer-programming-ics4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/computer-science-ics4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/foundations-for-college-mathematics-map4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/foundations-for-college-mathematics-mbf3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/functions-and-applications-mcf3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/functions-mcr3u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/mathematics-for-college-technology-mct4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/calculus-and-vectors-mcv4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/mathematics-of-data-management-mdm4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/mathematics-for-work-and-everyday-life-mel3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/mathematics-for-work-and-everyday-life-mel4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/foundations-of-mathematics-mfm2p/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/advanced-functions-mhf4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/principles-of-mathematics-mpm2d/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/mathematics-mth1w/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/recreation-and-healthy-active-living-leadership-plf4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/healthy-active-living-education-ppl1o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/healthy-active-living-education-ppl2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/healthy-active-living-education-ppl3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/health-active-living-education-ppl4o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/health-for-life-ppz3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/introductory-kinesiology-psk4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/biology-sbi3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/biology-sbi3u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/biology-sbi4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/chemistry-sch3u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/chemistry-sch4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/chemistry-sch4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/earth-and-space-science-ses4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/science-snc1w/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/science-snc2d/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/science-snc2p/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/science-snc4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/science-snc4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/physics-sph3u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/physics-sph4u/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/environmental-science-svn3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/technology-and-the-skilled-trades-tas1o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/technology-and-the-skilled-trades-tas2o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/construction-engineering-technology-tcj3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/construction-technology-tcj3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/construction-engineering-technology-tcj4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/construction-technology-tcj4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/technological-design-tdj3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/technological-design-and-the-environment-tdj3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/technological-design-tdj4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/technological-design-in-the-twenty-first-century-tdj4o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/computer-technology-tej3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/computer-engineering-technology-tej3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/computer-technology-tej4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/computer-engineering-technology-tej4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/hospitality-and-tourism-tfj3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/hospitality-and-tourism-tfj3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/hospitality-and-tourism-tfj4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/hospitality-and-tourism-tfj4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/communications-technology-tgj3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/communications-technology-broadcast-and-print-production-tgj3o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/communications-technology-tgj4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/communications-technology-digital-imagery-and-web-design-tgj4o/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/green-industries-thj3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/green-industries-thj3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/green-industries-thj4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/green-industries-thj4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/manufacturing-technology-tmj3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/manufacturing-technology-tmj3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/manufacturing-engineering-technology-tmj3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/manufacturing-technology-tmj4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/manufacturing-technology-tmj4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/manufacturing-engineering-technology-tmj4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/child-development-and-gerontology-toj4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/health-care-tpj3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/health-care-tpj3m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/health-care-tpj4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/health-care-support-services-tpj4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/health-care-tpj4m/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/transportation-technology-ttj3c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/transportation-technology-ttj4c/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/transportation-technology-vehicle-maintenance-ttj4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/custom-woodworking-twj3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/custom-woodworking-twj4e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/hairstyling-and-aesthetics-txj3e/outline</loc></url>
+  <url><loc>https://nexuseps.vercel.app/courses/hairstyling-and-aesthetics-txj4e/outline</loc></url>
   <url><loc>https://nexuseps.vercel.app/blog/how-ontario-high-school-course-codes-work</loc></url>
   <url><loc>https://nexuseps.vercel.app/blog/how-to-read-grade-9-12-course-codes-in-ontario</loc></url>
   <url><loc>https://nexuseps.vercel.app/blog/university-college-and-open-course-types-explained</loc></url>

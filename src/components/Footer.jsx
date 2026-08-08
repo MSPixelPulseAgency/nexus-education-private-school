@@ -5,9 +5,9 @@ import { Brand } from "./Header";
 
 const groups = [
   ["Nexus", [["About", "/about"], ["Why Nexus", "/why-nexus"], ["Contact", "/contact"]]],
-  ["Academics", [["All Courses", "/courses"], ["Grade 9", "/courses/grade-9"], ["Grade 10", "/courses/grade-10"], ["Grade 11", "/courses/grade-11"], ["Grade 12", "/courses/grade-12"]]],
-  ["Students", [["Student Support", "/student-support"], ["Academic Planning", "/academic-planning"], ["Online Learning", "/online-learning"], ["FAQ", "/faq"]]],
-  ["Resources", [["Blog", "/blog"], ["Reviews", "/reviews"], ["Policies", "/policies"], ["Accessibility", "/accessibility"]]],
+  ["Academics", [["All Courses", "/courses"], ["Grade 9", "/courses/grade-9"], ["Grade 10", "/courses/grade-10"], ["Grade 11", "/courses/grade-11"], ["Grade 12", "/courses/grade-12"], ["Course Codes", "/understanding-course-codes"]]],
+  ["Students", [["Student Support", "/student-support"], ["Academic Planning", "/academic-planning"], ["OSSD Requirements", "/ossd-requirements"], ["University Planning", "/university-planning"], ["College Planning", "/college-planning"]]],
+  ["Resources", [["Parent & Guardian Guide", "/parent-guardian-guide"], ["Online Learning", "/online-learning"], ["Blog", "/blog"], ["Reviews", "/reviews"], ["FAQ", "/faq"]]],
 ];
 
 export default function Footer() {

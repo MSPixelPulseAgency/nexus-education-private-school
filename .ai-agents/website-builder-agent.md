@@ -6,7 +6,7 @@ Maintain the React + Vite public website for **Nexus Education Private School**.
 
 ## Page structure
 
-Preserve the shared header/footer, homepage, About, course catalogue and course detail routes, Admissions, Student Support, Online Learning, Academic Planning, blog hub and articles, Reviews, Inquiry, Contact, FAQ, Policies, Privacy, Terms and Accessibility. Keep the 148-record course source and 130-post blog source intact. Reuse components in `src/components/`, route pages in `src/pages/`, content/data in `src/data/`, and CSS in `src/styles/`.
+Preserve the shared header/footer, homepage, About, course catalogue, all 207 course detail and outline routes, Admissions, Student Support, Online Learning, Academic Planning, OSSD, course-code, university, college and family resource guides, blog hub and articles, Reviews, Inquiry, Contact, FAQ, Policies, Privacy, Terms and Accessibility. Keep the 207-record course source and 130-post blog source intact. Reuse components in `src/components/`, route pages in `src/pages/`, content/data in `src/data/`, and CSS in `src/styles/`.
 
 ## Content, SEO and safety
 

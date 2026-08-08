@@ -1,4 +1,4 @@
-import { ArrowRight, BookMarked } from "lucide-react";
+import { ArrowRight, BookMarked, ClipboardList } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function CourseCard({ course, compact = false }) {
@@ -16,7 +16,7 @@ export default function CourseCard({ course, compact = false }) {
       </div>
       <div className="course-actions">
         <Link to={`/courses/${course.slug}`}>View Course <ArrowRight size={15} /></Link>
-        <Link to={`/inquiry?course=${course.code}`}>Inquire</Link>
+        <Link to={`/courses/${course.slug}/outline`}><ClipboardList size={14} /> Outline</Link>
       </div>
     </article>
   );
