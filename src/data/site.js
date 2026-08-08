@@ -26,7 +26,7 @@ export const images = {
   classroom: unsplash("photo-1509062522246-3755977927d7"),
   collaboration: unsplash("photo-1522202176988-66273c2fd55f"),
   science: unsplash("photo-1532094349884-543bc11b234d"),
-  graduation: unsplash("photo-1523050854058-8df90110c9f1"),
+  graduation: unsplash("photo-1523580846011-d3a5bc25702b"),
   campus: unsplash("photo-1523240795612-9a054b0db644"),
   mentoring: unsplash("photo-1577896851231-70ef18881754"),
   planning: unsplash("photo-1454165804606-c3d57bc86b40"),
