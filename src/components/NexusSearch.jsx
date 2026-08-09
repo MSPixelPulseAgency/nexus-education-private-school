@@ -1,4 +1,4 @@
-import { useDeferredValue, useMemo, useRef, useState } from "react";
+import { useDeferredValue, useId, useMemo, useRef, useState } from "react";
 import { ArrowRight, BookOpen, FileText, Newspaper, Search } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { homeBlogs as blogs, homeCourses as courses, rankCourses } from "../data/homeCatalog";
@@ -39,6 +39,7 @@ function textScore(title, haystack, query) {
 }
 
 export default function NexusSearch({ className = "" }) {
+  const searchId = useId();
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -52,7 +53,7 @@ export default function NexusSearch({ className = "" }) {
     const courseResults = rankCourses(courses, normalized).slice(0, 8).map((course, index) => ({
       type: "course",
       title: course.title,
-      label: `${course.code} · Grade ${course.grade} · ${course.type}`,
+      label: `${course.code} · Grade ${course.grade} · ${course.department}`,
       path: `/courses/${course.slug}`,
       key: `course-${course.code}`,
       score: 120 - index,
@@ -113,16 +114,16 @@ export default function NexusSearch({ className = "" }) {
     }}>
       <div className="nexus-search-input">
         <Search size={23} aria-hidden="true" />
-        <label className="sr-only" htmlFor="nexus-site-search">Search Nexus courses and resources</label>
+        <label className="sr-only" htmlFor={`${searchId}-input`}>Search Nexus courses and resources</label>
         <input
           ref={inputRef}
-          id="nexus-site-search"
+          id={`${searchId}-input`}
           type="search"
           role="combobox"
           aria-autocomplete="list"
           aria-expanded={listOpen}
-          aria-controls="nexus-search-results"
-          aria-activedescendant={activeIndex >= 0 ? `nexus-search-result-${activeIndex}` : undefined}
+          aria-controls={`${searchId}-results`}
+          aria-activedescendant={activeIndex >= 0 ? `${searchId}-result-${activeIndex}` : undefined}
           value={query}
           onFocus={() => setOpen(true)}
           onChange={(event) => { setQuery(event.target.value); setOpen(true); setActiveIndex(-1); }}
@@ -133,7 +134,7 @@ export default function NexusSearch({ className = "" }) {
       </div>
 
       {listOpen && (
-        <div className="nexus-search-panel" id="nexus-search-results" role="listbox" aria-label="Nexus search suggestions">
+        <div className="nexus-search-panel" id={`${searchId}-results`} role="listbox" aria-label="Nexus search suggestions">
           {results.length ? groupedTypes.map((type) => {
             const { label, Icon } = typeMeta[type];
             return (
@@ -141,19 +142,19 @@ export default function NexusSearch({ className = "" }) {
                 <div className="search-group-heading"><Icon size={16} /><span>{label}</span></div>
                 {results.filter((item) => item.type === type).map((item) => {
                   const index = results.indexOf(item);
-                  const resultLink = <Link id={`nexus-search-result-${index}`} className={activeIndex === index ? "is-active" : ""} role="option" aria-selected={activeIndex === index} to={item.path} onMouseEnter={() => setActiveIndex(index)} onClick={() => setOpen(false)}>{item.type === "course" && <span className="course-code">{item.label.split(" · ")[0]}</span>}<span><strong>{item.title}</strong><small>{item.type === "course" ? item.label.split(" · ").slice(1).join(" · ") : item.label}</small></span><ArrowRight size={16} aria-hidden="true" /></Link>;
+                  const resultLink = <Link id={`${searchId}-result-${index}`} className={activeIndex === index ? "is-active" : ""} role="option" aria-selected={activeIndex === index} to={item.path} onMouseEnter={() => setActiveIndex(index)} onClick={() => setOpen(false)}>{item.type === "course" && <span className="course-code">{item.label.split(" · ")[0]}</span>}<span><strong>{item.title}</strong><small>{item.type === "course" ? item.label.split(" · ").slice(1).join(" · ") : item.label}</small></span><ArrowRight size={16} aria-hidden="true" /></Link>;
                   if (item.type !== "course") return <div className="search-result-row" key={item.key}>{resultLink}</div>;
                   const course = courses.find((entry) => `course-${entry.code}` === item.key);
                   return <div className="search-result-row has-cart" key={item.key}>{resultLink}{course && <AddToCartButton course={course} className="search-add-cart" compact />}</div>;
                 })}
               </section>
             );
-          }) : <div className="search-empty"><strong>No close match yet.</strong><span>Try a course code, subject, grade, department or planning topic.</span></div>}
+          }) : <div className="search-empty"><strong>No close match for “{query.trim()}”.</strong><span>Try a course code, subject or grade—or choose a helpful next step.</span><div><Link to="/courses" onClick={() => setOpen(false)}>Browse all courses</Link><Link to="/courses/grade-12" onClick={() => setOpen(false)}>Grade 12 courses</Link><Link to="/inquiry" onClick={() => setOpen(false)}>Ask Guidance</Link></div></div>}
           <Link className="search-view-all" to={`/courses${query.trim() ? `?q=${encodeURIComponent(query.trim())}` : ""}`} onClick={() => setOpen(false)}>View all course results <ArrowRight size={16} /></Link>
         </div>
       )}
 
-      <div className="search-examples"><span>Popular:</span>{["MHF4U", "ENG4U", "SPH4U", "SBI4U"].map((term) => <button type="button" key={term} onClick={() => { setQuery(term); setOpen(true); inputRef.current?.focus(); }}>{term}</button>)}</div>
+      <div className="search-examples"><span>Popular:</span>{["MHF4U", "ENG4U", "SPH4U", "SBI4U"].map((term) => { const course = courses.find((item) => item.code === term); return course ? <Link key={term} to={`/courses/${course.slug}`}>{term}</Link> : null; })}</div>
     </div>
   );
 }

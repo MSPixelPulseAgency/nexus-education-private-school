@@ -3,7 +3,7 @@
     --container: 1260px;
   }
   .home-hero {
-    min-height: 820px;
+    min-height: 0;
   }
 }
 
@@ -138,6 +138,10 @@
   .contact-layout {
     grid-template-columns: 1fr;
   }
+  .home-hero {
+    grid-template-areas: "copy" "visual" "search";
+    row-gap: 28px;
+  }
   .page-hero-image {
     min-height: 410px;
     max-width: 760px;
@@ -147,13 +151,13 @@
     min-height: 386px;
   }
   .home-hero {
-    padding-top: 140px;
+    padding-top: 118px;
   }
   .home-hero-copy {
     max-width: 760px;
   }
   .hero-visual {
-    min-height: 540px;
+    min-height: 500px;
     max-width: 760px;
     width: 100%;
     margin-inline: auto;
@@ -302,7 +306,7 @@
     width: min(var(--container), calc(100% - 24px));
   }
   .section {
-    padding-block: 4.2rem;
+    padding-block: 3.25rem;
   }
   .site-header {
     padding-top: 8px;
@@ -367,18 +371,19 @@
   }
   .home-hero {
     min-height: auto;
-    gap: 28px;
-    padding-top: 115px;
-    padding-bottom: 50px;
+    row-gap: 24px;
+    padding-top: 104px;
+    padding-bottom: 44px;
   }
   .home-hero-copy h1 {
-    font-size: clamp(3rem, 14.5vw, 4.1rem);
+    font-size: clamp(2.125rem, 10vw, 2.625rem);
+    line-height: 1.14;
   }
   .home-hero-copy > p {
     font-size: 1rem;
   }
   .hero-visual {
-    min-height: 430px;
+    min-height: 330px;
   }
   .hero-photo {
     inset: 7% 2% 3% 4%;
@@ -403,6 +408,22 @@
     right: 0;
     bottom: 5%;
   }
+  .hero-video-frame {
+    inset: 5% 1% 4% 2%;
+    padding: 7px;
+    border-radius: 27px;
+    transform: none;
+  }
+  .hero-video-poster,
+  .hero-video {
+    inset: 7px;
+    width: calc(100% - 14px);
+    height: calc(100% - 14px);
+    border-radius: 20px;
+  }
+  .hero-video-caption { right: 20px; bottom: 20px; left: 20px; }
+  .hero-video-caption strong { display: none; }
+  .hero-course-search { width: 100%; margin-top: 0; }
   .hero-subjects {
     bottom: 10%;
     left: 9%;
@@ -952,13 +973,18 @@
 }
 
 /* Responsive overrides for the expanded navigation, catalogue and registration */
-@media (min-width: 1291px) {
+@media (min-width: 1220px) {
   .nav-shell.container {
     width: min(1260px, calc(100% - 40px));
   }
 }
 
-@media (max-width: 1290px) {
+@media (min-width: 1220px) and (max-width: 1365px) {
+  .desktop-nav > a,
+  .nav-dropdown > button { width: 112px; }
+}
+
+@media (max-width: 1219px) {
   .desktop-brand,
   .desktop-nav,
   .desktop-nav-actions {
@@ -1164,9 +1190,10 @@
     min-height: 64px;
   }
   .mobile-menu-sheet {
-    width: 100%;
-    max-width: none;
+    width: min(520px, calc(100% - 2px));
+    max-width: 520px;
   }
+  .mobile-menu-overlay { padding: 82px 10px 10px; }
   .mobile-menu-scroll > a,
   .mobile-menu-group > button {
     min-height: 54px;
@@ -1182,8 +1209,8 @@
   .page-hero-copy h1,
   .course-hero-grid h1,
   .outline-hero-grid h1 {
-    font-size: clamp(2.5rem, 11vw, 3.15rem);
-    line-height: 1.04;
+    font-size: clamp(1.875rem, 8.5vw, 2.375rem);
+    line-height: 1.2;
   }
   .page-hero-copy > p,
   .course-hero-copy > p,
@@ -1192,8 +1219,8 @@
     line-height: 1.7;
   }
   .section-heading h2 {
-    font-size: clamp(2.05rem, 9vw, 2.75rem);
-    line-height: 1.08;
+    font-size: clamp(1.75rem, 7.8vw, 2.25rem);
+    line-height: 1.18;
   }
   .btn {
     min-height: 52px;
@@ -1351,6 +1378,12 @@
   .help-panel {
     bottom: 65px;
   }
+  .guidance-prompt {
+    right: 10px;
+    bottom: max(82px, calc(env(safe-area-inset-bottom) + 72px));
+    left: 10px;
+    width: auto;
+  }
   .footer-contact span,
   .footer-contact a,
   .footer-links a {
@@ -1413,30 +1446,45 @@
 
 /* Clear, consistent page-title scale */
 h1,
-.home-hero-copy h1,
 .page-hero-copy h1,
 .course-hero-grid h1,
 .outline-hero-grid h1,
 .article-hero h1,
 .legal-hero h1,
 .not-found h1 {
-  font-size: clamp(2rem, 3.2vw, 2.5rem);
+  font-size: clamp(2rem, 3.7vw, 3.25rem);
   font-weight: 700;
-  line-height: 1.24;
-  letter-spacing: -0.025em;
+  line-height: 1.18;
+  letter-spacing: -0.032em;
+}
+.home-hero-copy h1 {
+  font-size: clamp(2.875rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
 }
 
 @media (max-width: 720px) {
   h1,
-  .home-hero-copy h1,
   .page-hero-copy h1,
   .course-hero-grid h1,
   .outline-hero-grid h1,
   .article-hero h1,
   .legal-hero h1,
   .not-found h1 {
-    font-size: clamp(1.125rem, 7.4vw, 2rem);
-    line-height: 1.28;
-    letter-spacing: -0.018em;
+    font-size: clamp(1.875rem, 8.5vw, 2.375rem);
+    line-height: 1.22;
+    letter-spacing: -0.024em;
   }
+  .home-hero-copy h1 {
+    font-size: clamp(2.125rem, 10vw, 2.625rem);
+    line-height: 1.14;
+    letter-spacing: -0.032em;
+  }
+  .home-hero-copy .button-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .home-hero-copy .button-row .btn { width: 100%; padding-inline: 8px; font-size: 0.92rem; }
+  .home-hero-copy .hero-guidance-link { grid-column: 1 / -1; }
 }

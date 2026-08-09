@@ -4,10 +4,11 @@ import { getCourseAccent, getCourseVisual } from "../data/site";
 import AddToCartButton from "./AddToCartButton";
 
 export default function CourseCard({ course, compact = false }) {
+  const visual = getCourseVisual(course, 760);
   return (
     <article className={`course-card ${compact ? "is-compact" : ""}`}>
       <Link className="course-card-visual" to={`/courses/${course.slug}`} aria-label={`View ${course.code} ${course.title}`} style={{ "--course-accent": getCourseAccent(course) }}>
-        <img src={getCourseVisual(course)} alt="" width="1400" height="900" loading="lazy" decoding="async" />
+        <img src={visual} srcSet={`${getCourseVisual(course, 480)} 480w, ${visual} 760w`} sizes="(max-width: 720px) 88vw, (max-width: 1160px) 46vw, 380px" alt="" width="1400" height="900" loading="lazy" decoding="async" />
         <span className="course-code">{course.code}</span>
       </Link>
       <div className="course-card-content">

@@ -104,7 +104,7 @@ const courseVisualCategory = (course) => {
   return "guidance";
 };
 
-export const getCourseVisual = (courseOrDepartment) => {
+export const getCourseVisual = (courseOrDepartment, width = 1400) => {
   if (typeof courseOrDepartment === "string") return courseVisuals[courseOrDepartment] || images.classroom;
   const course = courseOrDepartment || {};
   const seed = hashCourse(`${course.code || "course"}:${course.title || course.department || "Nexus"}`);
@@ -115,7 +115,8 @@ export const getCourseVisual = (courseOrDepartment) => {
   const focalY = (0.3 + ((seed >>> 8) % 39) / 100).toFixed(2);
   const saturation = (seed >>> 16) % 13 - 4;
   const contrast = 2 + ((seed >>> 24) % 7);
-  return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&crop=focalpoint&fp-x=${focalX}&fp-y=${focalY}&w=1400&h=900&q=82&sat=${saturation}&con=${contrast}&ixid=nexus-${encodeURIComponent(course.code || category)}`;
+  const height = Math.round(width * (9 / 14));
+  return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&crop=focalpoint&fp-x=${focalX}&fp-y=${focalY}&w=${width}&h=${height}&q=82&sat=${saturation}&con=${contrast}&ixid=nexus-${encodeURIComponent(course.code || category)}`;
 };
 
 export const getCourseAccent = (course) => {

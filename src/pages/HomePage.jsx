@@ -9,13 +9,14 @@ import { Link } from "react-router-dom";
 import BlogCard from "../components/BlogCard";
 import CourseCard from "../components/CourseCard";
 import FAQAccordion from "../components/FAQAccordion";
+import HeroVideo from "../components/HeroVideo";
 import NexusSearch from "../components/NexusSearch";
 import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
 import { CTASection, SectionHeading } from "../components/UI";
 import { homeBlogs as blogs, homeCourses as courses, homeGradeCounts as gradeCounts, homePopularCourses as featuredCourses } from "../data/homeCatalog";
 import { faqGroups } from "../data/content";
-import { images } from "../data/site";
+import { brand, images } from "../data/site";
 
 const trustItems = [
   [GraduationCap, "Grades 9–12", "Four secondary grade levels"],
@@ -65,24 +66,29 @@ export default function HomePage() {
 
   return (
     <>
-      <Seo image={images.hero} />
+      <Seo
+        title="Ontario Online High School Courses | Nexus Education"
+        description="Explore 207 Ontario secondary course records, plan prerequisites and connect with Nexus Education Private School for flexible online learning support."
+        image={`${brand.canonical}/media/nexus-education-hero-poster.jpg`}
+      />
       <section className="home-hero container">
         <div className="home-hero-copy">
           <span className="eyebrow"><Sparkles size={14} /> NEXUS EDUCATION PRIVATE SCHOOL</span>
-          <h1>Your Future <span>Starts Here.</span></h1>
-          <p>Explore Ontario secondary school credit courses in a modern learning environment built around clear pathways, flexible access and meaningful student support.</p>
+          <h1>Earn Your Ontario High School Diploma <span>From Anywhere in the World.</span></h1>
+          <p>Take individual Ontario credit courses, upgrade previous credits, or work toward your OSSD with flexible online learning, experienced teachers, and personalized student support.</p>
+          <p className="hero-trust-line"><BookOpenCheck size={18} /> Flexible Ontario Education. Real Teachers. Real Support.</p>
           <div className="button-row">
             <Link className="btn btn-primary" to="/courses" onFocus={preloadCoursesPage} onPointerEnter={preloadCoursesPage}>Explore Courses <ArrowRight size={17} /></Link>
-            <Link className="btn btn-secondary" to="/inquiry">Start an Inquiry</Link>
+            <Link className="btn btn-secondary" to="/enroll">Enroll Now</Link>
+            <Link className="hero-guidance-link" to="/inquiry">Talk to Guidance <ArrowRight size={15} /></Link>
           </div>
-          <div className="hero-chips" aria-label="Nexus highlights"><span>Grades 9–12</span><span>Ontario Credit Courses</span><span>Flexible Learning</span><span>Future Ready</span></div>
         </div>
         <div className="hero-visual">
-          <div className="hero-photo"><img src={images.hero} alt="Diverse students collaborating around a laptop in a modern learning space" width="1600" height="1067" fetchPriority="high" decoding="async" /></div>
+          <HeroVideo />
           <div className="hero-stat hero-stat-one"><span className="icon-bubble"><BookOpenCheck size={20} /></span><span><strong>{courses.length}</strong><small>Course records</small></span></div>
           <div className="hero-stat hero-stat-two"><span className="icon-bubble"><Target size={20} /></span><span><strong>Grades 9–12</strong><small>Clear pathways</small></span></div>
-          <div className="hero-subjects" aria-hidden="true"><span>STEM</span><span>CODE</span><span>CREATE</span></div>
         </div>
+        <NexusSearch className="hero-course-search" />
       </section>
 
       <section className="trust-strip" aria-label="Nexus experience highlights"><div className="container trust-grid">{trustItems.map(([Icon, title, text]) => <div key={title}><Icon size={21} /><span><strong>{title}</strong><small>{text}</small></span></div>)}</div></section>

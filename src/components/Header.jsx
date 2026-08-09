@@ -22,6 +22,7 @@ const menuGroups = [
   },
   {
     label: "Student Resources",
+    desktopLabel: "Resources",
     paths: ["/student-support", "/academic-planning", "/ossd", "/ouac", "/ocas", "/online-learning", "/student-resources"],
     links: [["Student Support", "/student-support"], ["Academic Planning", "/academic-planning"], ["OSSD", "/ossd"], ["OUAC", "/ouac"], ["OCAS", "/ocas"], ["Online Learning", "/online-learning"], ["Official Videos", "/student-resources/videos"]],
   },
@@ -52,6 +53,7 @@ export default function Header() {
   const location = useLocation();
   const menuButtonRef = useRef(null);
   const closeButtonRef = useRef(null);
+  const closeTimerRef = useRef(null);
 
   const closeMobile = () => {
     setOpen(false);
@@ -73,7 +75,10 @@ export default function Header() {
   useEffect(() => {
     if (!open) return undefined;
     const previousOverflow = document.body.style.overflow;
+    const previousPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
     document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) document.body.style.paddingRight = `${scrollbarWidth}px`;
     const focusTimer = window.setTimeout(() => closeButtonRef.current?.focus(), 40);
     const onKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -85,9 +90,22 @@ export default function Header() {
     return () => {
       window.clearTimeout(focusTimer);
       document.body.style.overflow = previousOverflow;
+      document.body.style.paddingRight = previousPaddingRight;
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);
+
+  useEffect(() => () => window.clearTimeout(closeTimerRef.current), []);
+
+  const openDesktopGroup = (label) => {
+    window.clearTimeout(closeTimerRef.current);
+    setDesktopOpen(label);
+  };
+
+  const scheduleDesktopClose = () => {
+    window.clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = window.setTimeout(() => setDesktopOpen(""), 170);
+  };
 
   const activeGroup = (group) => group.paths.some((path) => location.pathname === path || location.pathname.startsWith(`${path}/`));
 
@@ -102,7 +120,22 @@ export default function Header() {
         <div className="desktop-brand"><Brand /></div>
         <div className="desktop-nav">
           <NavLink end to="/">Home</NavLink>
-          {menuGroups.map((group) => <div className={`nav-dropdown ${activeGroup(group) ? "is-active" : ""}`} key={group.label}><button type="button" aria-expanded={desktopOpen === group.label} aria-controls={`desktop-${group.label.replace(/\s/g, "-").toLowerCase()}`} onClick={() => setDesktopOpen((value) => value === group.label ? "" : group.label)}>{group.label}<ChevronDown size={15} /></button>{desktopOpen === group.label && <div className="dropdown-panel" id={`desktop-${group.label.replace(/\s/g, "-").toLowerCase()}`}><div className="dropdown-intro"><span className="icon-bubble"><BookOpen size={20} /></span><div><strong>{group.label}</strong><small>Clear links for students and families.</small></div></div>{group.links.map(([label, to, external]) => <GroupLink key={to} label={label} to={to} external={external} />)}</div>}</div>)}
+          {menuGroups.map((group) => {
+            const isOpen = desktopOpen === group.label;
+            const menuId = `desktop-${group.label.replace(/\s/g, "-").toLowerCase()}`;
+            return <div
+              className={`nav-dropdown ${activeGroup(group) ? "is-active" : ""}`}
+              key={group.label}
+              onMouseEnter={() => openDesktopGroup(group.label)}
+              onMouseLeave={scheduleDesktopClose}
+              onFocusCapture={() => openDesktopGroup(group.label)}
+              onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) scheduleDesktopClose(); }}
+              onKeyDown={(event) => { if (event.key === "Escape") { setDesktopOpen(""); event.currentTarget.querySelector("button")?.focus(); } }}
+            >
+              <button type="button" aria-expanded={isOpen} aria-controls={menuId} onClick={() => setDesktopOpen((value) => value === group.label ? "" : group.label)}>{group.desktopLabel || group.label}<ChevronDown size={15} /></button>
+              {isOpen && <div className="dropdown-panel" id={menuId}><div className="dropdown-intro"><span className="icon-bubble"><BookOpen size={20} /></span><div><strong>{group.label}</strong><small>Clear links for students and families.</small></div></div>{group.links.map(([label, to, external]) => <GroupLink key={to} label={label} to={to} external={external} />)}</div>}
+            </div>;
+          })}
           <NavLink to="/contact">Contact</NavLink>
         </div>
         <div className="desktop-nav-actions"><CartLink /><Link className="btn btn-primary nav-cta" to="/enroll">Enroll Now</Link></div>
@@ -112,7 +145,7 @@ export default function Header() {
           <div className="mobile-menu-head"><Brand /><button ref={closeButtonRef} type="button" aria-label="Close navigation" onClick={() => { closeMobile(); menuButtonRef.current?.focus(); }}><X size={24} /></button></div>
           <div className="mobile-menu-scroll">
             <NavLink end to="/" onClick={closeMobile}>Home</NavLink>
-            {menuGroups.map((group) => <div className={`mobile-menu-group ${activeGroup(group) ? "is-active" : ""}`} key={group.label}><button type="button" aria-expanded={mobileGroup === group.label} onClick={() => setMobileGroup((value) => value === group.label ? "" : group.label)}>{group.label}<ChevronDown size={20} /></button>{mobileGroup === group.label && <div>{group.links.map(([label, to, external]) => <GroupLink key={to} label={label} to={to} external={external} mobile onClick={closeMobile} />)}</div>}</div>)}
+            {menuGroups.map((group) => { const groupOpen = mobileGroup === group.label; return <div className={`mobile-menu-group ${activeGroup(group) ? "is-active" : ""}`} key={group.label}><button type="button" aria-expanded={groupOpen} onClick={() => setMobileGroup((value) => value === group.label ? "" : group.label)}>{group.label}<ChevronDown size={20} /></button><div className={`mobile-menu-subnav ${groupOpen ? "is-open" : ""}`} aria-hidden={!groupOpen}><div>{group.links.map(([label, to, external]) => <GroupLink key={to} label={label} to={to} external={external} mobile onClick={closeMobile} />)}</div></div></div>; })}
             <NavLink to="/contact" onClick={closeMobile}>Contact</NavLink>
           </div>
           <div className="mobile-menu-actions"><Link className="btn btn-primary" to="/enroll" onClick={closeMobile}><GraduationCap size={17} /> Enroll Now</Link></div>

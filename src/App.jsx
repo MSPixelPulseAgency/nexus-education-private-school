@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingHelp from "./components/FloatingHelp";
+import GuidancePrompt from "./components/GuidancePrompt";
 import ScrollManager from "./components/ScrollManager";
 import { CartProvider } from "./context/CartContext";
 import HomePage from "./pages/HomePage";
@@ -84,6 +85,7 @@ export default function App() {
           </Routes>
         </Suspense>
         </main>
+        <GuidancePrompt />
         <FloatingHelp />
         <Footer />
       </CartProvider>

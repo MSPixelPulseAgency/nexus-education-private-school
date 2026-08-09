@@ -39,7 +39,7 @@ export default function CourseDetailPage() {
 
   return (
     <>
-      <Seo title={`${course.code} ${course.title} Online | Nexus Education Private School`} description={description} image={visual} structuredData={structuredData} />
+      <Seo title={`${course.title} (${course.code}) | Nexus Education Private School`} description={description} image={visual} structuredData={structuredData} />
       <section className="course-detail-hero">
         <div className="container">
           <nav className="breadcrumbs" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><Link to="/courses">Courses</Link><span>/</span><Link to={`/courses/grade-${course.grade}`}>Grade {course.grade}</Link><span>/</span><span aria-current="page">{course.title} | {course.code}</span></nav>
