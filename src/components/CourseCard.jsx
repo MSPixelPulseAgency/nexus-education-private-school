@@ -1,12 +1,12 @@
 import { ArrowRight, ClipboardList } from "lucide-react";
 import { Link } from "react-router-dom";
-import { getCourseVisual } from "../data/site";
+import { getCourseAccent, getCourseVisual } from "../data/site";
 import AddToCartButton from "./AddToCartButton";
 
 export default function CourseCard({ course, compact = false }) {
   return (
     <article className={`course-card ${compact ? "is-compact" : ""}`}>
-      <Link className="course-card-visual" to={`/courses/${course.slug}`} aria-label={`View ${course.code} ${course.title}`}>
+      <Link className="course-card-visual" to={`/courses/${course.slug}`} aria-label={`View ${course.code} ${course.title}`} style={{ "--course-accent": getCourseAccent(course) }}>
         <img src={getCourseVisual(course)} alt="" width="1400" height="900" loading="lazy" decoding="async" />
         <span className="course-code">{course.code}</span>
       </Link>

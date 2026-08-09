@@ -1,10 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { BookOpen, ChevronDown, GraduationCap, Menu, Monitor, ShoppingCart, X } from "lucide-react";
+import { ArrowUpRight, BookOpen, ChevronDown, GraduationCap, Menu, ShoppingCart, X } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import { brand } from "../data/site";
 
 const menuGroups = [
+  {
+    label: "About Us",
+    paths: ["/about", "/why-nexus", "/blog", "/reviews"],
+    links: [["About Nexus", "/about"], ["Why Nexus", "/why-nexus"], ["Nexus Journal", "/blog"], ["Reviews", "/reviews"]],
+  },
   {
     label: "Courses",
     paths: ["/courses", "/credit-recovery", "/upgrade-courses"],
@@ -12,8 +17,8 @@ const menuGroups = [
   },
   {
     label: "Admissions",
-    paths: ["/admissions", "/adult-education", "/mature-students", "/enroll", "/register"],
-    links: [["Admissions", "/admissions"], ["Enroll", "/enroll"], ["Adult Education", "/adult-education"], ["Mature Students", "/mature-students"], ["Start an Inquiry", "/inquiry"]],
+    paths: ["/admissions", "/adult-education", "/mature-students", "/enroll", "/register", "/inquiry"],
+    links: [["Admissions", "/admissions"], ["Enroll", "/enroll"], ["Adult Education", "/adult-education"], ["Mature Students", "/mature-students"], ["Start an Inquiry", "/inquiry"], ["LMS Login", brand.lms, true]],
   },
   {
     label: "Student Resources",
@@ -21,6 +26,14 @@ const menuGroups = [
     links: [["Student Support", "/student-support"], ["Academic Planning", "/academic-planning"], ["OSSD", "/ossd"], ["OUAC", "/ouac"], ["OCAS", "/ocas"], ["Online Learning", "/online-learning"], ["Official Videos", "/student-resources/videos"]],
   },
 ];
+
+function GroupLink({ label, to, external = false, mobile = false, onClick }) {
+  if (external) {
+    return <a href={to} target="_blank" rel="noreferrer" onClick={onClick}>{label}{!mobile && <ArrowUpRight size={15} aria-hidden="true" />}</a>;
+  }
+  const content = <>{label}{!mobile && <span aria-hidden="true">→</span>}</>;
+  return mobile ? <NavLink to={to} onClick={onClick}>{content}</NavLink> : <Link to={to}>{content}</Link>;
+}
 
 export function Brand({ footer = false }) {
   return <Link className={`brand brand-text-lockup ${footer ? "brand-footer" : ""}`} to="/" aria-label="Nexus Education Private School home"><span className="brand-title">NEXUS EDUCATION</span><span className="brand-subtitle">PRIVATE SCHOOL</span></Link>;
@@ -89,11 +102,8 @@ export default function Header() {
         <div className="desktop-brand"><Brand /></div>
         <div className="desktop-nav">
           <NavLink end to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          {menuGroups.map((group) => <div className={`nav-dropdown ${activeGroup(group) ? "is-active" : ""}`} key={group.label}><button type="button" aria-expanded={desktopOpen === group.label} aria-controls={`desktop-${group.label.replace(/\s/g, "-").toLowerCase()}`} onClick={() => setDesktopOpen((value) => value === group.label ? "" : group.label)}>{group.label}<ChevronDown size={15} /></button>{desktopOpen === group.label && <div className="dropdown-panel" id={`desktop-${group.label.replace(/\s/g, "-").toLowerCase()}`}><div className="dropdown-intro"><span className="icon-bubble"><BookOpen size={20} /></span><div><strong>{group.label}</strong><small>Clear links for students and families.</small></div></div>{group.links.map(([label, to]) => <Link key={to} to={to}>{label}<span aria-hidden="true">→</span></Link>)}</div>}</div>)}
-          <NavLink to="/blog">Blog</NavLink>
+          {menuGroups.map((group) => <div className={`nav-dropdown ${activeGroup(group) ? "is-active" : ""}`} key={group.label}><button type="button" aria-expanded={desktopOpen === group.label} aria-controls={`desktop-${group.label.replace(/\s/g, "-").toLowerCase()}`} onClick={() => setDesktopOpen((value) => value === group.label ? "" : group.label)}>{group.label}<ChevronDown size={15} /></button>{desktopOpen === group.label && <div className="dropdown-panel" id={`desktop-${group.label.replace(/\s/g, "-").toLowerCase()}`}><div className="dropdown-intro"><span className="icon-bubble"><BookOpen size={20} /></span><div><strong>{group.label}</strong><small>Clear links for students and families.</small></div></div>{group.links.map(([label, to, external]) => <GroupLink key={to} label={label} to={to} external={external} />)}</div>}</div>)}
           <NavLink to="/contact">Contact</NavLink>
-          <a href={brand.lms} target="_blank" rel="noreferrer">LMS</a>
         </div>
         <div className="desktop-nav-actions"><CartLink /><Link className="btn btn-primary nav-cta" to="/enroll">Enroll Now</Link></div>
       </nav>
@@ -102,14 +112,10 @@ export default function Header() {
           <div className="mobile-menu-head"><Brand /><button ref={closeButtonRef} type="button" aria-label="Close navigation" onClick={() => { closeMobile(); menuButtonRef.current?.focus(); }}><X size={24} /></button></div>
           <div className="mobile-menu-scroll">
             <NavLink end to="/" onClick={closeMobile}>Home</NavLink>
-            <NavLink to="/about" onClick={closeMobile}>About Nexus</NavLink>
-            <NavLink to="/why-nexus" onClick={closeMobile}>Why Nexus</NavLink>
-            {menuGroups.map((group) => <div className={`mobile-menu-group ${activeGroup(group) ? "is-active" : ""}`} key={group.label}><button type="button" aria-expanded={mobileGroup === group.label} onClick={() => setMobileGroup((value) => value === group.label ? "" : group.label)}>{group.label}<ChevronDown size={20} /></button>{mobileGroup === group.label && <div>{group.links.map(([label, to]) => <NavLink key={to} to={to} onClick={closeMobile}>{label}</NavLink>)}</div>}</div>)}
-            <NavLink to="/blog" onClick={closeMobile}>Blog</NavLink>
-            <NavLink to="/reviews" onClick={closeMobile}>Reviews</NavLink>
+            {menuGroups.map((group) => <div className={`mobile-menu-group ${activeGroup(group) ? "is-active" : ""}`} key={group.label}><button type="button" aria-expanded={mobileGroup === group.label} onClick={() => setMobileGroup((value) => value === group.label ? "" : group.label)}>{group.label}<ChevronDown size={20} /></button>{mobileGroup === group.label && <div>{group.links.map(([label, to, external]) => <GroupLink key={to} label={label} to={to} external={external} mobile onClick={closeMobile} />)}</div>}</div>)}
             <NavLink to="/contact" onClick={closeMobile}>Contact</NavLink>
           </div>
-          <div className="mobile-menu-actions"><a className="btn btn-secondary" href={brand.lms} target="_blank" rel="noreferrer"><Monitor size={17} /> LMS Login</a><Link className="btn btn-primary" to="/enroll" onClick={closeMobile}><GraduationCap size={17} /> Enroll Now</Link></div>
+          <div className="mobile-menu-actions"><Link className="btn btn-primary" to="/enroll" onClick={closeMobile}><GraduationCap size={17} /> Enroll Now</Link></div>
         </div>
       </div>
     </header>

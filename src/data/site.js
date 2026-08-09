@@ -61,20 +61,67 @@ export const courseVisuals = {
   "Technological Education": images.technology,
 };
 
+const coursePhotoIds = {
+  arts: ["photo-1549490349-8643362247b5", "photo-1522202176988-66273c2fd55f", "photo-1495446815901-a7297e633e8d"],
+  biology: ["photo-1530210124550-912dc1381cb8", "photo-1532094349884-543bc11b234d", "photo-1524995997946-a1c2e315a42f"],
+  business: ["photo-1556761175-b413da4baf72", "photo-1454165804606-c3d57bc86b40", "photo-1522202176988-66273c2fd55f"],
+  chemistry: ["photo-1532187863486-abf9dbad1b69", "photo-1532094349884-543bc11b234d", "photo-1635070041078-e363dbe005cb"],
+  coding: ["photo-1461749280684-dccba630e2f6", "photo-1581092160562-40aa08e78837", "photo-1516321318423-f06f85e504b3"],
+  english: ["photo-1495446815901-a7297e633e8d", "photo-1434030216411-0b793f4b4173", "photo-1457369804613-52c61a468e7d"],
+  geography: ["photo-1526778548025-fa2f459cd5c1", "photo-1521295121783-8a321d551ad2", "photo-1523050854058-8df90110c9f1"],
+  guidance: ["photo-1523580846011-d3a5bc25702b", "photo-1577896851231-70ef18881754", "photo-1523050854058-8df90110c9f1"],
+  health: ["photo-1571019613454-1cb2f99b2d8b", "photo-1530210124550-912dc1381cb8", "photo-1522202176988-66273c2fd55f"],
+  history: ["photo-1564399579883-451a5d44ec08", "photo-1521295121783-8a321d551ad2", "photo-1495446815901-a7297e633e8d"],
+  language: ["photo-1457369804613-52c61a468e7d", "photo-1495446815901-a7297e633e8d", "photo-1434030216411-0b793f4b4173"],
+  mathematics: ["photo-1509228468518-180dd4864904", "photo-1635070041078-e363dbe005cb", "photo-1434030216411-0b793f4b4173"],
+  physics: ["photo-1635070041078-e363dbe005cb", "photo-1532094349884-543bc11b234d", "photo-1581092160562-40aa08e78837"],
+  science: ["photo-1532094349884-543bc11b234d", "photo-1532187863486-abf9dbad1b69", "photo-1530210124550-912dc1381cb8"],
+  social: ["photo-1524995997946-a1c2e315a42f", "photo-1522202176988-66273c2fd55f", "photo-1577896851231-70ef18881754"],
+  technology: ["photo-1581092160562-40aa08e78837", "photo-1461749280684-dccba630e2f6", "photo-1516321318423-f06f85e504b3"],
+};
+
+const hashCourse = (value = "") => [...value].reduce((hash, character) => Math.imul(hash ^ character.charCodeAt(0), 16777619) >>> 0, 2166136261);
+
+const courseVisualCategory = (course) => {
+  const code = course.code || "";
+  const title = (course.title || "").toLowerCase();
+  if (/chemistry/.test(title) || /^SCH/.test(code)) return "chemistry";
+  if (/biology/.test(title) || /^SBI/.test(code)) return "biology";
+  if (/physics/.test(title) || /^SPH/.test(code)) return "physics";
+  if (/computer|programming/.test(title) || /^(ICS|ICD|BTA)/.test(code)) return "coding";
+  if (/geograph/.test(title) || /^CG/.test(code)) return "geography";
+  if (/history/.test(title) || /^CH/.test(code)) return "history";
+  if (/english|literacy|writer/.test(title) || /^(ENG|EAE|EWC|OLC)/.test(code)) return "english";
+  if (/french|language/.test(title) || /^(FSF|FIF|FEF|LV)/.test(code)) return "language";
+  if (/math/.test(title) || course.department === "Mathematics") return "mathematics";
+  if (course.department === "The Arts") return "arts";
+  if (course.department === "Business Studies") return "business";
+  if (course.department === "Guidance and Career Education") return "guidance";
+  if (course.department === "Health and Physical Education") return "health";
+  if (course.department === "Social Sciences and Humanities") return "social";
+  if (course.department === "Technological Education") return "technology";
+  if (course.department === "Science") return "science";
+  return "guidance";
+};
+
 export const getCourseVisual = (courseOrDepartment) => {
   if (typeof courseOrDepartment === "string") return courseVisuals[courseOrDepartment] || images.classroom;
   const course = courseOrDepartment || {};
-  const code = course.code || "";
-  const title = (course.title || "").toLowerCase();
-  if (/chemistry/.test(title) || /^SCH/.test(code)) return images.chemistry;
-  if (/biology/.test(title) || /^SBI/.test(code)) return images.biology;
-  if (/physics/.test(title) || /^SPH/.test(code)) return images.physics;
-  if (/computer|programming/.test(title) || /^(ICS|ICD|BTA)/.test(code)) return images.coding;
-  if (/geograph/.test(title) || /^CG/.test(code)) return images.geography;
-  if (/history/.test(title) || /^CH/.test(code)) return images.history;
-  if (/english|literacy|writer/.test(title) || /^(ENG|EAE|EWC|OLC)/.test(code)) return images.books;
-  if (/french|language/.test(title) || /^(FSF|FIF|FEF|LV)/.test(code)) return images.language;
-  return courseVisuals[course.department] || images.classroom;
+  const seed = hashCourse(`${course.code || "course"}:${course.title || course.department || "Nexus"}`);
+  const category = courseVisualCategory(course);
+  const pool = coursePhotoIds[category] || coursePhotoIds.guidance;
+  const photoId = pool[seed % pool.length];
+  const focalX = (0.32 + (seed % 37) / 100).toFixed(2);
+  const focalY = (0.3 + ((seed >>> 8) % 39) / 100).toFixed(2);
+  const saturation = (seed >>> 16) % 13 - 4;
+  const contrast = 2 + ((seed >>> 24) % 7);
+  return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&crop=focalpoint&fp-x=${focalX}&fp-y=${focalY}&w=1400&h=900&q=82&sat=${saturation}&con=${contrast}&ixid=nexus-${encodeURIComponent(course.code || category)}`;
+};
+
+export const getCourseAccent = (course) => {
+  const seed = hashCourse(`${course?.code || "Nexus"}:${course?.title || "Course"}`);
+  const hue = 35 + (seed % 205);
+  return `hsla(${hue}, 78%, 48%, 0.28)`;
 };
 
 export const imageSets = {
