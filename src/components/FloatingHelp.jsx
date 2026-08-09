@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const options = [
   ["Find a Course", "/courses", BookOpen],
-  ["Registration Help", "/register", GraduationCap],
+  ["Enroll", "/enroll", GraduationCap],
   ["OUAC Help", "/ouac", School],
   ["OCAS Help", "/ocas", School],
   ["LMS Support", "/contact", Headphones],

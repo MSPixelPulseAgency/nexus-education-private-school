@@ -1,13 +1,14 @@
 import { useDeferredValue, useMemo, useRef, useState } from "react";
 import { ArrowRight, BookOpen, FileText, Newspaper, Search } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import { blogs, courses, rankCourses } from "../data/catalog";
+import { homeBlogs as blogs, homeCourses as courses, rankCourses } from "../data/homeCatalog";
 import { resourceGuides } from "../data/resourceGuides";
 import AddToCartButton from "./AddToCartButton";
 
 const searchablePages = [
   ["About Nexus", "/about", "school approach future-ready student-focused"],
-  ["Admissions", "/admissions", "inquiry registration prerequisite preparation"],
+  ["Admissions", "/admissions", "inquiry enrollment enrolment prerequisite preparation"],
+  ["Enrollment", "/enroll", "enroll enrolment selected courses student information"],
   ["Student Support", "/student-support", "course selection LMS learning help"],
   ["Academic Planning", "/academic-planning", "credits prerequisites pathways university college"],
   ["Online Learning", "/online-learning", "digital learning assignments progress routines"],

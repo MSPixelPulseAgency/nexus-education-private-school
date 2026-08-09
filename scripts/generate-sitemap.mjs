@@ -12,7 +12,7 @@ const staticRoutes = [
   "/faq", "/understanding-course-codes", "/ossd-requirements", "/university-planning",
   "/college-planning", "/parent-guardian-guide", "/credit-recovery", "/upgrade-courses",
   "/adult-education", "/mature-students", "/ossd", "/ouac", "/ocas", "/student-resources/videos",
-  "/policies", "/privacy", "/terms", "/accessibility",
+  "/enroll", "/policies", "/privacy", "/terms", "/accessibility",
 ];
 const routes = [
   ...staticRoutes,

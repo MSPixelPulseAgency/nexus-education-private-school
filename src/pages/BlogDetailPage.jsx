@@ -37,7 +37,7 @@ export default function BlogDetailPage() {
       <header className="article-hero">
         <div className="container">
           <nav className="breadcrumbs" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><Link to="/blog">Blog</Link><span>/</span><span aria-current="page">{post.title}</span></nav>
-          <div className="article-hero-grid"><div><span className="eyebrow">{post.category}</span><h1>{post.title}</h1><p>{post.excerpt}</p><div className="article-byline"><span>Nexus Education Team</span><span>{post.readTime}</span></div></div><div className="article-hero-image"><img src={image} alt={`Editorial visual for ${post.title}`} fetchPriority="high" /></div></div>
+          <div className="article-hero-grid"><div><span className="eyebrow">{post.category}</span><h1>{post.title}</h1><p>{post.excerpt}</p><div className="article-byline"><span>Nexus Education Team</span><span>{post.readTime}</span></div></div><div className="article-hero-image"><img src={image} alt={`Editorial visual for ${post.title}`} width="1400" height="900" fetchPriority="high" decoding="async" /></div></div>
         </div>
       </header>
       <div className="container article-layout">

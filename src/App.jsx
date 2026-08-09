@@ -37,7 +37,7 @@ export default function App() {
         <a className="skip-link" href="#main-content">Skip to main content</a>
         <Header />
         <main id="main-content" tabIndex="-1">
-        <Suspense fallback={<div className="route-loader" role="status" aria-live="polite"><span aria-hidden="true" />Loading Nexus page…</div>}>
+        <Suspense fallback={<div className="route-loader" role="status" aria-live="polite"><span className="route-loader-bar" aria-hidden="true" /><div className="route-loader-shell" aria-hidden="true"><span /><span /><span /></div><strong>Loading Nexus page…</strong></div>}>
           <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -59,6 +59,7 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/enroll" element={<RegisterPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/checkout" element={<RegisterPage />} />
           <Route path="/credit-recovery" element={<PathwayPage slug="credit-recovery" />} />

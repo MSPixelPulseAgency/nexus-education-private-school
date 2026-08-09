@@ -39,15 +39,15 @@ export function learningHighlights(course) {
 
 export function courseFaqs(course) {
   const prerequisite = course.prerequisite && course.prerequisite !== "None"
-    ? `The catalogue lists ${course.prerequisite}. Nexus should confirm how that prerequisite applies to the student's record before registration.`
-    : "The current catalogue record lists no prerequisite. Nexus should still confirm eligibility and current availability before registration.";
+    ? `The catalogue lists ${course.prerequisite}. Nexus should confirm how that prerequisite applies to the student's record before enrollment.`
+    : "The current catalogue record lists no prerequisite. Nexus should still confirm eligibility and current availability before enrollment.";
   return [
     [`What is ${course.code}?`, `${course.code} is ${course.title}, a Grade ${course.grade} ${course.type} Ontario secondary school course record worth ${course.credit} credit.`],
     [`What is the prerequisite for ${course.code}?`, prerequisite],
     [`Who should consider ${course.code}?`, `Students can consider ${course.code} when its Grade ${course.grade} level, ${course.type} destination and prerequisite sequence fit their academic plan.`],
-    [`Can I take ${course.code} online?`, `${course.code} appears in the Nexus online catalogue. Current availability, delivery details and individual eligibility must be confirmed with Nexus before registration.`],
-    [`How long does ${course.code} take?`, "The public catalogue does not publish a completion promise. Timing and pacing should be confirmed during registration because they depend on the approved course delivery and the student's circumstances."],
-    [`How do I register for ${course.code}?`, `Add ${course.code} to the course cart and continue to registration to prepare the required student and academic information. Secure online delivery is still being configured, and no enrolment is confirmed by the public form.`],
+    [`Can I take ${course.code} online?`, `${course.code} appears in the Nexus online catalogue. Current availability, delivery details and individual eligibility must be confirmed with Nexus before enrollment.`],
+    [`How long does ${course.code} take?`, "The public catalogue does not publish a completion promise. Timing and pacing should be confirmed during enrollment because they depend on the approved course delivery and the student's circumstances."],
+    [`How do I enroll in ${course.code}?`, `Add ${course.code} to the course cart and continue to enrollment to prepare the required student and academic information. Secure online delivery is still being configured, and no enrolment is confirmed by the public form.`],
   ];
 }
 

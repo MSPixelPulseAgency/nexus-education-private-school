@@ -22,7 +22,7 @@ export default function RegisterPage() {
   const submit = (event) => {
     event.preventDefault();
     if (!items.length) {
-      setStatus({ state: "error", message: "Add at least one course before submitting registration." });
+      setStatus({ state: "error", message: "Add at least one course before submitting enrollment details." });
       return;
     }
     setStatus({ state: "error", message: "Online delivery is not configured, so no student information was transmitted or stored. Contact Nexus directly to continue safely." });
@@ -30,14 +30,14 @@ export default function RegisterPage() {
 
   return (
     <>
-      <Seo title="Register for Ontario Courses | Nexus Education Private School" description="Prepare student, academic and selected-course information for a Nexus Education registration review." />
-      <section className="page-hero register-hero"><div className="container"><nav className="breadcrumbs" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><Link to="/cart">Course Cart</Link><span>/</span><span aria-current="page">Register</span></nav><div className="page-hero-copy"><span className="eyebrow"><GraduationCap size={14} /> REGISTRATION</span><h1>Prepare Your Courses for Review.</h1><p>Complete the form with accurate student and academic information. A submission is not confirmation of enrolment, availability or eligibility.</p></div></div></section>
+      <Seo title="Enroll in Ontario Courses | Nexus Education Private School" description="Prepare student, academic and selected-course information for a Nexus Education enrollment review." />
+      <section className="page-hero register-hero"><div className="container"><nav className="breadcrumbs" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><Link to="/cart">Course Cart</Link><span>/</span><span aria-current="page">Enroll</span></nav><div className="page-hero-copy"><span className="eyebrow"><GraduationCap size={14} /> ENROLLMENT</span><h1>Prepare Your Courses for Review.</h1><p>Complete the form with accurate student and academic information. A submission is not confirmation of enrolment, availability or eligibility.</p></div></div></section>
       <section className="section container register-layout">
         <div>
           {!items.length && <div className="register-empty"><AlertCircle size={22} /><div><strong>No courses selected</strong><p>Add a course from search or the catalogue before continuing.</p></div></div>}
           <div className="register-search"><span className="mini-label">ADD A COURSE</span><NexusSearch className="register-course-search" /></div>
           <form className="form-card registration-form" onSubmit={submit}>
-            <div className="form-heading"><span className="mini-label">STUDENT</span><h2>Student information</h2><p>This page validates the registration fields locally. Sensitive information is not transmitted while delivery configuration is pending.</p></div>
+            <div className="form-heading"><span className="mini-label">STUDENT</span><h2>Student information</h2><p>This page validates the enrollment fields locally. Sensitive information is not transmitted while delivery configuration is pending.</p></div>
             <div className="form-grid">
               <label>First name<input required value={form.firstName} onChange={set("firstName")} autoComplete="given-name" /></label>
               <label>Middle name <span>(optional)</span><input value={form.middleName} onChange={set("middleName")} autoComplete="additional-name" /></label>

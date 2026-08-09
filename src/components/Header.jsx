@@ -12,8 +12,8 @@ const menuGroups = [
   },
   {
     label: "Admissions",
-    paths: ["/admissions", "/adult-education", "/mature-students", "/register"],
-    links: [["Admissions", "/admissions"], ["Register", "/register"], ["Adult Education", "/adult-education"], ["Mature Students", "/mature-students"], ["Start an Inquiry", "/inquiry"]],
+    paths: ["/admissions", "/adult-education", "/mature-students", "/enroll", "/register"],
+    links: [["Admissions", "/admissions"], ["Enroll", "/enroll"], ["Adult Education", "/adult-education"], ["Mature Students", "/mature-students"], ["Start an Inquiry", "/inquiry"]],
   },
   {
     label: "Student Resources",
@@ -23,7 +23,7 @@ const menuGroups = [
 ];
 
 export function Brand({ footer = false }) {
-  return <Link className={`brand ${footer ? "brand-footer" : ""}`} to="/" aria-label="Nexus Education Private School home"><img className="brand-wordmark" src="/nexus-wordmark.png" alt="" width="800" height="216" decoding="async" /></Link>;
+  return <Link className={`brand brand-text-lockup ${footer ? "brand-footer" : ""}`} to="/" aria-label="Nexus Education Private School home"><span className="brand-title">NEXUS EDUCATION</span><span className="brand-subtitle">PRIVATE SCHOOL</span></Link>;
 }
 
 function CartLink({ mobile = false, onClick }) {
@@ -95,7 +95,7 @@ export default function Header() {
           <NavLink to="/contact">Contact</NavLink>
           <a href={brand.lms} target="_blank" rel="noreferrer">LMS</a>
         </div>
-        <div className="desktop-nav-actions"><CartLink /><Link className="btn btn-primary nav-cta" to="/register">Register</Link></div>
+        <div className="desktop-nav-actions"><CartLink /><Link className="btn btn-primary nav-cta" to="/enroll">Enroll Now</Link></div>
       </nav>
       <div className={`mobile-menu-overlay ${open ? "is-open" : ""}`} aria-hidden={!open} onMouseDown={(event) => event.target === event.currentTarget && closeMobile()}>
         <div className="mobile-menu-sheet" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
@@ -109,7 +109,7 @@ export default function Header() {
             <NavLink to="/reviews" onClick={closeMobile}>Reviews</NavLink>
             <NavLink to="/contact" onClick={closeMobile}>Contact</NavLink>
           </div>
-          <div className="mobile-menu-actions"><a className="btn btn-secondary" href={brand.lms} target="_blank" rel="noreferrer"><Monitor size={17} /> LMS Login</a><Link className="btn btn-primary" to="/register" onClick={closeMobile}><GraduationCap size={17} /> Register Now</Link></div>
+          <div className="mobile-menu-actions"><a className="btn btn-secondary" href={brand.lms} target="_blank" rel="noreferrer"><Monitor size={17} /> LMS Login</a><Link className="btn btn-primary" to="/enroll" onClick={closeMobile}><GraduationCap size={17} /> Enroll Now</Link></div>
         </div>
       </div>
     </header>

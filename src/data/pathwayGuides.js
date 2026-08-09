@@ -11,11 +11,11 @@ export const pathwayGuides = {
     highlights: ["Review the original credit and transcript context", "Confirm the appropriate course code and prerequisite", "Connect the choice to graduation or postsecondary goals"],
     sections: [
       ["Start with the academic record", "Credit recovery, repetition and upgrading are not interchangeable labels. The right next step depends on the student's existing credit, mark, prerequisite chain and goal."],
-      ["Choose the course carefully", "A similarly named course may have a different grade, destination or prerequisite. Nexus can help compare the catalogue record with the student's documentation before registration."],
+      ["Choose the course carefully", "A similarly named course may have a different grade, destination or prerequisite. Nexus can help compare the catalogue record with the student's documentation before enrollment."],
       ["Understand transcript implications", "Transcript reporting depends on the student's situation and applicable Ontario rules. Students should request individualized guidance rather than assume how a repeated or recovered credit will appear."],
     ],
     faqs: [
-      ["Does Nexus guarantee credit recovery placement?", "No. Students can inquire about a course, but current availability and the appropriate pathway must be confirmed before registration."],
+      ["Does Nexus guarantee credit recovery placement?", "No. Students can inquire about a course, but current availability and the appropriate pathway must be confirmed before enrollment."],
       ["Can I repeat a course to improve a mark?", "A repeat or upgrade may be relevant, but the course code, prerequisite and postsecondary purpose should be reviewed first."],
       ["Is there a fixed completion time?", "No public completion-time promise is made. Timing must be confirmed for the specific course and student situation."],
     ],
@@ -57,7 +57,7 @@ export const pathwayGuides = {
     faqs: [
       ["Can adults earn Ontario high school credits?", "Ontario provides adult-learning pathways for high school diploma credits and prerequisite credits. The appropriate option depends on the learner's circumstances."],
       ["Is PLAR automatic?", "No. PLAR for mature students is an assessment and credit-granting process with requirements and decisions that must be handled by an authorized school principal or program."],
-      ["Can international learners register?", "Eligibility and fees can differ. International learners should submit an inquiry so Nexus can confirm what applies."],
+      ["Can international learners enroll?", "Eligibility and fees can differ. International learners should submit an inquiry so Nexus can confirm what applies."],
     ],
     sources: [["Ontario adult learning", "https://www.ontario.ca/page/adult-learning"], ["Adult learning: Ontario high school diploma", "https://www.ontario.ca/page/adult-learning-ontario-high-school-diploma"]],
   },

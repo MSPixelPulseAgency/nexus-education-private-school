@@ -6,7 +6,7 @@ export default function BlogCard({ post, featured = false }) {
   return (
     <article className={`blog-card ${featured ? "is-featured" : ""}`}>
       <Link className="blog-card-image" to={`/blog/${post.slug}`} aria-label={`Read ${post.title}`}>
-        <img src={imageSets.blog[post.visual % imageSets.blog.length]} alt="" loading="lazy" />
+        <img src={imageSets.blog[post.visual % imageSets.blog.length]} alt="" width="1400" height="900" loading="lazy" decoding="async" />
       </Link>
       <div className="blog-card-content">
         <div className="blog-card-meta"><span>{post.category}</span><span><Clock3 size={14} /> {post.readTime}</span></div>

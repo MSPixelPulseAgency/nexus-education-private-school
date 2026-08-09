@@ -28,7 +28,7 @@ export function PageHero({ eyebrow, title, text, image, imageAlt, children, meta
               <p>{text}</p>
               {children && <div className="button-row">{children}</div>}
             </div>
-            {image && <div className="page-hero-image"><img src={image} alt={imageAlt} fetchPriority="high" /></div>}
+            {image && <div className="page-hero-image"><img src={image} alt={imageAlt} width="1400" height="1050" fetchPriority="high" decoding="async" /></div>}
           </div>
         </div>
       </section>
@@ -60,7 +60,7 @@ export function CheckList({ items }) {
 export function VisualCard({ image, alt, eyebrow, title, text, className = "" }) {
   return (
     <article className={`visual-card ${className}`}>
-      <img src={image} alt={alt} loading="lazy" />
+      <img src={image} alt={alt} width="1400" height="900" loading="lazy" decoding="async" />
       <div><span className="mini-label">{eyebrow}</span><h3>{title}</h3>{text && <p>{text}</p>}</div>
     </article>
   );

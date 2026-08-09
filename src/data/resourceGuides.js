@@ -12,7 +12,7 @@ export const resourceGuides = [
     sections: [
       { title: "Read the code in parts", text: "The first three characters identify the subject, the fourth usually identifies the grade, and the fifth indicates the course type or destination. For example, MHF4U identifies Advanced Functions, Grade 12, University Preparation." },
       { title: "Use codes to trace a sequence", text: "Senior courses often depend on an earlier course. Compare the stated prerequisite, then verify that your completed course and intended destination fit the sequence." },
-      { title: "Do not treat a listing as availability", text: "A catalogue record explains the course. It does not guarantee that the course is currently open, appropriate for a particular student or available on a preferred timeline. Confirm with Nexus before registration." },
+      { title: "Do not treat a listing as availability", text: "A catalogue record explains the course. It does not guarantee that the course is currently open, appropriate for a particular student or available on a preferred timeline. Confirm with Nexus before enrollment." },
     ],
     sources: [{ label: "Ontario curriculum and resources", url: "https://www.dcp.edu.gov.on.ca/en/curriculum/secondary" }],
   },

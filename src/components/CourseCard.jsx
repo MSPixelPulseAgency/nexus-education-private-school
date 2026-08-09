@@ -7,7 +7,7 @@ export default function CourseCard({ course, compact = false }) {
   return (
     <article className={`course-card ${compact ? "is-compact" : ""}`}>
       <Link className="course-card-visual" to={`/courses/${course.slug}`} aria-label={`View ${course.code} ${course.title}`}>
-        <img src={getCourseVisual(course)} alt="" loading="lazy" />
+        <img src={getCourseVisual(course)} alt="" width="1400" height="900" loading="lazy" decoding="async" />
         <span className="course-code">{course.code}</span>
       </Link>
       <div className="course-card-content">

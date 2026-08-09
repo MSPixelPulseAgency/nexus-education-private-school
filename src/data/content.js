@@ -2,20 +2,20 @@ export const faqGroups = {
   Courses: [
     ["What grades does Nexus support?", "The current public catalogue is organized for Ontario secondary school Grades 9 through 12."],
     ["How do I search for a course?", "Search by exact course code, title, grade, department or course type. Exact course-code matches appear first."],
-    ["How do prerequisites work?", "Prerequisites identify learning that may need to be completed before a course. Confirm your eligibility with Nexus before registration when a listing is unclear."],
+    ["How do prerequisites work?", "Prerequisites identify learning that may need to be completed before a course. Confirm your eligibility with Nexus before enrollment when a listing is unclear."],
     ["Can I take an individual course?", "Use the inquiry form to share the course you need and your current studies. Nexus can clarify the available next step."],
   ],
   Admissions: [
     ["How do I start an inquiry?", "Share your current grade, course interest, academic goal and preferred contact details through the inquiry page."],
     ["What should I prepare?", "Have your current grade, course code if known, relevant prerequisite information and any timing or postsecondary goals ready."],
-    ["Is tuition listed online?", "Tuition is not presented in the current public catalogue. Ask Nexus for current registration information before making a decision."],
+    ["Is tuition listed online?", "Tuition is not presented in the current public catalogue. Ask Nexus for current enrollment information before making a decision."],
   ],
   Learning: [
-    ["How is online learning organized?", "Registered students use a digital learning environment for course materials, assignments, progress and communication. Course-specific expectations are shared after access is confirmed."],
+    ["How is online learning organized?", "Enrolled students use a digital learning environment for course materials, assignments, progress and communication. Course-specific expectations are shared after access is confirmed."],
     ["Is every course fully self-paced?", "The website does not make that promise. Confirm the format, timelines and expectations for the specific course you are considering."],
   ],
   LMS: [
-    ["Where do students log in?", "Registered students use the LMS link in the header, footer or Student Support page."],
+    ["Where do students log in?", "Enrolled students use the LMS link in the header, footer or Student Support page."],
     ["What if I cannot access the LMS?", "Use the Contact page and select LMS Support so your request reaches the right support path."],
   ],
   Parents: [
@@ -34,7 +34,7 @@ export const articleGuides = {
     sections: [
       ["Read the course code in parts", "Start with the subject letters, grade-position digit and course-type character. Together they help you compare level, subject and pathway context."],
       ["Check the prerequisite chain", "Look beyond the next course. Work backward from a target Grade 12 course or postsecondary requirement so an earlier choice does not close an option unintentionally."],
-      ["Confirm before you register", "Course information can change and individual eligibility matters. Verify unclear prerequisite or availability details before committing."],
+      ["Confirm before you enroll", "Course information can change and individual eligibility matters. Verify unclear prerequisite or availability details before committing."],
     ],
     checklist: ["Write down the target course or program", "Check the full prerequisite chain", "Compare credit and course type", "Confirm availability with Nexus"],
   },
