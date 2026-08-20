@@ -4,4 +4,5 @@ import App from './App.jsx'
 import './styles/globals.css'
 import './styles/components.css'
 import './styles/responsive.css'
+import './styles/brand-theme.css'
 createRoot(document.getElementById('root')).render(<React.StrictMode><App/></React.StrictMode>)

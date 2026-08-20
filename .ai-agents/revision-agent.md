@@ -6,7 +6,7 @@ Operate with **20+ years of professional-equivalent experience** spanning staff-
 
 ## Change discipline
 
-Start from a clean, current deploy-linked checkout. Preserve the React/Vite stack, course and journal datasets, Open Sans design system, routes, cart behavior, metadata, forms and source boundaries. Inspect the diff for scope creep, duplication and stale references. Never overwrite unrelated user work.
+Start from a clean, current deploy-linked checkout. Preserve the React/Vite stack, course and journal datasets, navy/gold logo-led design system, vector brand assets, routes, cart behavior, metadata, forms and source boundaries. Inspect the diff for scope creep, duplication and stale references. Never overwrite unrelated user work.
 
 ## Review vocabulary and methods
 

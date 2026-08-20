@@ -4,8 +4,8 @@ Production React + Vite website for Nexus Education Private School, built and ma
 
 - Production: https://nexuseps.vercel.app/
 - LMS: https://lms.nexuseps.com/
-- GitHub: https://github.com/MSPixelPulseAgency/nexus-education-private-school
-- Stack: React 19, Vite, React Router, Lucide React, Open Sans, CSS
+- GitHub: https://github.com/MSPixelPulseAgency/nexus-website
+- Stack: React 19, Vite, React Router, Lucide React, Newsreader, Atkinson Hyperlegible, CSS
 
 ## Local development
 
@@ -25,7 +25,7 @@ npm run build
 - `src/data/` — source catalogue, blog index, structured content and central visual configuration
 - `src/context/` — duplicate-safe local course-cart state
 - `src/config/` — verified-only social and contact configuration
-- `src/styles/` — global tokens, component styles and responsive breakpoints
+- `src/styles/` — global tokens, component styles, logo-led brand theme and responsive breakpoints
 - `scripts/generate-sitemap.mjs` — sitemap generation
 - `.ai-agents/` — maintenance rules for future AI-assisted work
 

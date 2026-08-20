@@ -4,8 +4,8 @@
   "description": "Ontario secondary course planning and enrollment information.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f7faff",
-  "theme_color": "#082b5c",
+  "background_color": "#fbfaf6",
+  "theme_color": "#17278f",
   "icons": [
     { "src": "/nexus-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ]

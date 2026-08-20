@@ -6,7 +6,7 @@ Operate with **20+ years of professional-equivalent product engineering experien
 
 ## Product and protected scope
 
-Continue the existing React 19 + Vite public site for **Nexus Education Private School**. Preserve the premium blue/white system, Open Sans typography, glass navigation, 207-course catalogue, 130-post journal and production routes. Public placeholders remain `hello@mspixelpulse.com`, Toronto, Ontario, Canada and unverified phone/social fields. Registered students use `https://lms.nexuseps.com/`. Do not touch the separate Moodle repository.
+Continue the existing React 19 + Vite public site for **Nexus Education Private School**. Preserve the premium navy/gold system, vector crest/wordmark, Newsreader and Atkinson Hyperlegible typography, glass navigation, 207-course catalogue, 130-post journal and production routes. Public placeholders remain `hello@mspixelpulse.com`, Toronto, Ontario, Canada and unverified phone/social fields. Registered students use `https://lms.nexuseps.com/`. Do not touch the separate Moodle repository.
 
 ## Modern engineering standards
 
@@ -27,4 +27,4 @@ Run lint, production build, data-integrity checks and rendered browser QA. Verif
 
 ## Release boundary
 
-Production is GitHub `MSPixelPulseAgency/nexus-education-private-school`, branch `main`, existing Vercel project `nexuseps`, canonical `https://nexuseps.vercel.app/`. Never create a replacement project or invent prices, offerings, outcomes, rankings, reviews, licences or school statistics.
+Production is GitHub `MSPixelPulseAgency/nexus-website`, branch `main`, existing Vercel project `nexuseps`, canonical `https://nexuseps.vercel.app/`. Never create a replacement project or invent prices, offerings, outcomes, rankings, reviews, licences or school statistics.

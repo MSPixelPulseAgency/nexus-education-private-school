@@ -37,7 +37,17 @@ function GroupLink({ label, to, external = false, mobile = false, onClick }) {
 }
 
 export function Brand({ footer = false }) {
-  return <Link className={`brand brand-text-lockup ${footer ? "brand-footer" : ""}`} to="/" aria-label="Nexus Education Private School home"><span className="brand-title">NEXUS EDUCATION</span><span className="brand-subtitle">PRIVATE SCHOOL</span></Link>;
+  return (
+    <Link className={`brand brand-logo ${footer ? "brand-footer" : ""}`} to="/" aria-label="Nexus Education Private School home">
+      <img
+        src={footer ? "/nexus-logo-reversed.svg" : "/nexus-logo-horizontal.svg"}
+        alt=""
+        width="820"
+        height="170"
+        fetchPriority={footer ? undefined : "high"}
+      />
+    </Link>
+  );
 }
 
 function CartLink({ mobile = false, onClick }) {
