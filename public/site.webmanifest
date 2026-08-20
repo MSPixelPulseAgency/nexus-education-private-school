@@ -4,8 +4,8 @@
   "description": "Elementary learning, Ontario secondary course planning and student support.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fffaf0",
-  "theme_color": "#162887",
+  "background_color": "#FFFFFF",
+  "theme_color": "#09264A",
   "icons": [
     { "src": "/nexus-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
   ]

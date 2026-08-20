@@ -37,15 +37,25 @@ function GroupLink({ label, to, external = false, mobile = false, onClick }) {
 }
 
 export function Brand({ footer = false }) {
+  if (footer) {
+    return (
+      <Link className="brand brand-logo brand-footer" to="/" aria-label="Nexus Education Private School home">
+        <img className="brand-full-logo" src="/brand/nexus-logo-official-transparent.png" alt="" width="692" height="423" loading="lazy" decoding="async" />
+      </Link>
+    );
+  }
+
   return (
-    <Link className={`brand brand-logo ${footer ? "brand-footer" : ""}`} to="/" aria-label="Nexus Education Private School home">
+    <Link className="brand brand-logo brand-lockup" to="/" aria-label="Nexus Education Private School home">
       <img
-        src="/brand/nexus-logo-official-transparent.png"
+        className="brand-crest"
+        src="/brand/nexus-crest-official-transparent.png"
         alt=""
-        width="692"
-        height="423"
-        fetchPriority={footer ? undefined : "high"}
+        width="366"
+        height="288"
+        fetchPriority="high"
       />
+      <span className="brand-wordmark" aria-hidden="true"><strong>NEXUS EDUCATION</strong><small>PRIVATE SCHOOL</small></span>
     </Link>
   );
 }

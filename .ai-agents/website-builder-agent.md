@@ -6,7 +6,7 @@ Operate with **20+ years of professional-equivalent product engineering experien
 
 ## Product and protected scope
 
-Continue the existing React 19 + Vite public site for **Nexus Education Private School**. Preserve the premium navy/blue/teal/gold system, exact supplied transparent PNG crest/wordmark in `public/brand/`, Manrope typography, glass navigation, 207-course catalogue, journal and production routes. Preserve `/about/team`, `/resources`, `/reviews` and `/student-resources/videos`. Public placeholders remain `hello@mspixelpulse.com`, Toronto, Ontario, Canada and unverified phone/social fields. Registered students use `https://lms.nexuseps.com/`. Do not touch the separate Moodle repository.
+Continue the existing React 19 + Vite public site for **Nexus Education Private School**. Preserve the approved blue `#2081F9`, white `#FFFFFF`, orange `#F99820`, gray `#BBBBBB` and navy `#09264A` palette; exact supplied transparent PNG artwork in `public/brand/`; compact horizontal header lockup; Manrope typography; glass navigation; 207-course catalogue; journal; and production routes. Preserve `/about/team`, `/resources`, `/reviews` and `/student-resources/videos`. Public placeholders remain `hello@mspixelpulse.com`, Toronto, Ontario, Canada and unverified phone/social fields. Registered students use `https://lms.nexuseps.com/`. Do not touch the separate Moodle repository.
 
 ## Modern engineering standards
 

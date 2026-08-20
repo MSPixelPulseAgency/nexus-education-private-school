@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import CartContext from "./cart-context";
 
 const STORAGE_KEY = "nexus-course-cart";
@@ -14,35 +14,42 @@ function readCart() {
 export function CartProvider({ children }) {
   const [items, setItems] = useState(() => (typeof window === "undefined" ? [] : readCart()));
   const [announcement, setAnnouncement] = useState("");
+  const itemsRef = useRef(items);
 
   useEffect(() => {
+    itemsRef.current = items;
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   }, [items]);
 
   const addCourse = useCallback((course) => {
-    if (items.some((item) => item.code === course.code)) {
+    if (itemsRef.current.some((item) => item.code === course.code)) {
       setAnnouncement(`${course.code} is already in your course cart.`);
       return;
     }
+    const nextItems = [...itemsRef.current, {
+      code: course.code,
+      title: course.title,
+      slug: course.slug,
+      grade: course.grade,
+      type: course.type,
+      credit: course.credit,
+      prerequisite: course.prerequisite,
+      department: course.department,
+    }];
+    itemsRef.current = nextItems;
     setAnnouncement(`${course.code} was added to your course cart.`);
-    setItems((current) => [...current, {
-        code: course.code,
-        title: course.title,
-        slug: course.slug,
-        grade: course.grade,
-        type: course.type,
-        credit: course.credit,
-        prerequisite: course.prerequisite,
-        department: course.department,
-      }]);
-  }, [items]);
+    setItems(nextItems);
+  }, []);
 
   const removeCourse = useCallback((code) => {
-    setItems((current) => current.filter((item) => item.code !== code));
+    const nextItems = itemsRef.current.filter((item) => item.code !== code);
+    itemsRef.current = nextItems;
+    setItems(nextItems);
     setAnnouncement(`${code} was removed from your course cart.`);
   }, []);
 
   const clearCart = useCallback(() => {
+    itemsRef.current = [];
     setItems([]);
     setAnnouncement("Your course cart was cleared.");
   }, []);
