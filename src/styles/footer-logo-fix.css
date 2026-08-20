@@ -6,7 +6,10 @@
   align-items: center;
   justify-content: flex-start;
   gap: 14px;
-  padding: 0;
+  padding: 10px 16px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .brand-footer-crest {
@@ -18,7 +21,7 @@
   aspect-ratio: 366 / 288;
   object-fit: contain;
   object-position: center;
-  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.16));
+  filter: none;
 }
 
 .brand-footer-wordmark {
@@ -30,7 +33,7 @@
 }
 
 .brand-footer-wordmark strong {
-  color: #fff;
+  color: #09264a;
   font-size: clamp(1rem, 1.45vw, 1.3rem);
   font-weight: 800;
   letter-spacing: 0.055em;
@@ -39,7 +42,7 @@
 }
 
 .brand-footer-wordmark small {
-  color: #f98125;
+  color: #9a4b00;
   font-size: clamp(0.52rem, 0.72vw, 0.66rem);
   font-weight: 800;
   letter-spacing: 0.28em;
@@ -60,6 +63,8 @@
     margin-inline: auto;
     justify-content: center;
     gap: 10px;
+    padding: 9px 13px;
+    border-radius: 14px;
   }
 
   .brand-footer-crest,
