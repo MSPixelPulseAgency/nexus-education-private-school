@@ -6,12 +6,12 @@ import { blogs, courses } from "../src/data/catalog.js";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const base = "https://nexuseps.vercel.app";
 const staticRoutes = [
-  "/", "/about", "/why-nexus", "/courses", "/courses/grade-9", "/courses/grade-10",
+  "/", "/about", "/about/team", "/why-nexus", "/courses", "/courses/grade-9", "/courses/grade-10",
   "/courses/grade-11", "/courses/grade-12", "/admissions", "/student-support",
   "/academic-planning", "/online-learning", "/blog", "/reviews", "/inquiry", "/contact",
   "/faq", "/understanding-course-codes", "/ossd-requirements", "/university-planning",
   "/college-planning", "/parent-guardian-guide", "/credit-recovery", "/upgrade-courses",
-  "/adult-education", "/mature-students", "/ossd", "/ouac", "/ocas", "/student-resources/videos",
+  "/adult-education", "/mature-students", "/ossd", "/ouac", "/ocas", "/resources", "/student-resources/videos",
   "/enroll", "/policies", "/privacy", "/terms", "/accessibility",
 ];
 const routes = [

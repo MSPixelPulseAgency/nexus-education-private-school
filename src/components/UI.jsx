@@ -1,5 +1,6 @@
 import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { brand } from "../data/site";
 import Reveal from "./Reveal";
 import Seo from "./Seo";
 
@@ -13,14 +14,29 @@ export function SectionHeading({ eyebrow, title, text, center = false, light = f
   );
 }
 
-export function PageHero({ eyebrow, title, text, image, imageAlt, children, metaTitle, metaDescription }) {
+export function PageHero({ eyebrow, title, text, image, imageAlt, children, metaTitle, metaDescription, breadcrumbs, compact = false, structuredData }) {
   const { pathname } = useLocation();
+  const breadcrumbItems = pathname === "/" ? [] : [
+    { label: "Home", to: "/" },
+    ...(breadcrumbs?.length ? breadcrumbs : [{ label: title.replace(/\.$/, "") }]),
+  ];
+  const breadcrumbSchema = breadcrumbItems.length ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: `${brand.canonical}${item.to || pathname}`,
+    })),
+  } : null;
+  const schemas = [structuredData, breadcrumbSchema].filter(Boolean);
   return (
     <>
-      <Seo title={metaTitle} description={metaDescription} image={image} />
-      <section className={`page-hero ${image ? "page-hero-visual" : ""}`}>
+      <Seo title={metaTitle} description={metaDescription} image={image} structuredData={schemas} />
+      <section className={`page-hero ${image ? "page-hero-visual" : ""} ${compact ? "is-compact" : ""}`}>
         <div className="container">
-          {pathname !== "/" && <nav className="breadcrumbs" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><span aria-current="page">{title.replace(/\.$/, "")}</span></nav>}
+          {breadcrumbItems.length > 0 && <nav className="breadcrumbs" aria-label="Breadcrumb"><ol>{breadcrumbItems.map((item, index) => <li key={`${item.label}-${index}`}>{index > 0 && <span aria-hidden="true">/</span>}{item.to && index < breadcrumbItems.length - 1 ? <Link to={item.to}>{item.label}</Link> : <span aria-current={index === breadcrumbItems.length - 1 ? "page" : undefined}>{item.label}</span>}</li>)}</ol></nav>}
           <div className="page-hero-grid">
             <div className="page-hero-copy">
               <span className="eyebrow">{eyebrow}</span>

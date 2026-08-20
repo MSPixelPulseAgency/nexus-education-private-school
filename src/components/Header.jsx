@@ -8,7 +8,7 @@ const menuGroups = [
   {
     label: "About Us",
     paths: ["/about", "/why-nexus", "/blog", "/reviews"],
-    links: [["About Nexus", "/about"], ["Why Nexus", "/why-nexus"], ["Nexus Journal", "/blog"], ["Reviews", "/reviews"]],
+    links: [["About Nexus", "/about"], ["Our Team", "/about/team"], ["Why Nexus", "/why-nexus"], ["Nexus Journal", "/blog"], ["Reviews", "/reviews"]],
   },
   {
     label: "Courses",
@@ -23,8 +23,8 @@ const menuGroups = [
   {
     label: "Student Resources",
     desktopLabel: "Resources",
-    paths: ["/student-support", "/academic-planning", "/ossd", "/ouac", "/ocas", "/online-learning", "/student-resources"],
-    links: [["Student Support", "/student-support"], ["Academic Planning", "/academic-planning"], ["OSSD", "/ossd"], ["OUAC", "/ouac"], ["OCAS", "/ocas"], ["Online Learning", "/online-learning"], ["Official Videos", "/student-resources/videos"]],
+    paths: ["/resources", "/student-support", "/academic-planning", "/ossd", "/ouac", "/ocas", "/online-learning", "/student-resources"],
+    links: [["Official Resource Hub", "/resources"], ["Student Support", "/student-support"], ["Academic Planning", "/academic-planning"], ["OSSD", "/ossd"], ["OUAC", "/ouac"], ["Ontario Colleges", "/ocas"], ["Online Learning", "/online-learning"], ["Official Videos", "/student-resources/videos"]],
   },
 ];
 
@@ -40,10 +40,10 @@ export function Brand({ footer = false }) {
   return (
     <Link className={`brand brand-logo ${footer ? "brand-footer" : ""}`} to="/" aria-label="Nexus Education Private School home">
       <img
-        src={footer ? "/nexus-logo-reversed.svg" : "/nexus-logo-horizontal.svg"}
+        src="/brand/nexus-logo-official-transparent.png"
         alt=""
-        width="820"
-        height="170"
+        width="692"
+        height="423"
         fetchPriority={footer ? undefined : "high"}
       />
     </Link>

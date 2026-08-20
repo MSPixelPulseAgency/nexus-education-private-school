@@ -16,7 +16,7 @@ export default function Reveal({ children, className = "", as: Tag = "div" }) {
           observer.disconnect();
         }
       },
-      { threshold: 0.08, rootMargin: "0px 0px -30px" },
+      { threshold: 0.02, rootMargin: "0px 0px 48px" },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();

@@ -8,6 +8,14 @@ export const officialVideos = [
     source: "https://www.ouac.on.ca/guide/undergrad-guide/",
   },
   {
+    title: "Build Your Future in the Skilled Trades",
+    organization: "Skilled Trades Ontario",
+    category: "CAREERS & TRADES",
+    youtubeId: "kx_0TqGe5yQ",
+    description: "An official introduction to apprenticeship pathways, hands-on training and skilled-trades career exploration in Ontario.",
+    source: "https://www.skilledtradesontario.ca/apprenticeship/",
+  },
+  {
     title: "How to Apply to Public Colleges in Ontario",
     organization: "Ontario Colleges",
     category: "OCAS",
@@ -22,4 +30,6 @@ export const officialResourceLinks = [
   ["Ontario diploma requirements", "Current OSSD requirements and cohort notes", "https://www.ontario.ca/page/earning-your-high-school-diploma"],
   ["OUAC undergraduate guide", "Official Ontario university application instructions", "https://www.ouac.on.ca/guide/undergrad-guide/"],
   ["Ontario Colleges application guide", "Official public-college application steps", "https://www.ontariocolleges.ca/en/applying/how-to-apply"],
+  ["OSAP", "Official Ontario student-aid information", "https://www.ontario.ca/page/osap-ontario-student-assistance-program"],
+  ["Government of Canada Job Bank", "Career exploration, skills and education planning", "https://www.jobbank.gc.ca/career-planning"],
 ];

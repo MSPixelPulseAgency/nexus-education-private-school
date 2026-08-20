@@ -1,12 +1,12 @@
 {
   "name": "Nexus Education Private School",
   "short_name": "Nexus Education",
-  "description": "Ontario secondary course planning and enrollment information.",
+  "description": "Elementary learning, Ontario secondary course planning and student support.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fbfaf6",
-  "theme_color": "#17278f",
+  "background_color": "#fffaf0",
+  "theme_color": "#162887",
   "icons": [
-    { "src": "/nexus-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    { "src": "/nexus-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
   ]
 }

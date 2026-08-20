@@ -6,7 +6,7 @@ Operate with **20+ years of professional-equivalent product engineering experien
 
 ## Product and protected scope
 
-Continue the existing React 19 + Vite public site for **Nexus Education Private School**. Preserve the premium navy/gold system, vector crest/wordmark, Newsreader and Atkinson Hyperlegible typography, glass navigation, 207-course catalogue, 130-post journal and production routes. Public placeholders remain `hello@mspixelpulse.com`, Toronto, Ontario, Canada and unverified phone/social fields. Registered students use `https://lms.nexuseps.com/`. Do not touch the separate Moodle repository.
+Continue the existing React 19 + Vite public site for **Nexus Education Private School**. Preserve the premium navy/blue/teal/gold system, exact supplied transparent PNG crest/wordmark in `public/brand/`, Manrope typography, glass navigation, 207-course catalogue, journal and production routes. Preserve `/about/team`, `/resources`, `/reviews` and `/student-resources/videos`. Public placeholders remain `hello@mspixelpulse.com`, Toronto, Ontario, Canada and unverified phone/social fields. Registered students use `https://lms.nexuseps.com/`. Do not touch the separate Moodle repository.
 
 ## Modern engineering standards
 
@@ -19,7 +19,7 @@ Continue the existing React 19 + Vite public site for **Nexus Education Private 
 
 ## Visual and interaction system
 
-Use high-quality subject-specific visuals from the central `src/data/site.js` mapping. Every meaningful image needs accurate alt text; decorative images use empty alt text. Maintain consistent radii, shadows, button hierarchy, hover/focus states and 44px minimum targets. Mobile must keep the menu left, logo truly centred and cart right regardless of badge width.
+Use high-quality subject-specific visuals from the central `src/data/site.js` mapping. Stock people illustrate learning themes and must never be described as actual Nexus students or staff. Every meaningful image needs accurate alt text; decorative images use empty alt text. Maintain consistent radii, shadows, button hierarchy, hover/focus states and 44px minimum targets. Mobile must keep the menu left, official logo truly centred and cart right regardless of badge width.
 
 ## Definition of done
 

@@ -6,7 +6,7 @@ Operate with **20+ years of professional-equivalent experience** spanning staff-
 
 ## Change discipline
 
-Start from a clean, current deploy-linked checkout. Preserve the React/Vite stack, course and journal datasets, navy/gold logo-led design system, vector brand assets, routes, cart behavior, metadata, forms and source boundaries. Inspect the diff for scope creep, duplication and stale references. Never overwrite unrelated user work.
+Start from a clean, current deploy-linked checkout. Preserve the React/Vite stack, course and journal datasets, official PNG logo-led design system, Manrope typography, routes, cart behavior, metadata, forms and source boundaries. Reject any regenerated or redrawn logo asset. Inspect the diff for scope creep, duplication and stale references. Never overwrite unrelated user work.
 
 ## Review vocabulary and methods
 
@@ -14,7 +14,7 @@ Apply smoke, functional, integration, regression, negative-path, boundary, state
 
 ## UX review
 
-Audit hierarchy, spacing, alignment, readable measure, font size, target size, contrast, focus visibility, error recovery, empty states, image cropping, card density, button priority and mobile safe areas. Check cart/help/back-to-top collision and the centred mobile logo at every specified width.
+Audit hierarchy, spacing, alignment, readable measure, font size, target size, contrast, focus visibility, error recovery, empty states, image cropping, card density, button priority and mobile safe areas. Check cart/help/enrollment-prompt/back-to-top collision and the centred mobile logo at every specified width. Confirm the catalogue renders 8 cards initially and official videos create no iframe until Play is selected.
 
 ## Technical review
 

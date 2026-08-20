@@ -9,6 +9,7 @@ import { CartProvider } from "./context/CartContext";
 import HomePage from "./pages/HomePage";
 
 const AboutPage = lazy(() => import("./pages/AboutPage"));
+const TeamPage = lazy(() => import("./pages/TeamPage"));
 const CoursesPage = lazy(() => import("./pages/CoursesPage"));
 const CourseDetailPage = lazy(() => import("./pages/CourseDetailPage"));
 const CourseOutlinePage = lazy(() => import("./pages/CourseOutlinePage"));
@@ -29,6 +30,7 @@ const CartPage = lazy(() => import("./pages/CartPage"));
 const RegisterPage = lazy(() => import("./pages/RegisterPage"));
 const PathwayPage = lazy(() => import("./pages/PathwayPage"));
 const VideosPage = lazy(() => import("./pages/VideosPage"));
+const ResourcesPage = lazy(() => import("./pages/ResourcesPage"));
 
 export default function App() {
   return (
@@ -42,6 +44,7 @@ export default function App() {
           <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/about/team" element={<TeamPage />} />
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/courses/grade-9" element={<CoursesPage gradeOverride="9" />} />
           <Route path="/courses/grade-10" element={<CoursesPage gradeOverride="10" />} />
@@ -71,6 +74,7 @@ export default function App() {
           <Route path="/ouac" element={<PathwayPage slug="ouac" />} />
           <Route path="/ocas" element={<PathwayPage slug="ocas" />} />
           <Route path="/student-resources/videos" element={<VideosPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/understanding-course-codes" element={<ResourceGuidePage slug="understanding-course-codes" />} />
           <Route path="/ossd-requirements" element={<PathwayPage slug="ossd" />} />
           <Route path="/university-planning" element={<ResourceGuidePage slug="university-planning" />} />

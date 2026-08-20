@@ -5,10 +5,10 @@ import { brand } from "../data/site";
 import { Brand } from "./Header";
 
 const groups = [
-  ["Nexus", [["About", "/about"], ["Why Nexus", "/why-nexus"], ["Admissions", "/admissions"], ["Contact", "/contact"]]],
+  ["Nexus", [["About", "/about"], ["Our Team", "/about/team"], ["Why Nexus", "/why-nexus"], ["Admissions", "/admissions"], ["Contact", "/contact"]]],
   ["Courses", [["All Courses", "/courses"], ["Grade 9", "/courses/grade-9"], ["Grade 10", "/courses/grade-10"], ["Grade 11", "/courses/grade-11"], ["Grade 12", "/courses/grade-12"], ["Upgrade Courses", "/upgrade-courses"], ["Credit Recovery", "/credit-recovery"]]],
   ["Student Support", [["Academic Planning", "/academic-planning"], ["OSSD", "/ossd"], ["OUAC", "/ouac"], ["OCAS", "/ocas"], ["Adult Education", "/adult-education"], ["Mature Students", "/mature-students"]]],
-  ["Resources", [["Official Videos", "/student-resources/videos"], ["Online Learning", "/online-learning"], ["Blog", "/blog"], ["Reviews", "/reviews"], ["FAQ", "/faq"], ["Course Cart", "/cart"]]],
+  ["Resources", [["Official Resource Hub", "/resources"], ["Official Videos", "/student-resources/videos"], ["Online Learning", "/online-learning"], ["Blog", "/blog"], ["Reviews", "/reviews"], ["FAQ", "/faq"], ["Course Cart", "/cart"]]],
 ];
 
 const socialIcons = { facebook: MessagesSquare, instagram: Camera, linkedin: BriefcaseBusiness, youtube: Video, whatsappNumber: MessageCircle };
@@ -20,7 +20,7 @@ export default function Footer() {
       <div className="container footer-main">
         <div className="footer-about">
           <Brand footer />
-          <p>Modern Ontario secondary school learning built around clear pathways, flexible access and meaningful student support.</p>
+          <p>Student-centred elementary learning and Ontario secondary school pathways, built around flexible access and meaningful support.</p>
           <div className="footer-contact"><span><MapPin size={17} /> Toronto, Ontario, Canada</span><a href={`mailto:${brand.email}`}><Mail size={17} /> {brand.email}</a><span className="unverified-contact"><Phone size={17} /> Phone available after verification</span></div>
           {verifiedSocialLinks.length > 0 && <div className="footer-socials">{verifiedSocialLinks.map(({ network, url }) => { const Icon = socialIcons[network]; return <a key={network} href={url} target="_blank" rel="noreferrer" aria-label={`Nexus on ${network}`}><Icon size={20} /></a>; })}</div>}
         </div>

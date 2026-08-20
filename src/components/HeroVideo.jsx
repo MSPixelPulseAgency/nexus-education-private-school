@@ -28,7 +28,7 @@ export default function HeroVideo() {
       <img
         className="hero-video-poster"
         src={posterPath}
-        alt="A Nexus student working through Calculus and Vectors with teacher support"
+        alt="Students illustrating collaborative secondary-school learning"
         width="1280"
         height="720"
         fetchPriority="high"

@@ -32,8 +32,8 @@ export const images = {
   planning: unsplash("photo-1454165804606-c3d57bc86b40"),
   study: unsplash("photo-1434030216411-0b793f4b4173"),
   adultLearning: unsplash("photo-1516321318423-f06f85e504b3"),
-  university: unsplash("photo-1523050854058-8df90110c9f1"),
-  college: unsplash("photo-1523240795612-9a054b0db644"),
+  university: unsplash("photo-1541339907198-e08756dedf3f"),
+  college: unsplash("photo-1541339907198-e08756dedf3f"),
   videoLearning: unsplash("photo-1584697964358-3e14ca57658b"),
   books: unsplash("photo-1495446815901-a7297e633e8d"),
   chemistry: unsplash("photo-1532187863486-abf9dbad1b69"),
@@ -45,6 +45,14 @@ export const images = {
   history: unsplash("photo-1564399579883-451a5d44ec08"),
   language: unsplash("photo-1457369804613-52c61a468e7d"),
   technology: unsplash("photo-1581092160562-40aa08e78837"),
+  elementary: unsplash("photo-1503454537195-1dcabb73ffb9", 1500),
+  reading: unsplash("photo-1544717305-2782549b5136", 1200),
+  stemTeam: unsplash("photo-1531482615713-2afd69097998", 1500),
+  onlineLesson: unsplash("photo-1516321318423-f06f85e504b3", 1400),
+  artLearning: unsplash("photo-1549490349-8643362247b5", 1200),
+  graduationGroup: unsplash("photo-1523580846011-d3a5bc25702b", 1500),
+  familySupport: unsplash("photo-1577896851231-70ef18881754", 1400),
+  secondaryStudents: unsplash("photo-1513258496099-48168024aec0", 1500),
 };
 
 export const courseVisuals = {
@@ -68,8 +76,8 @@ const coursePhotoIds = {
   chemistry: ["photo-1532187863486-abf9dbad1b69", "photo-1532094349884-543bc11b234d", "photo-1635070041078-e363dbe005cb"],
   coding: ["photo-1461749280684-dccba630e2f6", "photo-1581092160562-40aa08e78837", "photo-1516321318423-f06f85e504b3"],
   english: ["photo-1495446815901-a7297e633e8d", "photo-1434030216411-0b793f4b4173", "photo-1457369804613-52c61a468e7d"],
-  geography: ["photo-1526778548025-fa2f459cd5c1", "photo-1521295121783-8a321d551ad2", "photo-1523050854058-8df90110c9f1"],
-  guidance: ["photo-1523580846011-d3a5bc25702b", "photo-1577896851231-70ef18881754", "photo-1523050854058-8df90110c9f1"],
+  geography: ["photo-1526778548025-fa2f459cd5c1", "photo-1521295121783-8a321d551ad2", "photo-1524661135-423995f22d0b"],
+  guidance: ["photo-1523580846011-d3a5bc25702b", "photo-1577896851231-70ef18881754", "photo-1541339907198-e08756dedf3f"],
   health: ["photo-1571019613454-1cb2f99b2d8b", "photo-1530210124550-912dc1381cb8", "photo-1522202176988-66273c2fd55f"],
   history: ["photo-1564399579883-451a5d44ec08", "photo-1521295121783-8a321d551ad2", "photo-1495446815901-a7297e633e8d"],
   language: ["photo-1457369804613-52c61a468e7d", "photo-1495446815901-a7297e633e8d", "photo-1434030216411-0b793f4b4173"],
@@ -132,8 +140,9 @@ export const imageSets = {
 };
 
 export const staticMeta = {
-  "/": ["Nexus Education Private School | Ontario Courses", "Explore Ontario secondary school credit courses, academic pathways and student support for Grades 9–12."],
+  "/": ["Nexus Education Private School | Ontario Learning", "Explore student-centred elementary learning, Ontario secondary school credit courses, academic pathways and student support."],
   "/about": ["About Nexus Education Private School", "Learn about the clear, student-focused and future-ready approach behind Nexus Education Private School."],
+  "/about/team": ["Meet the Nexus Team | Nexus Education", "Meet the approved people supporting the Nexus school website, learning platform and future staff directory."],
   "/why-nexus": ["Why Nexus Education Private School", "Discover the clear, student-focused and future-ready approach behind Nexus Education Private School."],
   "/courses": ["Ontario Credit Courses | Nexus Education", "Search 207 Nexus catalogue records by exact code, title, grade, course type and department."],
   "/admissions": ["Admissions | Nexus Education Private School", "Explore the Nexus inquiry and admissions process, prerequisite guidance and enrollment preparation."],
@@ -142,6 +151,7 @@ export const staticMeta = {
   "/academic-planning": ["Academic Planning | Nexus Education", "Plan Ontario secondary school courses, prerequisites, postsecondary requirements and realistic workloads."],
   "/blog": ["Nexus Journal | Student Planning Guides", "Read practical guides about Ontario courses, study skills, online learning, STEM and academic pathways."],
   "/reviews": ["Reviews | Nexus Education Private School", "Share thoughtful feedback about your Nexus experience through a privacy-aware moderated review form."],
+  "/resources": ["Official Ontario Education Resources | Nexus Education", "Open verified Ontario and Canada education, postsecondary, student-aid, careers and skilled-trades resources."],
   "/inquiry": ["Start an Inquiry | Nexus Education", "Tell Nexus about your current studies, course interests and academic goals."],
   "/contact": ["Contact Nexus Education Private School", "Contact Nexus about courses, admissions, academic planning, LMS support or website accessibility."],
   "/faq": ["Frequently Asked Questions | Nexus Education", "Answers about Nexus courses, admissions, learning, LMS access and academic planning."],

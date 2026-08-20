@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://nexuseps.vercel.app/</loc></url>
   <url><loc>https://nexuseps.vercel.app/about</loc></url>
+  <url><loc>https://nexuseps.vercel.app/about/team</loc></url>
   <url><loc>https://nexuseps.vercel.app/why-nexus</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses</loc></url>
   <url><loc>https://nexuseps.vercel.app/courses/grade-9</loc></url>
@@ -29,6 +30,7 @@
   <url><loc>https://nexuseps.vercel.app/ossd</loc></url>
   <url><loc>https://nexuseps.vercel.app/ouac</loc></url>
   <url><loc>https://nexuseps.vercel.app/ocas</loc></url>
+  <url><loc>https://nexuseps.vercel.app/resources</loc></url>
   <url><loc>https://nexuseps.vercel.app/student-resources/videos</loc></url>
   <url><loc>https://nexuseps.vercel.app/enroll</loc></url>
   <url><loc>https://nexuseps.vercel.app/policies</loc></url>

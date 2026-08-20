@@ -1,8 +1,8 @@
 import {
-  ArrowLeft, ArrowRight, Atom, BookOpenCheck, Bot, BrainCircuit, BriefcaseBusiness,
+  ArrowLeft, ArrowRight, Atom, Backpack, BookOpenCheck, Bot, BrainCircuit, BriefcaseBusiness,
   Calculator, ChevronRight, CircleUserRound, Code2, Compass, Cpu, GraduationCap,
-  Headphones, Languages, Laptop2, Lightbulb, Landmark, Palette, ShieldCheck,
-  Sparkles, Star, Target, UsersRound,
+  Headphones, Languages, Laptop2, Lightbulb, Landmark, Palette, Route, School, ShieldCheck,
+  Sparkles, Star, Target, University, UsersRound,
 } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
@@ -10,13 +10,20 @@ import BlogCard from "../components/BlogCard";
 import CourseCard from "../components/CourseCard";
 import FAQAccordion from "../components/FAQAccordion";
 import HeroVideo from "../components/HeroVideo";
+import LazyVideoCard from "../components/LazyVideoCard";
+import MediaGallery from "../components/MediaGallery";
 import NexusSearch from "../components/NexusSearch";
+import OfficialResourceGrid from "../components/OfficialResourceGrid";
 import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
+import StaffCard from "../components/StaffCard";
 import { CTASection, SectionHeading } from "../components/UI";
 import { homeBlogs as blogs, homeCourses as courses, homeGradeCounts as gradeCounts, homePopularCourses as featuredCourses } from "../data/homeCatalog";
 import { faqGroups } from "../data/content";
+import { officialResources } from "../data/officialResources";
 import { brand, images } from "../data/site";
+import { teamMembers } from "../data/team";
+import { officialVideos } from "../data/videos";
 
 const trustItems = [
   [GraduationCap, "Grades 9–12", "Four secondary grade levels"],
@@ -68,7 +75,7 @@ export default function HomePage() {
     <>
       <Seo
         title="Ontario Online High School Courses | Nexus Education"
-        description="Explore 207 Ontario secondary course records, plan prerequisites and connect with Nexus Education Private School for flexible online learning support."
+        description="Explore student-centred elementary learning, 207 Ontario secondary course records, pathway resources and flexible digital support at Nexus Education Private School."
         image={`${brand.canonical}/media/nexus-education-hero-poster.jpg`}
       />
       <section className="home-hero container">
@@ -120,6 +127,15 @@ export default function HomePage() {
         <div className="grade-grid">{[9, 10, 11, 12].map((grade, index) => <Link className={`grade-card accent-${index + 1}`} to={`/courses/grade-${grade}`} key={grade}><span className="grade-number">{grade}</span><div><span className="mini-label">{gradeCounts[grade]} courses</span><h3>Grade {grade}</h3><p>{grade === 9 ? "Build a strong foundation and discover new interests." : grade === 10 ? "Strengthen core skills and start shaping your direction." : grade === 11 ? "Align course choices with future study and career goals." : "Complete credits and prerequisites for your next step."}</p><span className="text-link">Explore Grade {grade} <ArrowRight size={15} /></span></div></Link>)}</div>
       </Reveal>
 
+      <Reveal as="section" className="section learning-levels-section">
+        <div className="container"><SectionHeading eyebrow="SUPPORT FOR EVERY LEARNER" title="A learning experience that grows with the student." text="Friendly foundations for younger learners and transparent course pathways for Ontario secondary students." />
+          <div className="learning-levels-grid">
+            <article className="learning-level-card elementary"><div className="learning-level-photo"><img src={images.elementary} alt="Young learners working together in a classroom" width="1400" height="1000" loading="lazy" decoding="async" /><span><Backpack size={24} /> Elementary</span></div><div><h3>Curious minds need room to explore.</h3><p>Bright visuals, age-appropriate subject cues and clear family communication create a warmer foundation for learning.</p><div className="subject-mini-grid">{[[Calculator,"Math"],[Languages,"Language"],[Atom,"Science"],[Palette,"Arts"]].map(([Icon,label]) => <span key={label}><Icon size={18} />{label}</span>)}</div><Link className="text-link" to="/inquiry">Ask about elementary learning <ArrowRight size={16} /></Link></div></article>
+            <article className="learning-level-card secondary"><div className="learning-level-photo"><img src={images.secondaryStudents} alt="Secondary students collaborating on their studies" width="1400" height="1000" loading="lazy" decoding="async" /><span><School size={24} /> Grades 9–12</span></div><div><h3>Every course should connect to a next step.</h3><p>Search course codes, compare prerequisites and keep graduation, college, university and career destinations in view.</p><div className="subject-mini-grid">{[[BookOpenCheck,"Credits"],[Route,"Pathways"],[University,"Postsecondary"],[Target,"Goals"]].map(([Icon,label]) => <span key={label}><Icon size={18} />{label}</span>)}</div><Link className="text-link" to="/courses">Browse secondary courses <ArrowRight size={16} /></Link></div></article>
+          </div>
+        </div>
+      </Reveal>
+
       <Reveal as="section" className="section container">
         <SectionHeading eyebrow="WHY NEXUS" title="School Should Move You Forward." text="Every part of the experience is designed to make the next academic step easier to understand." />
         <div className="feature-grid">{advantages.map(([Icon, title, text], index) => <article className="feature-card" key={title}><span className="feature-index">0{index + 1}</span><span className="icon-bubble"><Icon size={21} /></span><h3>{title}</h3><p>{text}</p></article>)}</div>
@@ -143,6 +159,13 @@ export default function HomePage() {
         </div>
       </Reveal>
 
+      <Reveal as="section" className="section container pathway-journey-section">
+        <SectionHeading eyebrow="LEARNING PATHWAY" title="One journey, several meaningful destinations." text="The pathway stays flexible while each stage makes the next set of choices easier to understand." center />
+        <div className="learning-pathway" aria-label="Elementary to postsecondary learning pathway">{[[Backpack,"Elementary","Build foundations"],[School,"Secondary","Earn credits"],[GraduationCap,"Graduation","Complete requirements"],[University,"College / University","Meet prerequisites"],[BriefcaseBusiness,"Career","Keep learning"]].map(([Icon,title,text], index) => <article key={title}><span className="pathway-icon"><Icon size={25} /></span><div><strong>{title}</strong><small>{text}</small></div>{index < 4 && <i aria-hidden="true"><ArrowRight size={18} /></i>}</article>)}</div>
+      </Reveal>
+
+      <Reveal as="section" className="section media-rich-section"><div className="container"><SectionHeading eyebrow="LEARNING IN MANY FORMS" title="More than one picture of student success." text="Stock photography illustrates learning themes only; the people shown are not identified as Nexus students or staff." /><MediaGallery /></div></Reveal>
+
       <Reveal as="section" className="section container support-split">
         <div className="support-image"><img src={images.mentoring} alt="Teacher supporting students in a bright classroom" width="1400" height="900" loading="lazy" decoding="async" /><div><Headphones size={22} /><span><strong>Questions are welcome.</strong><small>Find the right support path quickly.</small></span></div></div>
         <div><SectionHeading eyebrow="STUDENT SUPPORT" title="Support That Meets the Question." text="Get a clear route for course selection, prerequisite questions, academic planning, LMS support and postsecondary research." />
@@ -151,12 +174,18 @@ export default function HomePage() {
         </div>
       </Reveal>
 
+      <Reveal as="section" className="section container home-team-section"><div><SectionHeading eyebrow="PEOPLE & TECHNOLOGY" title="A human experience, supported by reliable digital tools." text="Meet approved team members and see how the public website connects students with learning and support." /><Link className="btn btn-primary" to="/about/team">Meet the Nexus Team <ArrowRight size={17} /></Link></div><StaffCard member={teamMembers[0]} compact /></Reveal>
+
+      <Reveal as="section" className="section soft-section"><div className="container home-video-section"><div><SectionHeading eyebrow="OFFICIAL VIDEO HIGHLIGHT" title="Understand the application process before you begin." text="Official-source videos stay lightweight until you press Play, reducing page weight and unnecessary tracking requests." /><Link className="btn btn-secondary" to="/student-resources/videos">Browse the Video Library <ArrowRight size={17} /></Link></div><LazyVideoCard video={officialVideos[0]} /></div></Reveal>
+
       <Reveal as="section" className="section container">
         <div className="reviews-preview reviews-carousel" role="region" aria-label="Nexus review status">
-          <div><span className="eyebrow">COMMUNITY FEEDBACK</span><h2>Be Among the First to Share Your Nexus Experience.</h2><p>No approved public reviews are displayed yet. Thoughtful feedback can help future students while moderation and privacy keep the space responsible.</p><Link className="btn btn-primary" to="/reviews">Share Your Experience <ArrowRight size={17} /></Link></div>
+          <div><span className="eyebrow">COMMUNITY FEEDBACK</span><h2>What Students & Families Say.</h2><p>No approved public reviews are displayed yet. Thoughtful feedback can help future students while moderation and privacy keep the space responsible.</p><div className="button-row"><Link className="btn btn-primary" to="/reviews">Read All Reviews <ArrowRight size={17} /></Link><Link className="btn btn-secondary" to="/reviews#write-review">Share Your Experience</Link></div></div>
           <div className="review-empty-visual"><div aria-hidden="true">{[1,2,3,4,5].map((star) => <Star key={star} size={26} />)}</div><strong>No average shown until real reviews are approved.</strong><span><ShieldCheck size={17} /> Moderated before publishing</span><span><CircleUserRound size={17} /> Private email is not displayed</span></div>
         </div>
       </Reveal>
+
+      <Reveal as="section" className="section container home-resources-section"><div className="home-resources-heading"><SectionHeading eyebrow="OFFICIAL ONTARIO & CANADA RESOURCES" title="Primary sources for important decisions." text="Open current curriculum, graduation, application and career-planning information directly from the responsible organization." /><Link className="btn btn-secondary" to="/resources">Explore the Resource Hub <ArrowRight size={17} /></Link></div><OfficialResourceGrid resources={officialResources.slice(0, 4)} compact /></Reveal>
 
       <Reveal as="section" className="section soft-section">
         <div className="container"><SectionHeading eyebrow="NEXUS JOURNAL" title="Ideas That Move Students Forward." text="Practical guidance for course planning, learning habits and future pathways." />

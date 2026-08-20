@@ -14,7 +14,7 @@ Confirm path, remote, branch, status and pulled HEAD. Preserve unrelated work. R
 
 ## Production verification
 
-Inspect the exact deployment, target, status and aliases. Verify HTTP 200 for home, courses, a grade page, a course, its outline, cart, register, Ontario pathway pages, videos, blog and contact. Confirm production HTML references the newly built assets. Run rendered checks for search navigation, direct route refresh, cart state, responsive header and metadata where tooling permits.
+Inspect the exact deployment, target, status and aliases. Verify HTTP 200 for home, courses, a grade page, a course, its outline, About, Team, Reviews, Resources, cart, register, Ontario pathway pages, videos, blog and contact. Confirm production HTML references the newly built assets and that the official transparent logo, favicon and manifest icon return 200. Run rendered checks for search navigation, direct route refresh, cart state, responsive header and metadata where tooling permits.
 
 ## Reliability and privacy
 
