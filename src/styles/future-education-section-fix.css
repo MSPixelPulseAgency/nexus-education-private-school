@@ -1,0 +1,263 @@
+/* Focused redesign for the Home page “Future of Education” panel only. */
+.future-panel {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  gap: clamp(28px, 4vw, 54px);
+  padding: clamp(30px, 4.5vw, 54px);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: clamp(28px, 3vw, 42px);
+  background:
+    radial-gradient(circle at 78% 18%, rgba(249,152,32,.20), transparent 24rem),
+    radial-gradient(circle at 10% 90%, rgba(32,129,249,.18), transparent 25rem),
+    linear-gradient(135deg, #061d38 0%, #08294f 48%, #0c5ab1 100%);
+  box-shadow: 0 34px 90px rgba(5,26,51,.28), 0 10px 32px rgba(249,152,32,.12);
+}
+
+.future-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(255,255,255,.07), transparent 28%, transparent 74%, rgba(255,255,255,.05));
+}
+
+.future-panel > div:first-child {
+  align-self: center;
+}
+
+.future-panel h2 {
+  color: #fff !important;
+  margin: 18px 0 18px;
+  max-width: 620px;
+  font-size: clamp(2.55rem, 4.6vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  text-shadow: 0 8px 30px rgba(0,0,0,.16);
+}
+
+.future-panel > div:first-child > p {
+  max-width: 640px;
+  color: rgba(245,249,255,.88) !important;
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.7;
+}
+
+.future-panel .eyebrow-dark {
+  color: #fff;
+  border-color: rgba(255,255,255,.28);
+  background: rgba(255,255,255,.10);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 10px 30px rgba(0,0,0,.10);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.future-panel .btn-light {
+  color: #09264a;
+  border: 1px solid rgba(255,255,255,.72);
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(0,0,0,.17), 0 5px 18px rgba(249,152,32,.16);
+}
+
+.future-panel .btn-light:hover {
+  color: #09264a;
+  border-color: #f99820;
+  background: #fff7ed;
+  transform: translateY(-2px);
+}
+
+.future-visual {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 32px;
+  background: rgba(255,255,255,.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 24px 55px rgba(0,0,0,.20);
+}
+
+.future-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(4,22,44,.18), rgba(4,22,44,.34));
+}
+
+.future-visual > img {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+  filter: saturate(.82) contrast(1.03);
+  transform: scale(1.01);
+}
+
+.future-topics {
+  position: absolute;
+  z-index: 2;
+  inset: auto 22px 22px 22px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+}
+
+.future-topics span {
+  position: relative;
+  min-height: 92px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 42px 14px 14px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 20px;
+  color: #fff;
+  background: linear-gradient(145deg, rgba(255,255,255,.16), rgba(8,41,79,.56));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 12px 28px rgba(2,16,33,.18);
+  backdrop-filter: blur(15px) saturate(135%);
+  -webkit-backdrop-filter: blur(15px) saturate(135%);
+  font-size: .86rem;
+  font-weight: 800;
+  letter-spacing: .065em;
+  text-align: left;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.future-topics span::before {
+  position: absolute;
+  top: 13px;
+  left: 14px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  color: #09264a;
+  background: linear-gradient(145deg, #fff, #fff0de);
+  box-shadow: 0 8px 18px rgba(0,0,0,.14);
+  font-size: .9rem;
+  line-height: 1;
+}
+
+.future-topics span:nth-child(1)::before { content: "AI"; font-size: .58rem; font-weight: 900; }
+.future-topics span:nth-child(2)::before { content: "⚛"; font-size: 1rem; }
+.future-topics span:nth-child(3)::before { content: "</>"; font-size: .54rem; font-weight: 900; }
+.future-topics span:nth-child(4)::before { content: "✦"; color: #f98125; }
+.future-topics span:nth-child(5)::before { content: "✎"; color: #f98125; }
+.future-topics span:nth-child(6)::before { content: "⚙"; }
+
+@media (hover:hover) {
+  .future-topics span:hover {
+    transform: translateY(-3px);
+    border-color: rgba(249,152,32,.58);
+    background: linear-gradient(145deg, rgba(255,255,255,.20), rgba(8,41,79,.68));
+  }
+}
+
+@media (max-width: 1024px) {
+  .future-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .future-panel > div:first-child {
+    max-width: 760px;
+  }
+
+  .future-visual,
+  .future-visual > img {
+    min-height: 470px;
+  }
+}
+
+@media (max-width: 720px) {
+  .future-panel {
+    gap: 24px;
+    padding: 28px 20px 22px;
+    border-radius: 30px;
+  }
+
+  .future-panel h2 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: clamp(2.45rem, 12vw, 3.55rem);
+    line-height: 1.01;
+    letter-spacing: -0.045em;
+  }
+
+  .future-panel > div:first-child > p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .future-panel .btn-light {
+    width: 100%;
+    justify-content: center;
+    min-height: 54px;
+  }
+
+  .future-visual {
+    min-height: 430px;
+    border-radius: 26px;
+  }
+
+  .future-visual > img {
+    min-height: 430px;
+  }
+
+  .future-topics {
+    inset: auto 14px 14px;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 10px;
+  }
+
+  .future-topics span {
+    min-height: 76px;
+    padding: 36px 11px 11px;
+    border-radius: 17px;
+    font-size: .76rem;
+  }
+
+  .future-topics span::before {
+    top: 10px;
+    left: 11px;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 390px) {
+  .future-panel {
+    padding-inline: 16px;
+  }
+
+  .future-panel h2 {
+    font-size: clamp(2.25rem, 12.5vw, 3rem);
+  }
+
+  .future-visual,
+  .future-visual > img {
+    min-height: 410px;
+  }
+
+  .future-topics {
+    inset-inline: 10px;
+    bottom: 10px;
+    gap: 8px;
+  }
+
+  .future-topics span {
+    min-height: 72px;
+    padding: 34px 9px 9px;
+    font-size: .7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .future-topics span,
+  .future-panel .btn-light {
+    transition: none;
+  }
+}
