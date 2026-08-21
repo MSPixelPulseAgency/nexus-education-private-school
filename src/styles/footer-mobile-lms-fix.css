@@ -1,0 +1,9 @@
+/* Mobile-only footer LMS alignment fix. Desktop remains unchanged. */
+@media (max-width: 720px) {
+  .footer-lms > a {
+    align-self: center;
+    justify-content: center;
+    margin-inline: auto;
+    text-align: center;
+  }
+}
