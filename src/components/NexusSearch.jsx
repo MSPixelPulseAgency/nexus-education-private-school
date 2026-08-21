@@ -90,11 +90,6 @@ export default function NexusSearch({ className = "" }) {
     navigate(path);
   };
 
-  const handleResultClick = (event, path) => {
-    event.preventDefault();
-    choose(path);
-  };
-
   const onKeyDown = (event) => {
     if (event.key === "Escape") {
       setOpen(false);
@@ -158,7 +153,7 @@ export default function NexusSearch({ className = "" }) {
                 <div className="search-group-heading"><Icon size={16} /><span>{label}</span></div>
                 {results.filter((item) => item.type === type).map((item) => {
                   const index = results.indexOf(item);
-                  const resultLink = <Link id={`${searchId}-result-${index}`} className={activeIndex === index ? "is-active" : ""} role="option" aria-selected={activeIndex === index} to={item.path} onMouseEnter={() => setActiveIndex(index)} onClick={(event) => handleResultClick(event, item.path)}>{item.type === "course" && <span className="course-code">{item.label.split(" · ")[0]}</span>}<span><strong>{item.title}</strong><small>{item.type === "course" ? item.label.split(" · ").slice(1).join(" · ") : item.label}</small></span><ArrowRight size={16} aria-hidden="true" /></Link>;
+                  const resultLink = <Link id={`${searchId}-result-${index}`} className={activeIndex === index ? "is-active" : ""} role="option" aria-selected={activeIndex === index} to={item.path} onMouseEnter={() => setActiveIndex(index)} onClick={() => { setOpen(false); setActiveIndex(-1); }}>{item.type === "course" && <span className="course-code">{item.label.split(" · ")[0]}</span>}<span><strong>{item.title}</strong><small>{item.type === "course" ? item.label.split(" · ").slice(1).join(" · ") : item.label}</small></span><ArrowRight size={16} aria-hidden="true" /></Link>;
                   if (item.type !== "course") return <div className="search-result-row" key={item.key}>{resultLink}</div>;
                   const course = courses.find((entry) => `course-${entry.code}` === item.key);
                   return <div className="search-result-row has-cart" key={item.key}>{resultLink}{course && <AddToCartButton course={course} className="search-add-cart" compact />}</div>;
