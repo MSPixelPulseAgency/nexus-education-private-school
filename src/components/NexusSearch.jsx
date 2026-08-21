@@ -1,4 +1,4 @@
-import { useDeferredValue, useId, useMemo, useRef, useState } from "react";
+import { useDeferredValue, useEffect, useId, useMemo, useRef, useState } from "react";
 import { ArrowRight, BookOpen, FileText, Newspaper, Search } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { homeBlogs as blogs, homeCourses as courses, rankCourses } from "../data/homeCatalog";
@@ -46,6 +46,19 @@ export default function NexusSearch({ className = "" }) {
   const deferredQuery = useDeferredValue(query);
   const navigate = useNavigate();
   const inputRef = useRef(null);
+  const rootRef = useRef(null);
+
+  useEffect(() => {
+    const handlePointerDown = (event) => {
+      if (rootRef.current && !rootRef.current.contains(event.target)) {
+        setOpen(false);
+        setActiveIndex(-1);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown, true);
+    return () => document.removeEventListener("pointerdown", handlePointerDown, true);
+  }, []);
 
   const results = useMemo(() => {
     const normalized = deferredQuery.trim().toLowerCase();
@@ -75,6 +88,11 @@ export default function NexusSearch({ className = "" }) {
     setOpen(false);
     setActiveIndex(-1);
     navigate(path);
+  };
+
+  const handleResultClick = (event, path) => {
+    event.preventDefault();
+    choose(path);
   };
 
   const onKeyDown = (event) => {
@@ -109,9 +127,7 @@ export default function NexusSearch({ className = "" }) {
   const listOpen = open && Boolean(query.trim());
 
   return (
-    <div className={`nexus-search ${className}`} onBlur={(event) => {
-      if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
-    }}>
+    <div ref={rootRef} className={`nexus-search ${className}`}>
       <div className="nexus-search-input">
         <Search size={23} aria-hidden="true" />
         <label className="sr-only" htmlFor={`${searchId}-input`}>Search Nexus courses and resources</label>
@@ -142,7 +158,7 @@ export default function NexusSearch({ className = "" }) {
                 <div className="search-group-heading"><Icon size={16} /><span>{label}</span></div>
                 {results.filter((item) => item.type === type).map((item) => {
                   const index = results.indexOf(item);
-                  const resultLink = <Link id={`${searchId}-result-${index}`} className={activeIndex === index ? "is-active" : ""} role="option" aria-selected={activeIndex === index} to={item.path} onMouseEnter={() => setActiveIndex(index)} onClick={() => setOpen(false)}>{item.type === "course" && <span className="course-code">{item.label.split(" · ")[0]}</span>}<span><strong>{item.title}</strong><small>{item.type === "course" ? item.label.split(" · ").slice(1).join(" · ") : item.label}</small></span><ArrowRight size={16} aria-hidden="true" /></Link>;
+                  const resultLink = <Link id={`${searchId}-result-${index}`} className={activeIndex === index ? "is-active" : ""} role="option" aria-selected={activeIndex === index} to={item.path} onMouseEnter={() => setActiveIndex(index)} onClick={(event) => handleResultClick(event, item.path)}>{item.type === "course" && <span className="course-code">{item.label.split(" · ")[0]}</span>}<span><strong>{item.title}</strong><small>{item.type === "course" ? item.label.split(" · ").slice(1).join(" · ") : item.label}</small></span><ArrowRight size={16} aria-hidden="true" /></Link>;
                   if (item.type !== "course") return <div className="search-result-row" key={item.key}>{resultLink}</div>;
                   const course = courses.find((entry) => `course-${entry.code}` === item.key);
                   return <div className="search-result-row has-cart" key={item.key}>{resultLink}{course && <AddToCartButton course={course} className="search-add-cart" compact />}</div>;
