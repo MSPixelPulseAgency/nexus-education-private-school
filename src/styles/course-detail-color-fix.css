@@ -1,4 +1,8 @@
-/* Course detail title accent: keep the course title dark while making the separator/code use the Nexus orange accent. */
-.course-detail-hero .course-hero-copy h1 > span {
+/* Course detail title accent: dark course title, orange separator, blue course code. */
+.course-detail-hero .course-hero-copy h1 .course-title-separator {
   color: #f98125 !important;
+}
+
+.course-detail-hero .course-hero-copy h1 .course-title-code {
+  color: #2081f9 !important;
 }
