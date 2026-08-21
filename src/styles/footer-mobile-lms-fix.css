@@ -1,9 +1,36 @@
-/* Mobile-only footer LMS alignment fix. Desktop remains unchanged. */
+/* Mobile-only footer alignment fixes. Desktop remains unchanged. */
 @media (max-width: 720px) {
   .footer-lms > a {
     align-self: center;
     justify-content: center;
     margin-inline: auto;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .footer-bottom > span {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-bottom .legal-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-inline: auto;
+  }
+
+  .footer-bottom .legal-links a {
     text-align: center;
   }
 }
