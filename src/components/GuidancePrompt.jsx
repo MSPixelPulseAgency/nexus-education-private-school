@@ -60,12 +60,14 @@ export default function GuidancePrompt() {
 
   if (!visible) return null;
 
+  const promptButtonBorder = { border: "2px solid #F98125" };
+
   return (
     <div className="enrollment-prompt-layer" onMouseDown={(event) => event.target === event.currentTarget && closeForSession()}>
       <aside ref={dialogRef} className="guidance-prompt enrollment-prompt" role="dialog" aria-modal="true" aria-labelledby="enrollment-prompt-title" aria-describedby="enrollment-prompt-description">
         <button className="guidance-prompt-close" type="button" aria-label="Close enrollment reminder for this session" onClick={closeForSession}><X size={18} /></button>
         <span className="guidance-prompt-icon" aria-hidden="true"><GraduationCap size={23} /></span>
-        <div><span className="mini-label">YOUR NEXT STEP</span><strong id="enrollment-prompt-title">Ready to Start Learning?</strong><p id="enrollment-prompt-description">Explore course options or begin an enrollment review when you are ready.</p><div><Link className="btn btn-primary" to="/enroll" onClick={dismissForTwoWeeks}>Enroll Now</Link><button className="btn btn-secondary" type="button" onClick={dismissForTwoWeeks}>Got It</button></div></div>
+        <div><span className="mini-label">YOUR NEXT STEP</span><strong id="enrollment-prompt-title">Ready to Start Learning?</strong><p id="enrollment-prompt-description">Explore course options or begin an enrollment review when you are ready.</p><div><Link className="btn btn-primary" style={{ ...promptButtonBorder, color: "#FFFFFF" }} to="/enroll" onClick={dismissForTwoWeeks}>Enroll Now</Link><button className="btn btn-secondary" style={promptButtonBorder} type="button" onClick={dismissForTwoWeeks}>Got It</button></div></div>
       </aside>
     </div>
   );
