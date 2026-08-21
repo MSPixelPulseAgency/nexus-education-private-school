@@ -27,8 +27,14 @@
   align-self: center;
 }
 
-.future-panel h2 {
+/* Keep this heading white regardless of global h2 rules. */
+.future-panel h2,
+.future-panel h2 * {
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.future-panel h2 {
   margin: 18px 0 18px;
   max-width: 620px;
   font-size: clamp(2.55rem, 4.6vw, 4.7rem);
@@ -36,11 +42,12 @@
   letter-spacing: -0.04em;
   text-wrap: balance;
   text-shadow: 0 8px 30px rgba(0,0,0,.16);
+  background: none !important;
 }
 
 .future-panel > div:first-child > p {
   max-width: 640px;
-  color: rgba(245,249,255,.88) !important;
+  color: rgba(245,249,255,.9) !important;
   font-size: clamp(1rem, 1.5vw, 1.18rem);
   line-height: 1.7;
 }
@@ -83,7 +90,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(4,22,44,.18), rgba(4,22,44,.34));
+  background: linear-gradient(180deg, rgba(4,22,44,.12), rgba(4,22,44,.33));
 }
 
 .future-visual > img {
@@ -95,64 +102,87 @@
   transform: scale(1.01);
 }
 
+/* Four focused future-ready topics. The markup still contains six items,
+   but this presentation intentionally shows the four strongest themes. */
 .future-topics {
   position: absolute;
   z-index: 2;
   inset: auto 22px 22px 22px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(2, minmax(0,1fr));
   gap: 12px;
+}
+
+.future-topics span:nth-child(n+5) {
+  display: none;
 }
 
 .future-topics span {
   position: relative;
-  min-height: 92px;
+  min-height: 118px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  padding: 42px 14px 14px;
-  border: 1px solid rgba(255,255,255,.22);
-  border-radius: 20px;
+  padding: 58px 16px 16px;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 22px;
   color: #fff;
-  background: linear-gradient(145deg, rgba(255,255,255,.16), rgba(8,41,79,.56));
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 12px 28px rgba(2,16,33,.18);
-  backdrop-filter: blur(15px) saturate(135%);
-  -webkit-backdrop-filter: blur(15px) saturate(135%);
-  font-size: .86rem;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.18), rgba(8,41,79,.62));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.18),
+    0 14px 32px rgba(2,16,33,.20);
+  backdrop-filter: blur(16px) saturate(135%);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+  font-size: .88rem;
   font-weight: 800;
-  letter-spacing: .065em;
+  letter-spacing: .06em;
   text-align: left;
-  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
 }
 
+/* Icon tile. SVGs below use Lucide-compatible line artwork rather than emoji glyphs. */
 .future-topics span::before {
+  content: "";
   position: absolute;
-  top: 13px;
-  left: 14px;
-  width: 28px;
-  height: 28px;
-  display: grid;
-  place-items: center;
-  border-radius: 9px;
-  color: #09264a;
-  background: linear-gradient(145deg, #fff, #fff0de);
-  box-shadow: 0 8px 18px rgba(0,0,0,.14);
-  font-size: .9rem;
-  line-height: 1;
+  top: 14px;
+  left: 15px;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background-color: rgba(255,255,255,.96);
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
 }
 
-.future-topics span:nth-child(1)::before { content: "AI"; font-size: .58rem; font-weight: 900; }
-.future-topics span:nth-child(2)::before { content: "⚛"; font-size: 1rem; }
-.future-topics span:nth-child(3)::before { content: "</>"; font-size: .54rem; font-weight: 900; }
-.future-topics span:nth-child(4)::before { content: "✦"; color: #f98125; }
-.future-topics span:nth-child(5)::before { content: "✎"; color: #f98125; }
-.future-topics span:nth-child(6)::before { content: "⚙"; }
+/* Lucide Bot */
+.future-topics span:nth-child(1)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2309264a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 8V4H8'/%3E%3Crect width='16' height='12' x='4' y='8' rx='2'/%3E%3Cpath d='M2 14h2M20 14h2M9 13v2M15 13v2'/%3E%3C/svg%3E");
+}
+
+/* Lucide Atom */
+.future-topics span:nth-child(2)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%232081f9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='1'/%3E%3Cpath d='M20.2 20.2c2.04-2.03.02-7.43-4.5-11.95S5.78 1.7 3.75 3.75s-.02 7.43 4.5 11.95 9.92 6.55 11.95 4.5Z'/%3E%3Cpath d='M15.7 15.7c4.52-4.52 6.54-9.92 4.5-11.95s-7.43-.02-11.95 4.5-6.55 9.92-4.5 11.95 7.43.02 11.95-4.5Z'/%3E%3C/svg%3E");
+}
+
+/* Lucide Code2 */
+.future-topics span:nth-child(3)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2309264a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16'/%3E%3C/svg%3E");
+}
+
+/* Lucide FlaskConical */
+.future-topics span:nth-child(4)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f98125' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 2v7.53a2 2 0 0 1-.21.89L4.72 20.55A1 1 0 0 0 5.62 22h12.76a1 1 0 0 0 .9-1.45l-5.07-10.13A2 2 0 0 1 14 9.53V2'/%3E%3Cpath d='M8.5 2h7M7 16h10'/%3E%3C/svg%3E");
+}
 
 @media (hover:hover) {
   .future-topics span:hover {
     transform: translateY(-3px);
     border-color: rgba(249,152,32,.58);
-    background: linear-gradient(145deg, rgba(255,255,255,.20), rgba(8,41,79,.68));
+    background: linear-gradient(145deg, rgba(255,255,255,.22), rgba(8,41,79,.70));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 18px 36px rgba(2,16,33,.26);
   }
 }
 
@@ -198,12 +228,12 @@
   }
 
   .future-visual {
-    min-height: 430px;
+    min-height: 460px;
     border-radius: 26px;
   }
 
   .future-visual > img {
-    min-height: 430px;
+    min-height: 460px;
   }
 
   .future-topics {
@@ -213,18 +243,19 @@
   }
 
   .future-topics span {
-    min-height: 76px;
-    padding: 36px 11px 11px;
-    border-radius: 17px;
-    font-size: .76rem;
+    min-height: 118px;
+    padding: 56px 12px 13px;
+    border-radius: 18px;
+    font-size: .78rem;
   }
 
   .future-topics span::before {
-    top: 10px;
-    left: 11px;
-    width: 24px;
-    height: 24px;
-    border-radius: 8px;
+    top: 12px;
+    left: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background-size: 19px 19px;
   }
 }
 
@@ -239,7 +270,7 @@
 
   .future-visual,
   .future-visual > img {
-    min-height: 410px;
+    min-height: 440px;
   }
 
   .future-topics {
@@ -249,9 +280,9 @@
   }
 
   .future-topics span {
-    min-height: 72px;
-    padding: 34px 9px 9px;
-    font-size: .7rem;
+    min-height: 108px;
+    padding: 52px 10px 11px;
+    font-size: .73rem;
   }
 }
 
